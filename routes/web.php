@@ -28,5 +28,4 @@ Route::get('/about', function () {
 require __DIR__ . '/auth.php';
 
 
-
 Route::get('/profile', [UserController::class, 'index']);
