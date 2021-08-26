@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QuizController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+// /Route for the quiz (quiz.blade.php)
+Route::get('/quiz', [QuizController::class,'getQuiz']);
+
 
 require __DIR__.'/auth.php';
