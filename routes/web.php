@@ -31,6 +31,7 @@ Route::get('/about', function () {
 //Route::get('/home', [MainController::class, 'index']);
 
 require __DIR__ . '/auth.php';
+require __DIR__ . '/auth.php';
 
 //test route
 Route::get('/test', [Controller::class, 'index']);
