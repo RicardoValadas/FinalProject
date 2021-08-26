@@ -1,12 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\Controller;
-
-
-use App\Http\Controllers\MainController;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,5 +27,5 @@ Route::get('/about', function () {
 
 require __DIR__ . '/auth.php';
 
-//test route
-Route::get('/test', [Controller::class, 'index']);
+
+Route::get('/profile', [UserController::class, 'index']);
