@@ -13,6 +13,15 @@ use App\Http\Controllers\UserController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+
 Route::get('/home', function () {
     return view('home');
 });
@@ -24,5 +33,6 @@ Route::get('/about', function () {
 });
 Route::get('/profile', [UserController::class, 'index']);
 //Route::get('/home', [MainController::class, 'index']);
+
 
 require __DIR__ . '/auth.php';
