@@ -22,10 +22,7 @@ Route::get('/contact', function () {
 Route::get('/about', function () {
     return view('about');
 });
-
+Route::get('/profile', [UserController::class, 'index']);
 //Route::get('/home', [MainController::class, 'index']);
 
 require __DIR__ . '/auth.php';
-
-
-Route::get('/profile', [UserController::class, 'index']);
