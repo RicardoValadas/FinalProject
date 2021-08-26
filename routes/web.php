@@ -1,12 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QuizController;
 
-use App\Http\Controllers\Controller;
-
-
-use App\Http\Controllers\MainController;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +15,20 @@ use App\Http\Controllers\MainController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+// /Route for the quiz (quiz.blade.php)
+Route::get('/quiz', [QuizController::class, 'getQuiz']);
+
+
+
+
 Route::get('/home', function () {
     return view('home');
 });
@@ -27,11 +38,11 @@ Route::get('/contact', function () {
 Route::get('/about', function () {
     return view('about');
 });
-
+Route::get('/profile', [UserController::class, 'index']);
 //Route::get('/home', [MainController::class, 'index']);
 
-require __DIR__ . '/auth.php';
 
 
 //test route
 Route::get('/test', [Controller::class, 'index']);
+require __DIR__ . '/auth.php';
