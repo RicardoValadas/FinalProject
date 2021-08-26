@@ -13,6 +13,17 @@ use App\Http\Controllers\UserController;
 |
 */
 
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+
+
+
+
+
 Route::get('/home', function () {
     return view('home');
 });
