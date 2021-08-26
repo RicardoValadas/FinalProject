@@ -20,9 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->integer('password');
-            $table->enum('type', ['Parent', 'Child']);
-            $table->integer('user_score');
+            $table->string('password');
+            $table->enum('type', ['parent', 'child']);
+            $table->integer('user_score')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
