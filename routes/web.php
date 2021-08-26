@@ -19,12 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 // /Route for the quiz (quiz.blade.php)
 Route::get('/quiz', [QuizController::class,'getQuiz']);
+
 
 
 
