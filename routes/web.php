@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\AdminController;
+
 
 use App\Http\Controllers\UserController;
 /*
@@ -35,8 +37,11 @@ Route::get('/quiz', [QuizController::class, 'getQuiz'])->name('quiz');
 //Profile View
 Route::get('/profile', [UserController::class, 'index'])->name('profile');
 
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+
 //test route to test implementations
 Route::get('/test', [Controller::class, 'index'])->name('test');
+
 
 
 Route::get('/profile', [UserController::class, 'index']);
