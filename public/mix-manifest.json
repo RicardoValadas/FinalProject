@@ -1,7 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/resources/css/profile/profile.css": "/resources/css/profile/profile.css",
-    "/resources/css/quiz/quiz.css": "/resources/css/quiz/quiz.css",
-    "/resources/css/template/main.css": "/resources/css/template/main.css"
+    "/css/profile/profile.css": "/css/profile/profile.css",
+    "/css/quiz/quiz.css": "/css/quiz/quiz.css",
+    "/css/template/main.css": "/css/template/main.css"
 }
