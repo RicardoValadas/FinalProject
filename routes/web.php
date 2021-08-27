@@ -22,9 +22,6 @@ use App\Http\Controllers\UserController;
 Route::get('/', [MainController::class, 'home'])->name('home');
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 //Contact View
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
@@ -43,8 +40,11 @@ Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
 Route::get('/test', [Controller::class, 'index'])->name('test');
 
 
+<<<<<<< HEAD
 
 Route::get('/profile', [UserController::class, 'index']);
+=======
+>>>>>>> main
 //Route::get('/home', [MainController::class, 'index']);
 
 //Dashboard Predefined route to change later
