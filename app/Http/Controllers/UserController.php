@@ -11,8 +11,16 @@ class UserController extends Controller
 {
     public function index()
     {
+<<<<<<< Updated upstream
         $users = auth()->user();
         return view('user_profile',['users' => $users]);
+=======
+<<<<<<< Updated upstream
+=======
+        //$users = auth()->user();
+>>>>>>> Stashed changes
+        return view('user_profile');
+>>>>>>> Stashed changes
     }
 public function userinfo(){
 
