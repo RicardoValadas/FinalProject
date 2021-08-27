@@ -1,6 +1,6 @@
 <?php
-
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
@@ -21,6 +21,7 @@ use App\Http\Controllers\UserController;
 
 //Home View
 Route::get('/', [MainController::class, 'home'])->middleware(['auth'])->name('home');
+
 
 //Contact View
 Route::get('/contact', [MainController::class, 'contact'])->middleware(['auth'])->name('contact');
@@ -43,6 +44,8 @@ Route::get('/profile', [UserController::class, 'index'])->middleware(['auth'])->
 //test route to test implementations
 Route::get('/test', [Controller::class, 'index'])->middleware(['auth'])->name('test');
 
+
+//Route::get('/home', [MainController::class, 'index']);
 
 //Dashboard Predefined route to change later
 Route::get('/dashboard', function () {
