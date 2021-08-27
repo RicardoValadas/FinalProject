@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
 use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate in the web.php for the routes
+
+#use App\Http\Middleware\IsAdminMiddleware;
 use App\Http\Controllers\UserController;
 
 /*
@@ -18,7 +20,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-########### Route with all the Middlewares Auth  ###########
+########### Route with all the Middlewares Auth using the group function  ###########
 
 Route::middleware(['auth'])->group(function() {
 
@@ -46,7 +48,7 @@ Route::get('/editProfile/{id}', [UserController::class, 'editProfile'])->name('e
 ###########  Route to delete the user profile (delete.blade.php in Views )  ###########
 Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');
 
-});
+});# End of the middleware "auth" group function
 
 
 
