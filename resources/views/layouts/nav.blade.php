@@ -8,7 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="resources/css/template/main.css">
+    <link rel="stylesheet" href="{{ URL::asset('/css/template/main.css') }}">
+
 
     {{-- use this in a view if you want to change style in a page that uses this template
         with @section('style')

@@ -1,0 +1,42 @@
+body {
+  background-color: #B2FFD6;
+}
+
+h1 {
+  text-align: center;
+}
+
+#quiz {
+  margin: 100px auto;
+  padding: 10px;
+  width: 800px;
+  height: 800px;
+  border-radius: 10px;
+  background-color: #D7FDF0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#quiz #questionsView {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  width: 700px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border: 1px solid black;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#quiz #questionsView p {
+  width: 250px;
+  height: 100px;
+  border: 1px solid red;
+}
+/*# sourceMappingURL=quiz.css.map */
