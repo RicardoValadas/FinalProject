@@ -15,9 +15,8 @@ class QuestionlevelTable extends Migration
     {
         Schema::create('questionlevel', function (Blueprint $table) {
             $table->id();
-            $table->string('easy');
-            $table->string('medium');
-            $table->string('hard');
+            $table->string('level');
+
              //$table->timestamps();
         });
     }
