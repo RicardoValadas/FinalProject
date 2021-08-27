@@ -34,15 +34,6 @@ class UserController extends Controller
     }
 
 
-
-
-
-
-
-
-
-
-
 //this function will allow the user to edit its account
     public function update(Request $resquest){
 

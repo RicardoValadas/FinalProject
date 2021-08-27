@@ -50,8 +50,7 @@ Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->na
 
 });# End of the middleware "auth" group function
 
-
-
+# :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
 //Dashboard Predefined route to change later
 Route::get('/dashboard', function () {
     return view('dashboard');
