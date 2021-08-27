@@ -24,8 +24,8 @@ use Symfony\Component\VarDumper\VarDumper;
             <p>Username: {{ $user->username }}</p>
 			<p>Email: {{ $user->email }}</p>
 			<p>Score: {{ $user->user_score }}</p>
-            <p><a href="">Edit</a></p>
-            <p><a href="">delete</a></p>
+            <p><a href="/editProfile">Edit</a></p>
+            <p><a href="/delete/{{$user->id}}">delete</a></p>
         
     </div>
     @endforeach
