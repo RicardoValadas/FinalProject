@@ -41,11 +41,6 @@ Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
 Route::get('/test', [Controller::class, 'index'])->name('test');
 
 
-<<<<<<< HEAD
-
-Route::get('/profile', [UserController::class, 'index']);
-=======
->>>>>>> main
 //Route::get('/home', [MainController::class, 'index']);
 
 //Dashboard Predefined route to change later
