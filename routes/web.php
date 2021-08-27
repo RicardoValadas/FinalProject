@@ -38,9 +38,12 @@ Route::get('/test', [Controller::class, 'index'])->name('test');
 
 //to show edit page
 Route::get('/editProfile/{id}', [UserController::class, 'editProfile'])->name('edit.user');
+
 //delete page
 Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');
+
 //Route::get('/home', [MainController::class, 'index']);
+
 
 //Dashboard Predefined route to change later
 Route::get('/dashboard', function () {
