@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
 use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate in the web.php for the routes 
-
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -41,7 +41,7 @@ Route::get('/quiz', [QuizController::class, 'getQuiz'])->middleware(['auth'])->n
 //Profile View
 Route::get('/profile', [UserController::class, 'index'])->middleware(['auth'])->name('profile');
 
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+Route::get('/admin', [AdminController::class, 'showUserList'])->name('admin');
 
 //test route to test implementations
 Route::get('/test', [Controller::class, 'index'])->middleware(['auth'])->name('test');
