@@ -16,7 +16,8 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
     require('tailwindcss'),
     require('autoprefixer'),
 ]);
-mix.sass('resources/css/template/main.sass', 'resources/css/template/main.css')
-.sass('resources/css/quiz/quiz.sass', 'resources/css/quiz/quiz.css')
-.sass('resources/css/profile/profile.sass', 'resources/css/profile/profile.css');
+mix.sass('public/css/template/main.sass', 'public/css/template/main.css')
+.sass('public/css/quiz/quiz.sass', 'public/css/quiz/quiz.css')
+.sass('public/css/profile/profile.sass', 'public/css/profile/profile.css');
+
 
