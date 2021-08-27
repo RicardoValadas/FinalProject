@@ -10,34 +10,4 @@
     <input type="text" name="password" placeholder="password"><br>
     <input type="submit">
     </form>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <script>
-        /* Wait for the page to be loaded/ready */
-        $(function() {
-            $('#myForm').submit(function(e) {
-                e.preventDefault();
-                let formData = new FormData(this);
-                // Ajax call
-                $.ajax({
-                        url: "{{ route('submit.ajax.form') }}",
-                        //url: 'ajax-answer',
-                        method: 'post',
-                        data: formData,
-                        processData: false,
-                        contentType: false
-                    })
-                    .done(function(result) {
-                        // If AJAX call worked
-                        console.log(result);
-                    })
-                    .fail(function(result) {
-                        console.log('AJAX FAILED');
-                    })
-            });
-        });
-    </script>
-
     @endsection

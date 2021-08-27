@@ -25,7 +25,10 @@ class UserController extends Controller
     
     public function showdelete(){
         return view('delete');   
-
+        
+    }
+    public function editProfile(){
+        return view('editProfile');
     }
 
 
