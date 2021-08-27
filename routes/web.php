@@ -4,7 +4,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
-use Illuminate\Auth\Middleware\Authenticate;
+use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate in the web.php for the routes 
 
 use App\Http\Controllers\UserController;
 
