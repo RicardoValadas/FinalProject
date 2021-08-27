@@ -26,7 +26,7 @@ class User extends Authenticatable
         'type',
         'email',
         'password',
-        'user_score'
+        'user_score',
     ];
 
     /**
