@@ -36,6 +36,9 @@ Route::get('/profile', [UserController::class, 'index'])->name('profile');
 //test route to test implementations
 Route::get('/test', [Controller::class, 'index'])->name('test');
 
+//edit Profile Route
+Route::get('/editProfile', [UserController::class, 'index'])->name('test');
+
 
 //Route::get('/home', [MainController::class, 'index']);
 

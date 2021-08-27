@@ -9,17 +9,32 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+
+
     public function index()
     {
 
         //$users = auth()->user();
-
-        return view('user_profile');
-
+        $userinfo = array(
+            'user'=>auth()->user()
+        );
+        
+        return view('user_profile',['users' => $userinfo]);
+        
     }
-public function userinfo(){
 
-} 
+
+
+    public function update(Request $resquest){
+
+    }   
+
+
+    
+    
+
+
+
 
 
 
