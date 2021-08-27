@@ -11,7 +11,16 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('user_profile');
+        $users = auth()->user();
+        return view('user_profile',['users' => $users]);
     }
+public function userinfo(){
+
+} 
+
+
+
+
+
     
 }

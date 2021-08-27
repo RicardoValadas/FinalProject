@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 /*
@@ -30,6 +31,13 @@ Route::get('/contact', function () {
 });
 Route::get('/about', function () {
     return view('about');
+});
+Route::get('login', function () {
+    
+})->name('login');
+
+Route::middleware('auth.basic')->get('/user', function (Request $request) {
+    return Auth::user();
 });
 Route::get('/profile', [UserController::class, 'index']);
 //Route::get('/home', [MainController::class, 'index']);
