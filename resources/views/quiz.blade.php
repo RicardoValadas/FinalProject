@@ -7,12 +7,13 @@
 {{-- main content --}}
 @section('content')
     <h1>Welcome to the quiz page</h1>
+
     <div id="quiz">
+        <button id="start" type='button'>Start</button>
+        <h2>question</h2>
         <div id="questionsView">
+
             <p>Answer 1</p>
-            <p>Answer 2</p>
-            <p>Answer 3</p>
-            <p>Answer 4</p>
         </div>
     </div>
 
