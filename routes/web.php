@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\MainController;
 
 use App\Http\Controllers\UserController;
 /*
@@ -15,31 +16,33 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Home View
+Route::get('/', [MainController::class, 'home'])->name('home');
 
+//Contact View
+Route::get('/contact', [MainController::class, 'contact'])->name('contact');
+
+<<<<<<< HEAD
+# /Route for the quiz (quiz.blade.php)
+Route::get('/quiz', [QuizController::class,'getQuiz']);
+=======
+//About View
+Route::get('/about', [MainController::class, 'about'])->name('about');
+>>>>>>> 7398ee7ffa07914eb292c969f65a068082fcfbe5
+
+// /Route for the quiz (quiz.blade.php)
+Route::get('/quiz', [QuizController::class, 'getQuiz'])->name('quiz');
+
+//Profile View
+Route::get('/profile', [UserController::class, 'index'])->name('profile');
+
+//test route to test implementations
+Route::get('/test', [Controller::class, 'index'])->name('test');
+
+
+//Dashboard Predefined route to change later
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-
-# /Route for the quiz (quiz.blade.php)
-Route::get('/quiz', [QuizController::class,'getQuiz']);
-
-
-
-
-Route::get('/home', function () {
-    return view('home');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/profile', [UserController::class, 'index']);
-//Route::get('/home', [MainController::class, 'index']);
-
 
 require __DIR__ . '/auth.php';
