@@ -1,25 +1,24 @@
 @extends('layouts.template')
 @section('style')
-    <link rel="stylesheet" href="resources/css/profile/profile.css">
+    <link rel="stylesheet" href="{{ URL::asset('/css/profile/profile.css') }}">
     <a href=""></a>
 @endsection
 
 @section('content')
     <h1>User Profiles</h1>
 
+    @foreach ($users as $user)
+        <div>
 
-    <?php
-
-use Psy\Command\EditCommand;
-use Symfony\Component\VarDumper\VarDumper;
-
-$users = auth()->user();
-    //Var_Dump($users);
-    echo auth()->user()->username .'<br>';
-    echo auth()->user()->first_name .'<br>';
-    echo auth()->user()->last_name .'<br>';
-    echo auth()->user()->email .'<br>';
-    echo auth()->user()->password .'<br>';
-    echo '<a href="">EditCommand</a>'
-    ?>
+            <p>id: {{ $user->id }}</p>
+            <p>Firstname: {{ $user->first_name }}</p>
+            <p>Lastname: {{ $user->last_name }}</p>
+            <p>Username: {{ $user->username }}</p>
+            <p>Email: {{ $user->email }}</p>
+            <p>Score: {{ $user->user_score }}</p>
+            <p><a href="{{ route('edit.user', [$user->id]) }}">Edit</a></p>
+            <p><a href="{{ route('delete.user', [$user->id]) }}">delete</a></p>
+            
+        </div>
+    @endforeach
 @endsection
