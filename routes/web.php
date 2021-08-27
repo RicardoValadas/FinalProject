@@ -4,7 +4,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
-use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate in the web.php for the routes 
+use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate in the web.php for the routes
 
 use App\Http\Controllers\UserController;
 
@@ -45,9 +45,9 @@ Route::get('/profile', [UserController::class, 'index'])->middleware(['auth'])->
 Route::get('/test', [Controller::class, 'index'])->middleware(['auth'])->name('test');
 
 //to show edit page
-Route::get('/editProfile/{id}', [UserController::class, 'editProfile'])->name('edit.user');
+Route::get('/editProfile/{id}', [UserController::class, 'editProfile'])->middleware(['auth'])->name('edit.user');
 //delete page
-Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');
+Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->middleware(['auth'])->name('delete.user');
 //Route::get('/home', [MainController::class, 'index']);
 
 //Dashboard Predefined route to change later
