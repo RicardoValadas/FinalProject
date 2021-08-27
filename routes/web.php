@@ -42,9 +42,7 @@ Route::get('/editProfile', function () {
 });
 
 //delete page
-Route::get('/deleteProfile', function () {
-    return view('delete');
-});
+Route::get('/deleteProfile' , [UserController::class, 'destroy']);
 Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy']);
 //Route::get('/home', [MainController::class, 'index']);
 

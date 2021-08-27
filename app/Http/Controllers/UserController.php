@@ -21,6 +21,21 @@ class UserController extends Controller
         );
         return view('user_profile',['users' => $userinfo]);   
     }
+    
+    
+    public function showdelete(){
+        return view('delete');   
+
+    }
+
+
+
+
+
+
+
+
+
 
 
 //this function will allow the user to edit its account
