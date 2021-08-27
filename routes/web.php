@@ -38,6 +38,7 @@ Route::get('/test', [Controller::class, 'index'])->name('test');
 
 //to show edit page
 Route::get('/editProfile/{id}', [UserController::class, 'editProfile'])->name('edit.user');
+Route::post('/editProfile/{id}', [UserController::class, 'update'])->name('update.user');
 
 //delete page
 Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');

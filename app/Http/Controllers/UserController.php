@@ -27,10 +27,25 @@ class UserController extends Controller
         return view('delete');   
         
     }
-    public function editProfile(){
-        return view('editProfile');
+    //shows edit page and querys the db for info about the user
+    public function editProfile($id){
+        $user = User::find($id);
+        return view('editProfile',['users' => $user]);
     }
 
+    //this function will allow the user to edit its account
+        public function update(Request $resquest){
+            User::table('users')
+              ->where('id', $resquest->id)
+              ->update([
+                'first_name' => $resquest->first_name,
+                'last_name' => $resquest->last_name,
+                'username' => $resquest->username,
+                'email' => $resquest->email,
+                'password' => $resquest->password]);
+
+                return response()->json(['success' => 'Record is added']);
+        }   
 
 
 
@@ -41,10 +56,6 @@ class UserController extends Controller
 
 
 
-//this function will allow the user to edit its account
-    public function update(Request $resquest){
-        
-    }   
 
 
 //to delete user
