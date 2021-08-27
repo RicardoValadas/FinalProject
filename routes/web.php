@@ -45,15 +45,9 @@ Route::get('/profile', [UserController::class, 'index'])->middleware(['auth'])->
 Route::get('/test', [Controller::class, 'index'])->middleware(['auth'])->name('test');
 
 //to show edit page
-Route::get('/editProfile', function () {
-    return view('editProfile');
-});
-
+Route::get('/editProfile/{id}', [UserController::class, 'editProfile'])->name('edit.user');
 //delete page
-Route::get('/deleteProfile', function () {
-    return view('delete');
-});
-Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy']);
+Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');
 //Route::get('/home', [MainController::class, 'index']);
 
 //Dashboard Predefined route to change later
