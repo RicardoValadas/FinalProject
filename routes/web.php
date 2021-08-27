@@ -22,13 +22,8 @@ Route::get('/', [MainController::class, 'home'])->name('home');
 //Contact View
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
-<<<<<<< HEAD
-# /Route for the quiz (quiz.blade.php)
-Route::get('/quiz', [QuizController::class,'getQuiz']);
-=======
 //About View
 Route::get('/about', [MainController::class, 'about'])->name('about');
->>>>>>> 7398ee7ffa07914eb292c969f65a068082fcfbe5
 
 // /Route for the quiz (quiz.blade.php)
 Route::get('/quiz', [QuizController::class, 'getQuiz'])->name('quiz');
