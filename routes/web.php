@@ -1,10 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
+use Illuminate\Auth\Middleware\Authenticate;
 
 use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,22 +20,28 @@ use App\Http\Controllers\UserController;
 */
 
 //Home View
-Route::get('/', [MainController::class, 'home'])->name('home');
+Route::get('/', [MainController::class, 'home'])->middleware(['auth'])->name('home');
 
 //Contact View
-Route::get('/contact', [MainController::class, 'contact'])->name('contact');
+Route::get('/contact', [MainController::class, 'contact'])->middleware(['auth'])->name('contact');
 
-//About View
-Route::get('/about', [MainController::class, 'about'])->name('about');
+##About View
+
+/*Route::get('/about', function () {
+    return view('about');
+})->middleware(['MainController'])->name('about');*/
+
+Route::get('/about', [MainController::class, 'about'])->middleware(['auth'])->name('about');
+
 
 // /Route for the quiz (quiz.blade.php)
-Route::get('/quiz', [QuizController::class, 'getQuiz'])->name('quiz');
+Route::get('/quiz', [QuizController::class, 'getQuiz'])->middleware(['auth'])->name('quiz');
 
 //Profile View
-Route::get('/profile', [UserController::class, 'index'])->name('profile');
+Route::get('/profile', [UserController::class, 'index'])->middleware(['auth'])->name('profile');
 
 //test route to test implementations
-Route::get('/test', [Controller::class, 'index'])->name('test');
+Route::get('/test', [Controller::class, 'index'])->middleware(['auth'])->name('test');
 
 
 //Dashboard Predefined route to change later
