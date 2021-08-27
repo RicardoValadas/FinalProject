@@ -1,20 +1,24 @@
 const start = document.querySelector('#start');
 
-/* start.addEventListener('click', function(quiz) {
-if (!quiz.target.matches('#start'))
-})
- */
+start.addEventListener('click', function(quiz) {
+
 
 
 
 fetch('https://official-joke-api.appspot.com/random_joke')
-.then(response => response.json())
-.then(quote => console.log(quote))
+.then((response) => response.json())
+.then((data) => renderAnswers(data))
+});
+
+function renderAnswers(data) {
+    const setup = document.querySelector('#answers')
+    setup.innerHTML = data.setup;
+}
  
 
 
-
-/*   function createAnswers(answersArray) {
+/*
+  function createAnswers(answersArray) {
 
        for (answers of answersArray)
        {
@@ -25,4 +29,5 @@ fetch('https://official-joke-api.appspot.com/random_joke')
 
        }
 
-  } */
+  } 
+*/
