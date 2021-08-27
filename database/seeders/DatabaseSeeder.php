@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            QuestionsTableSeeder::class,
+            QuestionLevelTableSeeder::class, QuestionsTableSeeder::class
         ]);
     }
 }
