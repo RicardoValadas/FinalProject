@@ -6,15 +6,13 @@
 
 @section('content')
     <h1>User Profiles</h1>
-
-    
-   
         <div>
             <p>id: {{ $user->id }}</p>
             <p>Firstname: {{ $user->first_name }}</p>
             <p>Lastname: {{ $user->last_name }}</p>
             <p>Username: {{ $user->username }}</p>
             <p>Email: {{ $user->email }}</p>
+            <p>acc type: {{ $user->type }}</p>
             <p>Score: {{ $user->user_score }}</p>
             <p><a href="{{ route('edit.user', [$user->id]) }}">Edit</a></p>
             <p><a href="{{ route('delete.user', [$user->id]) }}">delete</a></p>

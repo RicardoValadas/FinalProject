@@ -7,7 +7,18 @@
 <div id="results"></div>
     <form action="" method="post">
     @csrf
-    <input type="hidden" name="id" value="{{$user->id}}">
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+<button><a href="/profile">go back</a></button><br>
+<input type="hidden" name="id" value="{{$user->id}}">
     <input type="text" name="username" placeholder="username" value="{{ $user->username }}" ><br>
     <input type="text" name="first_name" placeholder="first name" value="{{ $user->first_name }}" ><br>
     <input type="text" name="last_name" placeholder="last name" value="{{ $user->last_name }}"><br><!--verificar como colocar os nomes junto do old(...-->
@@ -17,7 +28,7 @@
         <option value="parent">parent</option>
     </select><br>
     <input type="password" name="password" placeholder="new password" value="{{ $user->password }}"><br>
-    <input type="password" name="pwdConfirm" placeholder="password Confirmation" value="{{ $user->password }}"><br>
+    <input type="password" name="password_confirmation" placeholder="password Confirmation" value="{{ $user->password }}"><br>
     <input type="submit">
     </form>
     <!--i want to use ajax here to check the database to see if the name is valid,mail valid,username valid,etc...
