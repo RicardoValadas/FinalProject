@@ -21,7 +21,6 @@ use App\Http\Controllers\UserController;
 */
 
 ########### Route with all the Middlewares Auth using the group function  ###########
-
 Route::middleware(['auth'])->group(function() {
 
     ###########  Route for the Home page (home.blade.php in views)  ###########
