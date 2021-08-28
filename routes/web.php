@@ -37,8 +37,41 @@ Route::get('/profile', [UserController::class, 'index'])->name('profile');
 Route::get('/test', [Controller::class, 'index'])->name('test');
 
 //to show edit page
-Route::get('/editProfile/{id}', [UserController::class, 'editProfile'])->name('edit.user');
-Route::post('/editProfile/{id}', [UserController::class, 'update'])->name('update.user');
+//Route::get('/editProfile/{id}', [UserController::class, 'editProfile'])->name('edit.user');//needs work 
+//Route::post('/ajaxeditProfile', [UserController::class, 'update'])->name('update.user');//needs work
+
+Route::get('/editProfile/{id}', [UserController::class, 'editform'])->name('edit.user');
+// When we submit the form
+Route::post('/editProfile/{id}', [UserController::class, 'update']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //delete page
 Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');
