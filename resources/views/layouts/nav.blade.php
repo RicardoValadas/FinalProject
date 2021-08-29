@@ -25,6 +25,8 @@
                 <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
                 <li class=" nav-item"><a class="nav-link" href="{{ route('about') }}">About</a></li>
                 <li class=" nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact</a></li>
+                <li class=" nav-item"><a class="nav-link" href="{{ route('quiz') }}">Quiz</a></li>
+                <li class=" nav-item"><a class="nav-link" href="{{ route('profile') }}">User Profile</a></li>
             </ul>
         </nav>
     </header>
