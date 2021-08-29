@@ -1,2 +1,73 @@
-body
-    background-color: black
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+    img
+    width: 80px
+
+header
+    display: flex
+    justify-content: space-between
+    nav
+        padding: 0 10px
+        width: 400px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        ul
+            display: flex
+            padding: 5px
+            margin: 15px
+            li
+                padding: 5px
+                a
+                    font-size: 18px
+
+
+#arrow
+    color: orange
+    font-size: 20px
+
+.dropdown
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    padding: 0 10px
+    margin: 0 100px
+    width: 200px
+    .dropButton
+        display: flex
+        padding: 20px
+        transition: 1s
+        position: absolute
+        left: 400px
+     
+.dropHiddenTrue
+    position: absolute
+    display: none
+    padding: 20px
+    width: 100px
+    top: 54px
+    left: 420px
+    background-color: #FFECD1
+    a
+.dropHiddenFalse
+    display: block
+   
+ 
+.showUsername
+    display: none
+    width: 100px
+
+.dropdownRes
+    padding: 10px
+    margin: 10 0
+
+@media screen and ( min-width:600px  )
+   .showUsername
+       display: block
+
+     
+    

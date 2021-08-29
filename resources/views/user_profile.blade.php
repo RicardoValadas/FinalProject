@@ -1,7 +1,6 @@
 @extends('layouts.template')
 @section('style')
     <link rel="stylesheet" href="{{ URL::asset('/css/profile/profile.css') }}">
-    <a href=""></a>
 @endsection
 
 @section('content')
@@ -18,7 +17,7 @@
             <p>Score: {{ $user->user_score }}</p>
             <p><a href="{{ route('edit.user', [$user->id]) }}">Edit</a></p>
             <p><a href="{{ route('delete.user', [$user->id]) }}">delete</a></p>
-            
+
         </div>
     @endforeach
 @endsection
