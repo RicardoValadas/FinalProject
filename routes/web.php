@@ -1,9 +1,11 @@
 <?php
+
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\Auth\NewPasswordController;
 use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate in the web.php for the routes
 
 #use App\Http\Middleware\IsAdminMiddleware;
@@ -21,39 +23,36 @@ use App\Http\Controllers\UserController;
 */
 
 ########### Route with all the Middlewares Auth using the group function  ###########
-Route::middleware(['auth'])->group(function() {
+Route::middleware(['auth'])->group(function () {
 
     ###########  Route for the Home page (home.blade.php in views)  ###########
-Route::get('/', [MainController::class, 'home'])->name('home');
+    Route::get('/', [MainController::class, 'home'])->name('home');
 
-###########  Route for the Contact page (contact.blade.php in Views )  ###########
-Route::get('/contact', [MainController::class, 'contact'])->name('contact');
+    ###########  Route for the Contact page (contact.blade.php in Views )  ###########
+    Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
-########### Route for the About page (about.blade.php in Views )  ###########
-Route::get('/about', [MainController::class, 'about'])->name('about');
+    ########### Route for the About page (about.blade.php in Views )  ###########
+    Route::get('/about', [MainController::class, 'about'])->name('about');
 
-###########  Route for the quiz page (quiz.blade.php in viwes)  ###########
-Route::get('/quiz', [QuizController::class, 'getQuiz'])->name('quiz');
+    ###########  Route for the quiz page (quiz.blade.php in viwes)  ###########
+    Route::get('/quiz', [QuizController::class, 'getQuiz'])->name('quiz');
 
-###########  Route for Profile page (user_profile.blade.php in Views )  ###########
-Route::get('/profile', [UserController::class, 'index'])->name('profile');
+    ###########  Route for the quiz !!!!Test!!!! page (quiz.blade.php in viwes)  ###########
+    Route::get('/quizTest', [QuizController::class, 'getQuestion'])->name('quizTest');
 
-###########  test route to test implementations  ###########
-Route::get('/test', [Controller::class, 'index'])->name('test');
+    ###########  Route for Profile page (user_profile.blade.php in Views )  ###########
+    Route::get('/profile', [UserController::class, 'index'])->name('profile');
 
-########### Route to show the edit user page (editProfile.blade.php in Views )  ###########
-Route::get('/editProfile/{id}', [UserController::class, 'editProfile'])->name('edit.user');
+    ###########  test route to test implementations  ###########
+    Route::get('/test', [Controller::class, 'index'])->name('test');
 
-###########  Route to delete the user profile (delete.blade.php in Views )  ###########
-Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');
+    ########### Route to show the edit user page (editProfile.blade.php in Views )  ###########
+    Route::get('/editProfile/{id}', [UserController::class, 'editform'])->name('edit.user');
+    Route::post('/editProfile/{id}', [UserController::class, 'update']);
 
-###########  Route to edit the user profile (user_ajax.form.blade.php in Views )  ###########
-# Display the form
-Route::get('/ajax-form', [UserController::class,  'ajaxForm'])->name('show.ajax.form');
-# When we submit the form
-Route::post('/ajax-answer', [UserController::class, 'ajaxAnswer'])->name('submit.ajax.form');
-
-});# End of the middleware "auth" group function
+    ###########  Route to delete the user profile (delete.blade.php in Views )  ###########
+    Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');
+}); # End of the middleware "auth" group function
 
 # :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
 //Dashboard Predefined route to change later
@@ -62,3 +61,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
+
+
+Route::get('/reset', [NewPasswordController::class, 'create'])->name('passchange');
+
+

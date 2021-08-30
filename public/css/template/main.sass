@@ -1,2 +1,145 @@
-body
-    background-color: black
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+//MOBILE VIEW
+//HEADER
+header
+    background-color: #ffd29d
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px
+    margin: -16px 0
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px
+    nav
+        display: flex
+        align-items: center
+        .logo
+            width: 100px
+.username
+    font-size: 20px
+    text-shadow: 0px 1px 6px #ce694a
+//Mobile Dropdown menu
+.dropdownRes
+    position: relative
+.contentDropdownLayoutRes
+    position: absolute
+    display: none
+    height: 210px
+    width: 87px
+    padding: 10px
+    left: 5px
+    background-color: #fde4d4
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
+.contentDropdownLinksRes
+    font-size: 18px
+    &:hover
+        color: orange
+   
+.contentDropdownLayoutResShow
+    display: block
+
+//Nav with links for views hidden in mobile
+.desktop
+    display: none
+
+.showUsername
+    width: 100px
+    display: none
+
+//mobile menu for dropdown    
+#menu
+    color: orange
+    margin: 0 30px
+    font-size: 40px
+
+//Hidden menu and arrow only for desktop
+.dropHiddenTrue
+    display: none
+#arrow
+    display: none
+    color: orange
+    font-size: 20px
+
+// BODY MAIN TEMPLATE
+main
+    width: 300px
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px
+    padding: 10px
+    margin: 60px auto
+
+
+//desktop
+@media screen and ( min-width:600px  )
+    .showUsername
+        display: block
+
+    .dropButton
+        display: block       
+
+    #arrow
+        display: block
+        //nav
+    .desktop
+        display: flex
+        padding: 5px
+        margin: 15px
+        li
+            padding: 5px   
+        // Username and arrow with dropdown js function
+    .dropdown
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: flex-end
+    .dropButton
+        display: flex
+        padding: 20px
+
+        //classes to show menu in dropdown
+    .dropHiddenTrue
+        position: absolute
+        padding: 20px
+        width: 100px
+        top: 46px
+        left: 32px
+        background-color: #FFECD1
+        display: none
+
+    .dropHiddenFalse
+        display: block 
+
+    .desktop
+        display: flex
+        li
+            padding: 10px
+            transition: 0.5s
+            &:hover
+                transform: scale(110%)
+            a
+                font-size: 25px
+                transition: 0.5s
+                &:hover
+                    color: white
+                    
+                  
+     .logo
+        width: 150px
+
+    .dropdownRes
+        display: none
+    .username
+        display: none
+
+        //main
+    main
+        width: 1400px
+
+
+
+      
+        
+
+    
