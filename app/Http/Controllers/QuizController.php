@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Questions;
 use App\Models\WrongAnswer;
+use App\Models\Answers;
 use App\Models\CorrectAnswer;
 use Illuminate\Database\Eloquent\Model;
 
@@ -26,12 +27,9 @@ class QuizController extends Controller
     {
         $question = Questions::all()->random();
 
-        $wrongAnswer  = WrongAnswer::where('questionId', '=', $question->id)->get();
+        $Answers  = Answers::where('questionId', '=', $question->id)->get();
 
-        $correctAnswer  = CorrectAnswer::where('questionId', '=', $question->id)->first();
-
-        $question['wrongAnswer'] = $wrongAnswer;
-        $question['correctAnswer'] = $correctAnswer;
+        $question['Answers'] = $Answers;
 
         return $question->toJson(JSON_PRETTY_PRINT);
     }
