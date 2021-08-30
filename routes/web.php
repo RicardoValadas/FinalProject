@@ -40,7 +40,7 @@ Route::get('/profile', [UserController::class, 'index'])->name('profile');
 
 ###########  test route to test implementations  ###########
 Route::get('/test', [Controller::class, 'index'])->name('test');
-
+});
 //to show edit page
 //Route::get('/editProfile/{id}', [UserController::class, 'editProfile'])->name('edit.user');//needs work 
 //Route::post('/ajaxeditProfile', [UserController::class, 'update'])->name('update.user');//needs work
