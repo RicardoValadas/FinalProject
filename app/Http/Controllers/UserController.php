@@ -58,5 +58,6 @@ class UserController extends Controller
 //to delete user
     public function destroy($id){
         User::destroy($id);
+        return view('home');
     }       
 }
