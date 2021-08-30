@@ -31,7 +31,9 @@ class UserController extends Controller
 
     //this function will allow the user to edit its account
     //-------------------can be improved----------------//
-/*need to change... i will create a password only becauseit will always send a new password since is hashed*/
+/*need to change... i will create a password only becauseit will always send a new password since is hashed
+remove type and password
+password will be redirected to the premade reset password*/
         public function update(Request $request,$id){
             $user = User::find($id);        
             $user->type=$request->type;
