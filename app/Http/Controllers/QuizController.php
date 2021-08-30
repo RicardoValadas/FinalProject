@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Questions;
-use App\Models\WrongAnswer;
 use App\Models\Answers;
-use App\Models\CorrectAnswer;
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Http\Request;
@@ -32,5 +30,15 @@ class QuizController extends Controller
         $question['Answers'] = $Answers;
 
         return $question->toJson(JSON_PRETTY_PRINT);
+    }
+
+    public function getQuizHome()
+    {
+        # if statement
+        /*if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
+
+            # The user is being remembered...
+        }*/
+        return view('quizHome');
     }
 }

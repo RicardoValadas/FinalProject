@@ -1,4 +1,4 @@
-const start = document.querySelector('#start');
+/*const start = document.querySelector('#start');
 
 start.addEventListener('click', function(quiz) {
 
@@ -15,7 +15,7 @@ function renderAnswers(data) {
     setup.innerHTML = data.setup;
 }
  
-
+*/
 
 /*
   function createAnswers(answersArray) {
