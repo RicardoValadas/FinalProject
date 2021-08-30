@@ -119,56 +119,51 @@ class QuestionsTableSeeder extends Seeder
             ],
             [
                 'id' => '21',
-                'questions' => 'Why should you choose a strong password?',
-                'levelID' => 1,
-            ],
-            [
-                'id' => '22',
                 'questions' => 'What should a kid do if they receive an insulting message ?',
                 'levelID' => 1,
             ],
             [
-                'id' => '23',
+                'id' => '22',
                 'questions' => 'How should you verify before registering into a social network ?',
                 'levelID' => 2,
             ],
             [
-                'id' => '24',
+                'id' => '23',
                 'questions' => 'How often should you use the same password?',
                 'levelID' => 3,
             ],
             [
-                'id' => '25',
+                'id' => '24',
                 'questions' => 'What should you do with unused accounts ?',
                 'levelID' => 2,
             ],
             [
-                'id' => '26',
+                'id' => '25',
                 'questions' => 'What is cyberbullying ?',
                 'levelID' => 3,
             ],
             [
-                'id' => '27',
+                'id' => '26',
                 'questions' => 'What cautions should you have when using free public wi-fi ?',
                 'levelID' => 3,
             ],
             [
-                'id' => '28',
+                'id' => '27',
                 'questions' => 'What is a VPN?',
                 'levelID' => 3,
             ],
             [
-                'id' => '29',
+                'id' => '28',
                 'questions' => 'What is a digital footprint ?',
                 'levelID' => 3,
             ],
             [
-                'id' => '30',
+                'id' => '29',
                 'questions' => 'If you receive an email from a man claiming to be a prince from Nigeria you should…',
                 'levelID' => 3,
             ],
             [
-                'id' => '31',
+                'id' => '30',
                 'questions' => 'Why should your mobile phone/computer account be protected by a password ?',
                 'levelID' => 2,
             ]

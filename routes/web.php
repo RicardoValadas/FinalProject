@@ -4,8 +4,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
+use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate in the web.php for the routes
 
+#use App\Http\Middleware\IsAdminMiddleware;
 use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,23 +20,25 @@ use App\Http\Controllers\UserController;
 |
 */
 
-//Home View
+########### Route with all the Middlewares Auth using the group function  ###########
+Route::middleware(['auth'])->group(function() {
+
+    ###########  Route for the Home page (home.blade.php in views)  ###########
 Route::get('/', [MainController::class, 'home'])->name('home');
 
-
-//Contact View
+###########  Route for the Contact page (contact.blade.php in Views )  ###########
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
-//About View
+########### Route for the About page (about.blade.php in Views )  ###########
 Route::get('/about', [MainController::class, 'about'])->name('about');
 
-// /Route for the quiz (quiz.blade.php)
+###########  Route for the quiz page (quiz.blade.php in viwes)  ###########
 Route::get('/quiz', [QuizController::class, 'getQuiz'])->name('quiz');
 
-//Profile View
+###########  Route for Profile page (user_profile.blade.php in Views )  ###########
 Route::get('/profile', [UserController::class, 'index'])->name('profile');
 
-//test route to test implementations
+###########  test route to test implementations  ###########
 Route::get('/test', [Controller::class, 'index'])->name('test');
 
 //to show edit page
