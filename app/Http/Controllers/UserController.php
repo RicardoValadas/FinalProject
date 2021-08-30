@@ -21,7 +21,44 @@ class UserController extends Controller
         $userinfo = array(
             'user'=>auth()->user()
         );
+        # Display the user profile
         return view('user_profile',['users' => $userinfo]);
+    }
+
+    # Function to use Ajax to edit the user profile
+    public function ajaxForm()
+    {
+        return view("ajax-form");
+    }
+
+    public function ajaxAnswer(Request $request)
+    {
+        // + Validations
+        $validations = Validator::make($request->all(), [
+            'first_namne' => 'required|max:50',
+            'last_name' => 'required|max:50',
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        # + Upload file
+        $fileName = $request->file->getClientOriginalName(); //'randomName.' . $request->file->extension();
+        $public_path = public_path('uploads');
+
+        $request->file->move($public_path, $fileName);
+
+        # + Try to insert in the DB
+        $user = new User;
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->photo = $fileName;
+        $user->save();
+
+        # Message
+        if ($validations->fails())
+            return response()->json(['errors' => $validations->errors()->all()]);
+
+        return response()->json(['success' => 'Profile successfully updated']);
     }
 
 

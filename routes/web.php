@@ -47,6 +47,12 @@ Route::get('/editProfile/{id}', [UserController::class, 'editProfile'])->name('e
 ###########  Route to delete the user profile (delete.blade.php in Views )  ###########
 Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');
 
+###########  Route to edit the user profile (user_ajax.form.blade.php in Views )  ###########
+# Display the form
+Route::get('/ajax-form', [UserController::class, 'ajaxForm'])->name('show.ajax.form');
+# When we submit the form
+Route::post('/ajax-answer', [UserController::class, 'ajaxAnswer'])->name('/editProfile/{id}submit.ajax.form');
+
 });# End of the middleware "auth" group function
 
 # :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
