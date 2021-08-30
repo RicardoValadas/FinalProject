@@ -4,6 +4,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\Auth\NewPasswordController;
 use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate in the web.php for the routes
 
 #use App\Http\Middleware\IsAdminMiddleware;
@@ -59,5 +60,6 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 
+Route::get('/reset', [NewPasswordController::class, 'create'])->name('passchange');
 
 
