@@ -3,18 +3,16 @@
     padding: 0
     box-sizing: border-box
 
-    img
-    width: 80px
-
 header
     display: flex
     justify-content: space-between
     nav
         padding: 0 10px
-        width: 400px
         display: flex
         justify-content: space-between
         align-items: center
+        img
+            width: 40px
         ul
             display: flex
             padding: 5px
@@ -22,12 +20,13 @@ header
             li
                 padding: 5px
                 a
-                    font-size: 18px
+                    font-size: 14px
 
 
 #arrow
+    display: none
     color: orange
-    font-size: 20px
+    font-size: 20px    
 
 .dropdown
     position: relative
@@ -42,21 +41,14 @@ header
         padding: 20px
         transition: 1s
         position: absolute
-        left: 400px
+        left: -450px
      
 .dropHiddenTrue
-    position: absolute
     display: none
-    padding: 20px
-    width: 100px
-    top: 54px
-    left: 420px
     background-color: #FFECD1
-    a
 .dropHiddenFalse
     display: block
    
- 
 .showUsername
     display: none
     width: 100px
@@ -66,8 +58,22 @@ header
     margin: 10 0
 
 @media screen and ( min-width:600px  )
-   .showUsername
-       display: block
+.showUsername
+    display: block
 
-     
+.dropButton
+    display: block       
+
+.dropHiddenTrue
+    position: absolute
+    padding: 20px
+    width: 100px
+    top: 54px
+    left: -420px
+    background-color: #FFECD1
+
+#arrow
+    display: block
+    
+
     
