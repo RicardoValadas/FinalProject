@@ -1,50 +1,74 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: #ffd29d;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: -16px 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-
 header nav {
-  padding: 0 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
+}
+header nav .logo {
+  width: 100px;
 }
 
-header nav img {
-  width: 40px;
+.username {
+  font-size: 20px;
+  text-shadow: 0px 1px 6px #ce694a;
 }
 
-header nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 5px;
-  margin: 15px;
+.dropdownRes {
+  position: relative;
 }
 
-header nav ul li {
-  padding: 5px;
+.contentDropdownLayoutRes {
+  position: absolute;
+  display: none;
+  height: 210px;
+  width: 87px;
+  padding: 10px;
+  left: 5px;
+  background-color: #fde4d4;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-header nav ul li a {
-  font-size: 14px;
+.contentDropdownLinksRes {
+  font-size: 18px;
+}
+.contentDropdownLinksRes:hover {
+  color: orange;
+}
+
+.contentDropdownLayoutResShow {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
+
+.showUsername {
+  width: 100px;
+  display: none;
+}
+
+#menu {
+  color: orange;
+  margin: 0 30px;
+  font-size: 40px;
+}
+
+.dropHiddenTrue {
+  display: none;
 }
 
 #arrow {
@@ -53,70 +77,88 @@ header nav ul li a {
   font-size: 20px;
 }
 
-.dropdown {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding: 0 10px;
-  margin: 0 100px;
-  width: 200px;
-}
-
-.dropdown .dropButton {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 20px;
-  -webkit-transition: 1s;
-  transition: 1s;
-  position: absolute;
-  left: -450px;
-}
-
-.dropHiddenTrue {
-  display: none;
-  background-color: #FFECD1;
-}
-
-.dropHiddenFalse {
-  display: block;
-}
-
-.showUsername {
-  display: none;
-  width: 100px;
-}
-
-.dropdownRes {
+main {
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   padding: 10px;
-  margin: 10 0;
+  margin: 60px auto;
 }
 
-.showUsername {
-  display: block;
-}
+@media screen and (min-width: 600px) {
+  .showUsername {
+    display: block;
+  }
 
-.dropButton {
-  display: block;
-}
+  .dropButton {
+    display: block;
+  }
 
-.dropHiddenTrue {
-  position: absolute;
-  padding: 20px;
-  width: 100px;
-  top: 54px;
-  left: -420px;
-  background-color: #FFECD1;
-}
+  #arrow {
+    display: block;
+  }
 
-#arrow {
-  display: block;
+  .desktop {
+    display: flex;
+    padding: 5px;
+    margin: 15px;
+  }
+  .desktop li {
+    padding: 5px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .dropButton {
+    display: flex;
+    padding: 20px;
+  }
+
+  .dropHiddenTrue {
+    position: absolute;
+    padding: 20px;
+    width: 100px;
+    top: 46px;
+    left: 32px;
+    background-color: #FFECD1;
+    display: none;
+  }
+
+  .dropHiddenFalse {
+    display: block;
+  }
+
+  .desktop {
+    display: flex;
+  }
+  .desktop li {
+    padding: 10px;
+    transition: 0.5s;
+  }
+  .desktop li:hover {
+    transform: scale(110%);
+  }
+  .desktop li a {
+    font-size: 25px;
+    transition: 0.5s;
+  }
+  .desktop li a:hover {
+    color: white;
+  }
+
+  .dropdownRes {
+    display: none;
+  }
+
+  .username {
+    display: none;
+  }
+
+  main {
+    width: 1400px;
+  }
 }
-/*# sourceMappingURL=main.css.map */
