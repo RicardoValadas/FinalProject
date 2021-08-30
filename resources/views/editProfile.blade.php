@@ -1,7 +1,7 @@
 @extends('layouts.template')
-    
+
 @section('content')
-    <h1>home</h1>
+    <h3>Edit your profile</h3>
 
 
 <div id="results"></div>
@@ -31,55 +31,33 @@
     <input type="password" name="password_confirmation" placeholder="password Confirmation" value="{{ $user->password }}"><br>
     <input type="submit">
     </form>
-    <!--i want to use ajax here to check the database to see if the name is valid,mail valid,username valid,etc...
-        while doing that i will display the message if valid or not valid...
-        while valid border red, if valid border green and a right icon
-        while invalid input, the button is disabled.
-        if everything ok, return to profile page, and display a message, with orange border saying  update successful
-    
-        WHATS IS MISSING HERE?
-        AJAX CALL TO SEND FORM SERALIZED TO ROUTE/FUNCTION THAT CONNECTS WITH DATABASE.
-        INSERT THE USER PREVIEWS VALUES IN THE INPUTS
-        THE PASSWORD I GET FROM THE DB, NEEDS TO BE "DEHASHED"
-        (SEARCH ON SIMONS GITHUB)
 
-        WHEN I GET HOME
-        ORGANIZE MATERIAL NEEDED FOR THIS TASK
-        -HASH,INSERT INTO DATABASE ELOQUENT,AND AJAX CALL
-    
-    
-
-
-
-
-    -->
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-        <script>/*
-             $(function() {
-            
-             $('form').submit(function(e) {
+    {{}} ######## Waiting for the page to be loaded/ready ######## */
+            $(function() {
+            $('#usForm').submit(function(e){
                 e.preventDefault();
-                    
+                let formData = new FormData(this);
+
+                /* # Ajax call # */
                 $.ajax({
-                        url: "",
+                        url: "{{ route('submit.ajax.form') }}",
+                        /* # url: 'ajax-answer' # */
                         method: 'post',
-                        data:$("form").serialize(),
+                        data: formData,
+                        processData: false,
+                        contentType: false
                     })
                     .done(function(result) {
-                        $('#results').html(result);
+                         /* # If AJAX call worked # */
                         console.log(result);
-                })
-                .fail(function(result) {
+                    })
+                    .fail(function(result) {
                         console.log('AJAX FAILED');
                     })
                 });
-             });
-*/
-        </script>
 
+            });
+        </script>
 
 
     @endsection
