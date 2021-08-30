@@ -42,7 +42,7 @@ Route::get('/profile', [UserController::class, 'index'])->name('profile');
 Route::get('/test', [Controller::class, 'index'])->name('test');
 
 ########### Route to show the edit user page (editProfile.blade.php in Views )  ###########
-Route::get('/editProfile/{id}', [UserController::class, 'editProfile'])->name('edit.user');
+Route::get('/editProfile/{id}', [UserController::class, 'editform'])->name('edit.user');
 Route::post('/editProfile/{id}', [UserController::class, 'update']);
 
 ###########  Route to delete the user profile (delete.blade.php in Views )  ###########
