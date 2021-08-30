@@ -1,1 +1,42 @@
+body {
+  background-color: yellow;
+}
 
+body #pic {
+  height: 300px;
+  background-color: red;
+}
+
+body .info a {
+  padding: 10px;
+  border: 2px solid blue;
+  margin-top: 50px;
+}
+
+body #achi {
+  margin-top: 50px;
+}
+
+body #achi h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+body #achi #achievments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body #achi #achievments article {
+  height: 200px;
+  width: 150px;
+  background-color: white;
+  border: 1px solid red;
+  border-radius: 10px;
+}
+/*# sourceMappingURL=profile.css.map */
