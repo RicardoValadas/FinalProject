@@ -16,14 +16,14 @@
     <section class="info">
         <p>Score: 420 {{ $user->user_score }} points</p>
         <hr>
-        <p>Username: {{ $user->username }}</p>
-        <p>Firstname: {{ $user->first_name }}</p>
-        <p>Lastname: {{ $user->last_name }}</p>
-        <p>Email: {{ $user->email }}</p><br>
+        <p>Username: {{ $user->username }}                    <a href="{{ route('edit.username', [$user->id]) }}">edit</a></p>
+        <p>Firstname: {{ $user->first_name }}     <a href="{{ route('edit.names', [$user->id]) }}">edit</a></p>
+        <p>Lastname: {{ $user->last_name }}      <a href="{{ route('edit.names', [$user->id]) }}">edit</a></p>
+        <p>Email: {{ $user->email }}     <a href="{{ route('edit.email', [$user->id]) }}">edit</a></p><br>
         <ul>
             <li><a href="{{ route('edit.user', [$user->id]) }}">Edit Profile</a></li>
             <li><a href="">Change Password</a></li>
-            <li><a href="{{ route('delete.user', [$user->id]) }}">delete account</a></li>
+            <li><a href="{{ route('admineditpage', [$user->id]) }}">delete account</a></li>
         </ul>
         
         
