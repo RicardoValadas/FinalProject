@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\UserAvatarController;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -52,7 +53,7 @@ class RegisteredUserController extends Controller
             'avatar' => $request->avatar,
         ]);
 
-        
+
 
         event(new Registered($user));
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\NewPasswordController;
+use App\Http\Controllers\ImageController;
 use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate in the web.php for the routes
 
 #use App\Http\Middleware\IsAdminMiddleware;
@@ -53,6 +54,9 @@ require __DIR__ . '/auth.php';
 
 
 Route::get('/reset', [NewPasswordController::class, 'create'])->name('passchange');
+
+###########  Route for User Avatar uploading image during the register process  ###########
+Route::post('image/upload', [ImageController::class, 'uploadImage']);
 
 
 ###########  Route for the Home page (home.blade.php in views)  ###########

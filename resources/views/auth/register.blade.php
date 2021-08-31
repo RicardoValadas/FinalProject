@@ -73,7 +73,19 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation"
                     required />
             </div>
-            
+                <!-- Upload Image to user -->
+            <div class="form-group{{ $errors->has('avatar') ? ' has-error' : '' }}">
+                <label for="image" class="col-md-4 control-label">Avatar</label>
+
+                <div class="col-md-6">
+                    <input id="image" type="file" class="form-control" name="image" required>
+
+                    @if ($errors->has('image'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('image') }}</strong>
+                        </span>
+                    @endif
+
 
 
             <div class="flex items-center justify-end mt-4">

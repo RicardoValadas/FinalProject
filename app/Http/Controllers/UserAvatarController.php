@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\RegisteredUserController;
 
+
 class UserAvatarController extends Controller
 {
     /**
@@ -15,10 +16,29 @@ class UserAvatarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
-    {
-        $name = $request->file('avatar')->getClientOriginalName();
+    protected $file_handler
 
-        return $name;
-    }
+public function __construct(MyFileHandlerInterface $file_handler)
+{
+    $this->middleware('guest');
+
+    $this->file_handler = $file_handler;
+}
+
+/**
+ * The user has been registered.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @param  mixed  $user
+ * @return mixed
+ */
+protected function registered(Request $request, $user)
+{
+    $path  = $this->file_handler->storef($request->file('image'));
+
+    Userpic::create([
+        'address' => $path,
+        'user_id' => $user->id,
+    ]);
+}
 }
