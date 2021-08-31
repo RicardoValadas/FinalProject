@@ -63,6 +63,7 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 
-Route::get('/reset', [NewPasswordController::class, 'create'])->name('passchange');
+//Route::get('password/reset/{token}', [NewPasswordController::class, 'create'])->name('passchange');
+//Route::post('password/reset', [NewPasswordController::class, 'store'])->name('storeit');
 
 

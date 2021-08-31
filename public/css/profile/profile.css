@@ -1,16 +1,32 @@
 body {
-  background-color: yellow;
+  background-color: #ffa60086;
+}
+
+body #pageIdentifier {
+  font-weight: bolder;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 body #pic {
   height: 300px;
-  background-color: red;
 }
 
-body .info a {
-  padding: 10px;
-  border: 2px solid blue;
-  margin-top: 50px;
+body .info ul {
+  width: 260px;
+  text-align: center;
+}
+
+body .info ul li {
+  padding: 5px;
+  border: 1px solid orange;
+  background-color: #ff8000;
+  font-size: 15px;
+  margin-bottom: 5px;
+  -webkit-box-shadow: 0px -1px 28px 5px rgba(0, 0, 0, 0.41);
+          box-shadow: 0px -1px 28px 5px rgba(0, 0, 0, 0.41);
 }
 
 body #achi {
@@ -22,21 +38,34 @@ body #achi h2 {
   margin-bottom: 30px;
 }
 
-body #achi #achievments {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+body #achi button {
+  background-color: white;
+  border: 2px solid gray;
 }
 
-body #achi #achievments article {
-  height: 200px;
-  width: 150px;
-  background-color: white;
-  border: 1px solid red;
-  border-radius: 10px;
+body #achi .achievments {
+  display: none;
+}
+
+body #achi .achievments article {
+  width: 260px;
+  height: 310px;
+  background-color: #fff;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.671);
+          box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.671);
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  /*The card is the reference point of the .sliding*/
+  position: relative;
+  /* I don't want to see elements flowing out of me*/
+  overflow: hidden;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+body #achi .achievments.visible {
+  display: block;
 }
 /*# sourceMappingURL=profile.css.map */

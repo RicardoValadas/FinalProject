@@ -1,10 +1,11 @@
 @extends('layouts.template')
+
 @section('style')
     <link rel="stylesheet" href="{{ URL::asset('/css/profile/profile.css') }}">
 @endsection
 
 @section('content')
-    <h1>User Profiles</h1>
+    <h1 id="pageIdentifier">{{ $user->username }}'s Profile</h1>
 
 
     <div id="pic">
@@ -13,45 +14,37 @@
     </div>
 
     <section class="info">
-        <p>id: {{ $user->id }}</p>
-        <p>Score: {{ $user->user_score }}</p>
+        <p>Score: 420 {{ $user->user_score }} points</p>
+        <hr>
+        <p>Username: {{ $user->username }}</p>
         <p>Firstname: {{ $user->first_name }}</p>
         <p>Lastname: {{ $user->last_name }}</p>
-        <p>Username: {{ $user->username }}</p>
-        <p>Email: {{ $user->email }}</p>
-        <p>acc type: {{ $user->type }}</p>
-        <a href="{{ route('edit.user', [$user->id]) }}">Edit Profile</a>
-        <a href="{{ route('passchange') }}">Change Password</a>
-        <a href="{{ route('delete.user', [$user->id]) }}">delete account</a>
+        <p>Email: {{ $user->email }}</p><br>
+        <ul>
+            <li><a href="{{ route('edit.user', [$user->id]) }}">Edit Profile</a></li>
+            <li><a href="">Change Password</a></li>
+            <li><a href="{{ route('delete.user', [$user->id]) }}">delete account</a></li>
+        </ul>
+        
+        
+        
 
     </section>
     <!--/////////////////////////////////////////////////////////////////-->
     <hr>
     <section id="achi">
         <h2>Achievments</h2>
-        <section id="achievments">
+        <button id="showachi">show achievments</button>
+        <section class="achievments">
             <!-- aqui vai ser necessario fazer clone dos trofeus.... usar ajax e clones....criar js file que contenha tudo-->
             <article>
-                <img src="" alt="" height="130px">
+                <img src="{{ asset('img/Profileex.png') }}" alt="imagem" height="50px">
                 <h7> <strong> Ran achievment</strong></h7>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, in.</p>
             </article>
-            <article>
-                <img src="" alt="" height="130px">
-                <h7> <strong> Ran achievment</strong></h7>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, in.</p>
-            </article>
-            <article>
-                <img src="" alt="" height="130px">
-                <h7> <strong> Ran achievment</strong></h7>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, in.</p>
-            </article>
-            <article>
-                <img src="" alt="" height="130px">
-                <h7> <strong> Ran achievment</strong></h7>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, in.</p>
-            </article>
-
         </section>
     </section>
+    
+    @yield('script')
+    <script src="{{ URL::asset('js/profilejs/profile.js') }}"></script>
 @endsection
