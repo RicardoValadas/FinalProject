@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('admin')->nullable();
             $table->enum('type', ['parent', 'child']);
             $table->integer('user_score')->nullable();
-            $table->string('avatar');
+            $table->string('images');
             $table->rememberToken();
             $table->timestamps();
         });

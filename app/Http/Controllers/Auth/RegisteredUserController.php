@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\UserAvatarController;
+use App\Http\Controllers\ImageController;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -40,7 +40,9 @@ class RegisteredUserController extends Controller
             'username' => 'required|string|max:255|unique:users',
             'type' => 'required',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', 'confirmed',
+
+            Rules\Password::defaults()],
         ]);
 
         $user = User::create([
@@ -50,7 +52,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'type' => $request->type,
             'password' => Hash::make($request->password),
-            'avatar' => $request->avatar,
+            'images' => $request->image,
         ]);
 
 

@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Image;
 
 class ImageController extends Controller
 {
-    // ---------- [ Upload image ] ---------
+
+    public function index() {
+        return view('profile');
+    }
+
+    ## ---------- [ Upload image ] --------- ##
     public function uploadImage(Request $request) {
 
         $request->validate([
@@ -20,11 +26,11 @@ class ImageController extends Controller
         $image      =       Image::create(["image_name" => $image]);
 
         if(!is_null($image)) {
-            return back()->with('success','Success! image uploaded');
+            return back()->with('success','Success! avatar image uploaded');
         }
 
         else {
-            return back()->with("failed", "Alert! image not uploaded");
+            return back()->with("failed", "Alert! avatar image not uploaded");
         }
     }
 }
