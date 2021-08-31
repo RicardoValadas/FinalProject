@@ -65,5 +65,3 @@ require __DIR__ . '/auth.php';
 
 
 Route::get('/reset', [NewPasswordController::class, 'create'])->name('passchange');
-
-

@@ -21,7 +21,7 @@ class QuizController extends Controller
         return view('quiz');
     }
 
-    public function getQuestion()
+    public static function getQuestion()
     {
         $question = Questions::all()->random();
 
@@ -30,15 +30,5 @@ class QuizController extends Controller
         $question['Answers'] = $Answers;
 
         return $question->toJson(JSON_PRETTY_PRINT);
-    }
-
-    public function getQuizHome()
-    {
-        # if statement
-        /*if (Auth::attempt(['email' => $email, 'password' => $password], $remember)) {
-
-            # The user is being remembered...
-        }*/
-        return view('quizHome');
     }
 }

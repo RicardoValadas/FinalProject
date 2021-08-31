@@ -1,5 +1,10 @@
 @extends('layouts.template')
-@section('content')
-    <<<<<<< Updated upstream <h1>about</h1>
 
-    @endsection
+@section('style')
+<link rel="stylesheet" href="{{ URL::asset('/css/about/about.css') }}">
+@endsection
+
+@section('content')
+
+
+@endsection

@@ -12,12 +12,14 @@
     <button id="start" type='button'>Start</button>
     <h2>question</h2>
     <div id="questionsView">
-
-        <p id='answers'>Answer 1</p>
+        <p id='answers'>
+        </p>
     </div>
 </div>
 
 @endsection
+
+
 
 
 
