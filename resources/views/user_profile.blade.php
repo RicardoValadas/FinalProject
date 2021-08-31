@@ -2,14 +2,13 @@
 
 @section('style')
     <link rel="stylesheet" href="{{ URL::asset('/css/profile/profile.css') }}">
-@endsection
+    @endsectionnpm
 
 @section('content')
     <h1 id="pageIdentifier">{{ $user->username }}'s Profile</h1>
 
 
     <div id="pic">
-
         <img src="{{ asset('img/Profileex.png') }}" height="300px">
     </div>
 
@@ -47,4 +46,7 @@
     
     @yield('script')
     <script src="{{ URL::asset('js/profilejs/profile.js') }}"></script>
+@endsection
+@section('script')
+    <script src="{{ URL::asset('js/profile/profile.js') }}"></script>
 @endsection

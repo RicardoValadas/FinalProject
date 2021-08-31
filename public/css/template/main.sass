@@ -49,6 +49,9 @@ header
     width: 100px
     display: none
 
+.showUsernameRes
+    width: 100px
+
 //mobile menu for dropdown    
 #menu
     color: orange
@@ -62,6 +65,15 @@ header
     display: none
     color: orange
     font-size: 20px
+.LoginRegister
+    padding: 5px
+    a
+        font-size: 20px
+        margin: 5px
+        &:hover
+            color: white
+            
+
 
 // BODY MAIN TEMPLATE
 main
@@ -71,10 +83,12 @@ main
     margin: 60px auto
 
 
-//desktop
+// -----DESKTOP----------- 
 @media screen and ( min-width:600px  )
     .showUsername
         display: block
+    .showUsernameRes
+        display: none
 
     .dropButton
         display: block       
@@ -123,11 +137,6 @@ main
                 transition: 0.5s
                 &:hover
                     color: white
-                    
-                  
-     .logo
-        width: 150px
-
     .dropdownRes
         display: none
     .username

@@ -61,6 +61,10 @@ header nav .logo {
   display: none;
 }
 
+.showUsernameRes {
+  width: 100px;
+}
+
 #menu {
   color: orange;
   margin: 0 30px;
@@ -77,6 +81,17 @@ header nav .logo {
   font-size: 20px;
 }
 
+.LoginRegister {
+  padding: 5px;
+}
+.LoginRegister a {
+  font-size: 20px;
+  margin: 5px;
+}
+.LoginRegister a:hover {
+  color: white;
+}
+
 main {
   width: 300px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
@@ -87,6 +102,10 @@ main {
 @media screen and (min-width: 600px) {
   .showUsername {
     display: block;
+  }
+
+  .showUsernameRes {
+    display: none;
   }
 
   .dropButton {

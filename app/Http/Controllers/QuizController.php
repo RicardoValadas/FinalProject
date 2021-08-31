@@ -33,4 +33,11 @@ class QuizController extends Controller
 
         return $question->toJson(JSON_PRETTY_PRINT);
     }
+
+    public function getAnswer()
+    {
+        $question = Answers::all()->random();
+
+        return $question->toJson(JSON_PRETTY_PRINT);
+    }
 }

@@ -1,4 +1,7 @@
-<x-guest-layout>
+@extends('layouts.template')
+
+
+@section('content')
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
@@ -16,8 +19,8 @@
             <div>
                 <x-label for="first_name" :value="__('First Name')" />
 
-                <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name"
-                    :value="old('first_name')" required autofocus />
+                <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')"
+                    required autofocus />
             </div>
 
             <!-- Last Name -->
@@ -52,8 +55,7 @@
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
-                    required />
+                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
             <!-- Password -->
@@ -68,8 +70,8 @@
             <div class="mt-4">
                 <x-label for="password_confirmation" :value="__('Confirm Password')" />
 
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password"
-                    name="password_confirmation" required />
+                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation"
+                    required />
             </div>
 
             <div class="flex items-center justify-end mt-4">
@@ -83,4 +85,4 @@
             </div>
         </form>
     </x-auth-card>
-</x-guest-layout>
+@endsection
