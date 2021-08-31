@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->tinyInteger('admin');
+            $table->tinyInteger('admin')->nullable();
             $table->enum('type', ['parent', 'child']);
             $table->integer('user_score')->nullable();
             $table->rememberToken();
