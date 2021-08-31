@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
+
 class UserController extends Controller
 {
     protected $stopOnFirstFailure = true;//added
@@ -47,7 +48,7 @@ password will be redirected to the premade reset password*/
                 'email'=> "required|unique:users,email,$id",
                 'first_name'=> 'required|min:3|max:15',
                 'last_name'=> 'required|min:3|max:15',
-                'password'=> ['required','confirmed','min:3','max:60',Password::min(8)
+                'password'=> ['required','confirmed','min:3','max:60', Password::min(8)
                 ->letters(5)
                 ->mixedCase(1)
                 ->numbers(2)
