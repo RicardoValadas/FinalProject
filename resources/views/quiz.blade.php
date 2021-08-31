@@ -6,17 +6,31 @@
 
 {{-- main content --}}
 @section('content')
-<h1>Welcome to the quiz page</h1>
+<button class="start" type='button'>Start</button>
+<div id="questionsView" class="questionsViewHide">
+    <form action="">
+        <p id='question'>Question 1</p>
+        <div class="quizActive">
+            <input type="radio" id="answer1" name="answer" value="wrong" checked>
+            <label for="answer1">
+                <p class="firstAnswer"></p>
+            </label>
+        </div>
 
-<div id="quiz">
-    <button id="start" type='button'>Start</button>
-    <h2>question</h2>
-    <div id="questionsView">
-        <p id='answers'>
-        </p>
-    </div>
+        <div class="quizActive">
+            <input type="radio" id="answer3" name="answer" value="wrong">
+            <label for="answer2">Mais merda</label>
+            <p class="firstAnswer"></p>
+        </div>
+
+        <div class="quizActive">
+            <input type="radio" id="answer3" name="answer" value="right">
+            <label for="answer3">Resposta certa</label>
+            <p class="firstAnswer"></p>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
 </div>
-
 @endsection
 
 

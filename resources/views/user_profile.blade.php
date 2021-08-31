@@ -1,7 +1,7 @@
 @extends('layouts.template')
 @section('style')
     <link rel="stylesheet" href="{{ URL::asset('/css/profile/profile.css') }}">
-@endsection
+    @endsectionnpm
 
 @section('content')
     <h1>User Profiles</h1>
