@@ -10,19 +10,23 @@
     <div id="questionsView" class="questionsViewHide">
         <form action="">
             <p id='question'>Question 1</p>
-            <div>
+            <div class="quizActive">
                 <input type="radio" id="answer1" name="answer" value="wrong" checked>
-                <label for="answer1">Merda</label>
+                <label for="answer1">
+                    <p class="firstAnswer"></p>
+                </label>
             </div>
 
-            <div>
+            <div class="quizActive">
                 <input type="radio" id="answer3" name="answer" value="wrong">
                 <label for="answer2">Mais merda</label>
+                <p class="firstAnswer"></p>
             </div>
 
-            <div>
+            <div class="quizActive">
                 <input type="radio" id="answer3" name="answer" value="right">
                 <label for="answer3">Resposta certa</label>
+                <p class="firstAnswer"></p>
             </div>
             <input type="submit" value="Submit">
         </form>
