@@ -1,9 +1,8 @@
-const start = document.querySelector('#start');
+
+//FETCH API FOR QUESTION
+const start = document.querySelector('.start');
 
 start.addEventListener('click', function(quiz) {
-
-
-
 
 fetch('https://official-joke-api.appspot.com/random_joke')
 .then((response) => response.json())
@@ -11,23 +10,18 @@ fetch('https://official-joke-api.appspot.com/random_joke')
 });
 
 function renderAnswers(data) {
-    const setup = document.querySelector('#answers')
-    setup.innerHTML = data.setup;
+    const setup = document.querySelector('#question')
+    setup.innerHTML = data.questions;
 }
  
+//DISPLAY CONTENT WHEN START
 
+start.addEventListener('click',function(){
+  const game = document.querySelector('#questionsView')
 
-/*
-  function createAnswers(answersArray) {
+  if (game.classList.contains('questionsViewHide')) {
+    game.classList.toggle('questionsViewShow')
+  }
+  start.classList.add('questionsViewHide')
+})
 
-       for (answers of answersArray)
-       {
-               const clone = document.querySelector('#questionsView')
-                document.querySelector('#questionsView').append(clone);
-
-                clone.querySelector('p').innerText = answers.content;
-
-       }
-
-  } 
-*/
