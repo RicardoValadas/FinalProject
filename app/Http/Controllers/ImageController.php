@@ -19,13 +19,13 @@ class ImageController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $image      =       time().'.'.$request->image->extension();
+        $images      =       time().'.'.$request->image->extension();
 
-        $request->image->move(public_path('uploads'), $image);
+        $request->image->move(public_path('uploads'), $images);
 
-        $image      =       Image::create(["image_name" => $image]);
+        $images      =       Image::create(["image_name" => $images]);
 
-        if(!is_null($image)) {
+        if(!is_null($images)) {
             return back()->with('success','Success! avatar image uploaded');
         }
 
