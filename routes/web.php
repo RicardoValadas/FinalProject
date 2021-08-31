@@ -25,15 +25,6 @@ use App\Http\Controllers\UserController;
 ########### Route with all the Middlewares Auth using the group function  ###########
 Route::middleware(['auth'])->group(function () {
 
-    ###########  Route for the Home page (home.blade.php in views)  ###########
-    Route::get('/', [MainController::class, 'home'])->name('home');
-
-    ###########  Route for the Contact page (contact.blade.php in Views )  ###########
-    Route::get('/contact', [MainController::class, 'contact'])->name('contact');
-
-    ########### Route for the About page (about.blade.php in Views )  ###########
-    Route::get('/about', [MainController::class, 'about'])->name('about');
-
     ###########  Route for the quiz page (quiz.blade.php in viwes)  ###########
     Route::get('/quiz', [QuizController::class, 'getQuiz'])->name('quiz');
 
@@ -56,12 +47,19 @@ Route::middleware(['auth'])->group(function () {
 }); # End of the middleware "auth" group function
 
 # :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
-//Dashboard Predefined route to change later
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+
 
 require __DIR__ . '/auth.php';
 
 
 Route::get('/reset', [NewPasswordController::class, 'create'])->name('passchange');
+
+
+###########  Route for the Home page (home.blade.php in views)  ###########
+Route::get('/', [MainController::class, 'home'])->name('home');
+
+###########  Route for the Contact page (contact.blade.php in Views )  ###########
+Route::get('/contact', [MainController::class, 'contact'])->name('contact');
+
+########### Route for the About page (about.blade.php in Views )  ###########
+Route::get('/about', [MainController::class, 'about'])->name('about');

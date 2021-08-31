@@ -5,15 +5,11 @@
 
 @section('content')
     <h1>User Profiles</h1>
-
-
     <div id="pic">
-
         <img src="{{ asset('img/Profileex.png') }}" height="300px">
     </div>
 
     <section class="info">
-        <p>id: {{ $user->id }}</p>
         <p>Score: {{ $user->user_score }}</p>
         <p>Firstname: {{ $user->first_name }}</p>
         <p>Lastname: {{ $user->last_name }}</p>
@@ -28,8 +24,9 @@
     <!--/////////////////////////////////////////////////////////////////-->
     <hr>
     <section id="achi">
-        <h2>Achievments</h2>
-        <section id="achievments">
+        <button id="buttonAchieve">Achievements</button>
+
+        <section id="achieveSection" class="achieveHidden">
             <!-- aqui vai ser necessario fazer clone dos trofeus.... usar ajax e clones....criar js file que contenha tudo-->
             <article>
                 <img src="" alt="" height="130px">
@@ -54,4 +51,7 @@
 
         </section>
     </section>
+@endsection
+@section('script')
+    <script src="{{ URL::asset('js/profile/profile.js') }}"></script>
 @endsection

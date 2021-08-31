@@ -21051,9 +21051,12 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 /*!***************************************!*\
   !*** ./public/css/template/main.sass ***!
   \***************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Inconsistent indentation, expected 8 spaces.\n    ╷\n128 │      .logo\r\n    │ ^^^^^\n    ╵\n  public\\css\\template\\main.sass 128:1  root stylesheet\n    at processResult (C:\\Users\\gabri\\Documents\\GitHub\\FinalProject\\node_modules\\webpack\\lib\\NormalModule.js:721:19)\n    at C:\\Users\\gabri\\Documents\\GitHub\\FinalProject\\node_modules\\webpack\\lib\\NormalModule.js:827:5\n    at C:\\Users\\gabri\\Documents\\GitHub\\FinalProject\\node_modules\\loader-runner\\lib\\LoaderRunner.js:399:11\n    at C:\\Users\\gabri\\Documents\\GitHub\\FinalProject\\node_modules\\loader-runner\\lib\\LoaderRunner.js:251:18\n    at context.callback (C:\\Users\\gabri\\Documents\\GitHub\\FinalProject\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at C:\\Users\\gabri\\Documents\\GitHub\\FinalProject\\node_modules\\sass-loader\\dist\\index.js:54:7\n    at Function.call$2 (C:\\Users\\gabri\\Documents\\GitHub\\FinalProject\\node_modules\\sass\\sass.dart.js:94122:16)\n    at _render_closure1.call$2 (C:\\Users\\gabri\\Documents\\GitHub\\FinalProject\\node_modules\\sass\\sass.dart.js:82377:12)\n    at _RootZone.runBinary$3$3 (C:\\Users\\gabri\\Documents\\GitHub\\FinalProject\\node_modules\\sass\\sass.dart.js:27674:18)\n    at _FutureListener.handleError$1 (C:\\Users\\gabri\\Documents\\GitHub\\FinalProject\\node_modules\\sass\\sass.dart.js:26223:19)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
@@ -21417,7 +21420,8 @@ process.umask = function() { return 0; };
 /******/ 			"css/app": 0,
 /******/ 			"css/about/about": 0,
 /******/ 			"css/profile/profile": 0,
-/******/ 			"css/quiz/quiz": 0
+/******/ 			"css/quiz/quiz": 0,
+/******/ 			"css/template/main": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -21467,12 +21471,12 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./public/css/template/main.sass")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./public/css/quiz/quiz.sass")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./public/css/profile/profile.sass")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./public/css/about/about.sass")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz","css/template/main"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz","css/template/main"], () => (__webpack_require__("./public/css/template/main.sass")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz","css/template/main"], () => (__webpack_require__("./public/css/quiz/quiz.sass")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz","css/template/main"], () => (__webpack_require__("./public/css/profile/profile.sass")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz","css/template/main"], () => (__webpack_require__("./public/css/about/about.sass")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz","css/template/main"], () => (__webpack_require__("./resources/css/app.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
