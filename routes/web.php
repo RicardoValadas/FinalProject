@@ -51,7 +51,7 @@ Route::middleware(['auth'])->group(function () {
 require __DIR__ . '/auth.php';
 
 
-Route::get('/reset', [NewPasswordController::class, 'create'])->name('passchange');
+Route::get('profile/change', [NewPasswordController::class, 'create'])->name('passchange');
 
 
 ###########  Route for the Home page (home.blade.php in views)  ###########
