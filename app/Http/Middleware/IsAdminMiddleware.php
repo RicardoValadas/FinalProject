@@ -17,9 +17,9 @@ class IsAdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-       
+
        # verify if the connected user is an admin user
-       #we still needed the column "admin" into the "users" 'table'  with a bolean (0 ou 1)
+       # we still needed the column "admin" into the "users" 'table'  with a bolean (0 ou 1)
        if (auth()->user()->admin == 1){
 
            return $next($request);

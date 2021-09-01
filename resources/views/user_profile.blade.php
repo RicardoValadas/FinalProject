@@ -9,7 +9,8 @@
 
 
     <div id="pic">
-        <img src="{{ asset('img/Profileex.png') }}" height="300px">
+        {{-- This link the user image avatar with the user profile and display it --}}
+        <img src="uploads/{{ $user->images}}" width="300px">
     </div>
 
     <section class="info">

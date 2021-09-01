@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
+
 class UserController extends Controller
 {
     protected $stopOnFirstFailure = true;//added
@@ -16,11 +17,11 @@ class UserController extends Controller
         //$users = auth()->user();
         //it's a way to store logged in user
         $userinfo =auth()->user();
-        return view('user_profile',['user' => $userinfo]);   
+        return view('user_profile',['user' => $userinfo]);
     }
-    
+
     public function showdelete(){
-        return view('delete');    
+        return view('delete');
     }
 
     //shows edit page and querys the db for info about the user
@@ -90,7 +91,7 @@ class UserController extends Controller
 remove type and password
 password will be redirected to the premade reset password*/
         public function update(Request $request,$id){
-            $user = User::find($id);        
+            $user = User::find($id);
             $user->type=$request->type;
             $user->username=$request->username;
             $user->first_name=$request->first_name;
@@ -102,19 +103,19 @@ password will be redirected to the premade reset password*/
                 'email'=> "required|unique:users,email,$id",
                 'first_name'=> 'required|min:3|max:15',
                 'last_name'=> 'required|min:3|max:15',
-                'password'=> ['required','confirmed','min:3','max:60',Password::min(8)
+                'password'=> ['required','confirmed','min:3','max:60', Password::min(8)
                 ->letters(5)
                 ->mixedCase(1)
                 ->numbers(2)
                 ->symbols(1)
                 ->uncompromised()],
                 ]);
-            $user->save();    
+            $user->save();
             return view('user_profile',['user' => $user])->with('success', 'user updated');
-        } 
+        }
 //to delete user
     public function destroy($id){
         User::destroy($id);
         return view('home');
-    }       
+    }
 }

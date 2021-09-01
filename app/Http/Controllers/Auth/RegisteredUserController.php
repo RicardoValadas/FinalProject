@@ -39,9 +39,12 @@ class RegisteredUserController extends Controller
             'username' => 'required|string|max:255|unique:users',
             'type' => 'required',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+            'password' => ['required', 'confirmed',
+            'image' => 'required',
 
+            Rules\Password::defaults()],
+        ]);
+        $image =  time().'.'.$request->image->extension();
         $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
@@ -49,7 +52,13 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'type' => $request->type,
             'password' => Hash::make($request->password),
+            'images' => $image,
         ]);
+
+        ## ---------- [ Upload image into the folder (in local) ] --------- ##
+
+
+        $request->image->move(public_path('uploads'), $image);
 
         event(new Registered($user));
 
