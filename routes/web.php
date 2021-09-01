@@ -29,7 +29,7 @@ Route::middleware(['auth'])->group(function () {
     ###########  Route for the quiz page (quiz.blade.php in viwes)  ###########
     Route::get('/quiz', [QuizController::class, 'getQuiz'])->name('quiz');
 
-    ###########  Route for the quiz !!!!Test!!!! page (quiz.blade.php in viwes)  ###########
+    ###########  Route for the quiz !!!!Test json!!!! page (quiz.blade.php in viwes)  ###########
     Route::get('/quizTest', [QuizController::class, 'getQuestion'])->name('quizTest');
 
     Route::get('/quizAnswer', [QuizController::class, 'getAnswer'])->name('quizAnswer');
