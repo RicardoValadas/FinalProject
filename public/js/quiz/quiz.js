@@ -15,10 +15,10 @@ function renderQuestions(data) {
     const answer2 = document.querySelector('.secondAnswer')
     const answer3 = document.querySelector('.thirdAnswer')
     console.log(data)
-    let newData =  data.Answers[0]['answer']
+    let newData =  data.Answers[Math.floor(Math.random() * 3)]['answer']
    
-    let newData2 = data.Answers[1]['answer']
-    let newData3 = data.Answers[2]['answer']
+    let newData2 = data.Answers[Math.floor(Math.random() * 3)]['answer']
+    let newData3 = data.Answers[Math.floor(Math.random() * 3)]['answer']
     console.log(newData)
     console.log(newData2)
     console.log(newData3)
