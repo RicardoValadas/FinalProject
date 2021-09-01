@@ -2,7 +2,7 @@
 
 @section('style')
     <link rel="stylesheet" href="{{ URL::asset('/css/profile/profile.css') }}">
-    @endsectionnpm
+@endsection
 
 @section('content')
     <h1 id="pageIdentifier">{{ $user->username }}'s Profile</h1>
@@ -15,18 +15,18 @@
     <section class="info">
         <p>Score: 420 {{ $user->user_score }} points</p>
         <hr>
-        <p>Username: {{ $user->username }}                    <a href="{{ route('edit.username', [$user->id]) }}">edit</a></p>
-        <p>Firstname: {{ $user->first_name }}     <a href="{{ route('edit.names', [$user->id]) }}">edit</a></p>
-        <p>Lastname: {{ $user->last_name }}      <a href="{{ route('edit.names', [$user->id]) }}">edit</a></p>
-        <p>Email: {{ $user->email }}     <a href="{{ route('edit.email', [$user->id]) }}">edit</a></p><br>
+        <p>Username: {{ $user->username }} <a href="{{ route('edit.username', [$user->id]) }}">edit</a></p>
+        <p>Firstname: {{ $user->first_name }} <a href="{{ route('edit.names', [$user->id]) }}">edit</a></p>
+        <p>Lastname: {{ $user->last_name }} <a href="{{ route('edit.names', [$user->id]) }}">edit</a></p>
+        <p>Email: {{ $user->email }} <a href="{{ route('edit.email', [$user->id]) }}">edit</a></p><br>
         <ul>
             <li><a href="{{ route('edit.user', [$user->id]) }}">Edit Profile</a></li>
             <li><a href="{{ route('change.password', [$user->id]) }}">Change Password</a></li>
             <li><a href="{{ route('admineditpage', [$user->id]) }}">delete account</a></li>
         </ul>
-        
-        
-        
+
+
+
 
     </section>
     <!--/////////////////////////////////////////////////////////////////-->
@@ -43,10 +43,11 @@
             </article>
         </section>
     </section>
-    
+
     @yield('script')
     <script src="{{ URL::asset('js/profilejs/profile.js') }}"></script>
 @endsection
+
 @section('script')
     <script src="{{ URL::asset('js/profile/profile.js') }}"></script>
 @endsection
