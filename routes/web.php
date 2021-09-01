@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate in the web.php for the routes
 
@@ -43,19 +44,21 @@ Route::middleware(['auth'])->group(function () {
     ########### Route to show the edit user page (editProfile.blade.php in Views )  ###########
     Route::get('/editProfile/{id}', [UserController::class, 'editform'])->name('edit.user');
     Route::post('/editProfile/{id}', [UserController::class, 'update']);
-    
+
     ###########  Route to delete the user profile (delete.blade.php in Views )  ###########
     Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');
-    
+
     Route::get('/editUsername/{id}', [UserController::class, 'meh'])->name('edit.username');
     Route::post('/editUsername/{id}', [UserController::class, 'updateUsername']);
-    
+
     Route::get('/editFLname/{id}', [UserController::class, 'firstLastName'])->name('edit.names');
     Route::post('/editFLname/{id}', [UserController::class, 'updateFirstLastName']);
-    
+
     Route::get('/editEmail/{id}', [UserController::class, 'email'])->name('edit.email');
     Route::post('/editEmail/{id}', [UserController::class, 'updateEmail']);
 }); # End of the middleware "auth" group function
+Route::get('/change-password', [ChangePasswordController::class, 'index'])->name('password.reset');
+Route::post('change-password', [ChangePasswordController::class, 'store'])->name('change.password');
 
 # :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
 
@@ -63,9 +66,9 @@ Route::middleware(['auth'])->group(function () {
 require __DIR__ . '/auth.php';
 
 
-//Route::get('password/reset/{token}', [NewPasswordController::class, 'create'])->name('passchange');
-//Route::post('password/reset', [NewPasswordController::class, 'store'])->name('storeit');
 
+###########  Route for User Avatar uploading image during the register process  ###########
+Route::post('image/upload', [MainController::class, 'uploadImage']);
 
 
 Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('admin.page');
@@ -87,3 +90,8 @@ Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('up
 //Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
 Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
 //Route::post('/displayusers', [AdminController::class, 'displayUsers'])->name('getusers');
+
+//CORS
+Route::middleware(['cors'])->group(function () {
+    Route::post('/quiz', [QuizController::class, 'getQuiz']);
+});

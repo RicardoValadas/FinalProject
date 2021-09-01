@@ -12,7 +12,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-   
+
 
 
     /**
@@ -28,6 +28,7 @@ class User extends Authenticatable
         'email',
         'password',
         'user_score',
+        'images',
     ];
 
     /**
