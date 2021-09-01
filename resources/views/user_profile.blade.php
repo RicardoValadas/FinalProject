@@ -2,7 +2,7 @@
 
 @section('style')
     <link rel="stylesheet" href="{{ URL::asset('/css/profile/profile.css') }}">
-    @endsectionnpm
+    @endsection
 
 @section('content')
     <h1 id="pageIdentifier">{{ $user->username }}'s Profile</h1>
