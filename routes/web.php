@@ -63,13 +63,9 @@ Route::middleware(['auth'])->group(function () {
 require __DIR__ . '/auth.php';
 
 
-<<<<<<< HEAD
-Route::get('profile/change', [NewPasswordController::class, 'create'])->name('passchange');
-=======
-//Route::get('password/reset/{token}', [NewPasswordController::class, 'create'])->name('passchange');
+// Route::get('password/reset/{token}', [NewPasswordController::class, 'create'])->name('passchange');
 //Route::post('password/reset', [NewPasswordController::class, 'store'])->name('storeit');
 
->>>>>>> 969e12358f6f4475a4ab1e33bfde4038a64da344
 
 
 Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('edit.email');
