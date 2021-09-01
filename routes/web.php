@@ -43,16 +43,16 @@ Route::middleware(['auth'])->group(function () {
     ########### Route to show the edit user page (editProfile.blade.php in Views )  ###########
     Route::get('/editProfile/{id}', [UserController::class, 'editform'])->name('edit.user');
     Route::post('/editProfile/{id}', [UserController::class, 'update']);
-    
+
     ###########  Route to delete the user profile (delete.blade.php in Views )  ###########
     Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');
-    
+
     Route::get('/editUsername/{id}', [UserController::class, 'meh'])->name('edit.username');
     Route::post('/editUsername/{id}', [UserController::class, 'updateUsername']);
-    
+
     Route::get('/editFLname/{id}', [UserController::class, 'firstLastName'])->name('edit.names');
     Route::post('/editFLname/{id}', [UserController::class, 'updateFirstLastName']);
-    
+
     Route::get('/editEmail/{id}', [UserController::class, 'email'])->name('edit.email');
     Route::post('/editEmail/{id}', [UserController::class, 'updateEmail']);
 }); # End of the middleware "auth" group function
@@ -63,7 +63,7 @@ Route::middleware(['auth'])->group(function () {
 require __DIR__ . '/auth.php';
 
 
-// Route::get('password/reset/{token}', [NewPasswordController::class, 'create'])->name('passchange');
+//Route::get('password/reset/{token}', [NewPasswordController::class, 'create'])->name('passchange');
 //Route::post('password/reset', [NewPasswordController::class, 'store'])->name('storeit');
 
 
@@ -82,3 +82,8 @@ Route::get('/about', [MainController::class, 'about'])->name('about');
 
 Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
 Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
+
+//CORS
+Route::middleware(['cors'])->group(function () {
+    Route::post('/quiz', [QuizController::class, 'getQuiz']);
+});
