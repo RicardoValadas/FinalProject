@@ -9,7 +9,7 @@
 
 
     <div id="pic">
-        <img src="{{ asset('img/Profileex.png') }}" height="300px">
+        <img src="uploads/{{ $user->images}}" width="300px">
     </div>
 
     <section class="info">
