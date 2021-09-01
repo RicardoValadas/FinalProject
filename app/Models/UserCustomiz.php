@@ -15,7 +15,7 @@ class UserCustomiz extends Model
         'last_name',
         'email',
         'password',
-        'photo',
+        'images',
     ]
 
     ## Mutators : password

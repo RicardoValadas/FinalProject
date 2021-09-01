@@ -9,7 +9,7 @@
 
 
     <div id="pic">
-        <img src="{{ asset('img/Profileex.png') }}" height="300px">
+        <img src="uploads/{{ $user->images}}" width="300px">
     </div>
 
     <section class="info">
@@ -24,9 +24,9 @@
             <li><a href="">Change Password</a></li>
             <li><a href="{{ route('admineditpage', [$user->id]) }}">delete account</a></li>
         </ul>
-        
-        
-        
+
+
+
 
     </section>
     <!--/////////////////////////////////////////////////////////////////-->
@@ -43,7 +43,7 @@
             </article>
         </section>
     </section>
-    
+
     @yield('script')
     <script src="{{ URL::asset('js/profilejs/profile.js') }}"></script>
 @endsection

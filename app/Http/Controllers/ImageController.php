@@ -8,9 +8,7 @@ use App\Models\Image;
 class ImageController extends Controller
 {
 
-    public function index() {
-        return view('profile');
-    }
+   
 
     ## ---------- [ Upload image ] --------- ##
     public function uploadImage(Request $request) {

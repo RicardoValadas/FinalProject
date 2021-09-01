@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\ImageController;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -41,10 +40,11 @@ class RegisteredUserController extends Controller
             'type' => 'required',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => ['required', 'confirmed',
+            'image' => 'required',
 
             Rules\Password::defaults()],
         ]);
-
+        $image =  time().'.'.$request->image->extension();
         $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
@@ -52,10 +52,13 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'type' => $request->type,
             'password' => Hash::make($request->password),
-            'images' => $request->image,
+            'images' => $image,
         ]);
 
+        ## ---------- [ Upload image ] --------- ##
 
+
+        $request->image->move(public_path('uploads'), $image);
 
         event(new Registered($user));
 
