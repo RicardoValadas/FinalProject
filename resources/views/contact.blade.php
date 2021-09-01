@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-<div class="se-pre-con"></div>
+
 <section id="contact">
 	<div class="sectionheader">	<h1>CONTACT</h1></div>
 	<article>
@@ -23,15 +23,7 @@
 </section>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-<script>
-	
-		$(window).load(function() {
-			$(".se-pre-con").fadeOut("slow");;
-		});
 
-</script>
 
 
     
