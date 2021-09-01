@@ -20,10 +20,25 @@ function renderQuestions(data) {
     const answer2 = document.querySelector('.secondAnswer')
     const answer3 = document.querySelector('.thirdAnswer')
 
-    let list = [1, 2, 3]
+
+  /*   let list = [1, 2, 3]
     list = list.sort(() => Math.random() - 0.5)
     console.log(list)
+ 
+    let usedNumbers = []
+let counter = 0
 
+while(counter < 3){
+    let math = Math.floor(Math.random() * 3)
+    
+    if(!usedNumbers.includes(math)){
+        usedNumbers[counter] = math
+        counter++
+    }
+}
+
+console.log(usedNumbers.sort())
+ */
 
 
     let newData =  data.Answers[Math.floor(Math.random() * 3)]['answer']

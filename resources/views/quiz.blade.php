@@ -15,7 +15,6 @@
 
                 <label for="answer1">
                     <p class="answer"></p>
-                    <p class="answer2"></p>
                 </label>
             </div>
 
@@ -23,14 +22,12 @@
                 <input type="radio" id="answer3" name="answer">
                 <label for="answer2"></label>
                 <p class="answer"></p>
-                <p class="answer2"></p>
             </div>
 
             <div class="quizActive">
                 <input type="radio" id="answer3" name="answer">
                 <label for="answer3"></label>
                 <p class="answer"></p>
-                <p class="answer2"></p>
             </div>
             <input type="submit" value="Submit">
         </form>
