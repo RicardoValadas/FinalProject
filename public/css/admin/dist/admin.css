@@ -1,0 +1,14 @@
+body #functions button {
+  border: 2px solid green;
+  padding: 10px;
+}
+body #functions button:hover {
+  background-color: green;
+  color: white;
+}
+body #functions .info {
+  display: none;
+}
+body #functions .info #visible {
+  font-size: 70px;
+}
