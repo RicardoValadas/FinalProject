@@ -1,206 +1,216 @@
 * {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2a9d8f;
 }
 
 header {
-  background-color: #ffd29d;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 10px;
-  margin: -16px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-}
-
-header nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-header nav .logo {
-  width: 100px;
-}
-
-.username {
-  font-size: 20px;
-  text-shadow: 0px 1px 6px #ce694a;
-}
-
-.dropdownRes {
-  position: relative;
-}
-
-.contentDropdownLayoutRes {
-  position: absolute;
-  display: none;
-  height: 210px;
-  width: 87px;
-  padding: 10px;
-  left: 5px;
-  background-color: #fde4d4;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-
-.contentDropdownLinksRes {
-  font-size: 18px;
-}
-
-.contentDropdownLinksRes:hover {
-  color: orange;
-}
-
-.contentDropdownLayoutResShow {
-  display: block;
-}
-
-.desktop {
-  display: none;
-}
-
-.showUsername {
-  width: 100px;
-  display: none;
-}
-
-.showUsernameRes {
-  width: 100px;
-}
-
-#menu {
-  color: orange;
-  margin: 0 30px;
-  font-size: 40px;
-}
-
-.dropHiddenTrue {
-  display: none;
-}
-
-#arrow {
-  display: none;
-  color: orange;
-  font-size: 20px;
-}
-
-.LoginRegister {
-  padding: 5px;
-}
-
-.LoginRegister a {
-  font-size: 20px;
-  margin: 5px;
-}
-
-.LoginRegister a:hover {
-  color: white;
-}
-
-main {
-  width: 300px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-  padding: 10px;
-  margin: 60px auto;
-}
-
-@media screen and (min-width: 600px) {
-  .showUsername {
-    display: block;
-  }
-  .showUsernameRes {
-    display: none;
-  }
-  .dropButton {
-    display: block;
-  }
-  #arrow {
-    display: block;
-  }
-  .desktop {
+    background-color: #e76f51;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 5px;
-    margin: 15px;
-  }
-  .desktop li {
-    padding: 5px;
-  }
-  .dropdown {
-    position: relative;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 10px;
+    margin: -16px 0;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+        rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+header nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
-  .dropButton {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 20px;
-  }
-  .dropHiddenTrue {
-    position: absolute;
-    padding: 20px;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+header nav .logo {
     width: 100px;
-    top: 46px;
-    left: 32px;
-    background-color: #FFECD1;
+}
+
+.username {
+    font-size: 20px;
+    text-shadow: 0px 1px 6px;
+}
+
+.dropdownRes {
+    position: relative;
+}
+
+.contentDropdownLayoutRes {
+    position: absolute;
     display: none;
-  }
-  .dropHiddenFalse {
-    display: block;
-  }
-  .desktop {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .desktop li {
+    height: 210px;
+    width: 87px;
     padding: 10px;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-  }
-  .desktop li:hover {
-    -webkit-transform: scale(110%);
-            transform: scale(110%);
-  }
-  .desktop li a {
-    font-size: 25px;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-  }
-  .desktop li a:hover {
+    left: 5px;
+    background-color: #fff;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.contentDropdownLinksRes {
+    font-size: 18px;
+}
+
+.contentDropdownLinksRes:hover {
+    color: orange;
+}
+
+.contentDropdownLayoutResShow {
+    display: block;
+}
+
+.desktop {
+    display: none;
+}
+
+.showUsername {
+    width: 100px;
+    display: none;
+}
+
+.showUsernameRes {
+    width: 100px;
+}
+
+#menu {
+    color: #fff;
+    margin: 0 30px;
+    font-size: 40px;
+}
+
+.dropHiddenTrue {
+    display: none;
+}
+
+#arrow {
+    display: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+.LoginRegister {
+    padding: 5px;
+}
+
+.LoginRegister a {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.LoginRegister a:hover {
     color: white;
-  }
-  .dropdownRes {
-    display: none;
-  }
-  .username {
-    display: none;
-  }
-  main {
-    width: 1400px;
-  }
+}
+
+main {
+    width: 300px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    padding: 10px;
+    margin: 60px auto;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 600px) {
+    .showUsername {
+        display: block;
+    }
+    .showUsernameRes {
+        display: none;
+    }
+    .dropButton {
+        display: block;
+    }
+    #arrow {
+        display: block;
+    }
+    .desktop {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 5px;
+        margin: 15px;
+    }
+    .desktop li {
+        padding: 5px;
+    }
+    .dropdown {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+    .dropButton {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 20px;
+    }
+    .dropHiddenTrue {
+        position: absolute;
+        padding: 20px;
+        width: 100px;
+        top: 46px;
+        left: 32px;
+        background-color: #fff;
+        border-radius: 5px;
+        display: none;
+    }
+    .dropHiddenFalse {
+        display: block;
+    }
+    .desktop {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .desktop li {
+        padding: 10px;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+    }
+    .desktop li:hover {
+        -webkit-transform: scale(110%);
+        transform: scale(110%);
+    }
+    .desktop li a {
+        font-size: 25px;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+    }
+    .desktop li a:hover {
+        color: white;
+    }
+    .dropdownRes {
+        display: none;
+    }
+    .username {
+        display: none;
+    }
+    main {
+        width: 1400px;
+    }
 }
 /*# sourceMappingURL=main.css.map */
