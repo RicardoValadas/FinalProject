@@ -63,8 +63,8 @@ Route::middleware(['auth'])->group(function () {
 require __DIR__ . '/auth.php';
 
 
-//Route::get('password/reset/{token}', [NewPasswordController::class, 'create'])->name('passchange');
-//Route::post('password/reset', [NewPasswordController::class, 'store'])->name('storeit');
+Route::get('password/reset/{token}', [NewPasswordController::class, 'create'])->name('passchange');
+Route::post('password/reset', [NewPasswordController::class, 'store'])->name('storeit');
 
 
 
