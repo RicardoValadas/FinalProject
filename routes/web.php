@@ -5,6 +5,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate in the web.php for the routes
 
@@ -31,6 +32,8 @@ Route::middleware(['auth'])->group(function () {
     ###########  Route for the quiz !!!!Test!!!! page (quiz.blade.php in viwes)  ###########
     Route::get('/quizTest', [QuizController::class, 'getQuestion'])->name('quizTest');
 
+    Route::get('/quizAnswer', [QuizController::class, 'getAnswer'])->name('quizAnswer');
+
     ###########  Route for Profile page (user_profile.blade.php in Views )  ###########
     Route::get('/profile', [UserController::class, 'index'])->name('profile');
 
@@ -40,9 +43,18 @@ Route::middleware(['auth'])->group(function () {
     ########### Route to show the edit user page (editProfile.blade.php in Views )  ###########
     Route::get('/editProfile/{id}', [UserController::class, 'editform'])->name('edit.user');
     Route::post('/editProfile/{id}', [UserController::class, 'update']);
-
+    
     ###########  Route to delete the user profile (delete.blade.php in Views )  ###########
     Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');
+    
+    Route::get('/editUsername/{id}', [UserController::class, 'meh'])->name('edit.username');
+    Route::post('/editUsername/{id}', [UserController::class, 'updateUsername']);
+    
+    Route::get('/editFLname/{id}', [UserController::class, 'firstLastName'])->name('edit.names');
+    Route::post('/editFLname/{id}', [UserController::class, 'updateFirstLastName']);
+    
+    Route::get('/editEmail/{id}', [UserController::class, 'email'])->name('edit.email');
+    Route::post('/editEmail/{id}', [UserController::class, 'updateEmail']);
 }); # End of the middleware "auth" group function
 
 # :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
@@ -51,8 +63,17 @@ Route::middleware(['auth'])->group(function () {
 require __DIR__ . '/auth.php';
 
 
+<<<<<<< HEAD
 Route::get('profile/change', [NewPasswordController::class, 'create'])->name('passchange');
+=======
+//Route::get('password/reset/{token}', [NewPasswordController::class, 'create'])->name('passchange');
+//Route::post('password/reset', [NewPasswordController::class, 'store'])->name('storeit');
 
+>>>>>>> 969e12358f6f4475a4ab1e33bfde4038a64da344
+
+
+Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('edit.email');
+Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('ADMdelete.user');
 
 ###########  Route for the Home page (home.blade.php in views)  ###########
 Route::get('/', [MainController::class, 'home'])->name('home');
@@ -62,3 +83,6 @@ Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
 ########### Route for the About page (about.blade.php in Views )  ###########
 Route::get('/about', [MainController::class, 'about'])->name('about');
+
+Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
+Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
