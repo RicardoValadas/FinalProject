@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Questions;
-use App\Models\WrongAnswer;
 use App\Models\Answers;
-use App\Models\CorrectAnswer;
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Http\Request;
@@ -23,13 +21,20 @@ class QuizController extends Controller
         return view('quiz');
     }
 
-    public function getQuestion()
+    public static function getQuestion()
     {
         $question = Questions::all()->random();
 
         $Answers  = Answers::where('questionId', '=', $question->id)->get();
 
         $question['Answers'] = $Answers;
+
+        return $question->toJson(JSON_PRETTY_PRINT);
+    }
+
+    public function getAnswer()
+    {
+        $question = Answers::all()->random();
 
         return $question->toJson(JSON_PRETTY_PRINT);
     }
