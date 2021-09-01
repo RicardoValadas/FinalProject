@@ -14,20 +14,23 @@
                 <input type="radio" id="answer1" name="answer">
 
                 <label for="answer1">
-                    <p class="firstAnswer"></p>
+                    <p class="answer"></p>
+                    <p class="answer2"></p>
                 </label>
             </div>
 
             <div class="quizActive">
                 <input type="radio" id="answer3" name="answer">
                 <label for="answer2"></label>
-                <p class="secondAnswer"></p>
+                <p class="answer"></p>
+                <p class="answer2"></p>
             </div>
 
             <div class="quizActive">
                 <input type="radio" id="answer3" name="answer">
                 <label for="answer3"></label>
-                <p class="thirdAnswer"></p>
+                <p class="answer"></p>
+                <p class="answer2"></p>
             </div>
             <input type="submit" value="Submit">
         </form>

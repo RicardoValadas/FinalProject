@@ -9,25 +9,33 @@ fetch('http://127.0.0.1:8000/quizTest')
 .then(data => renderQuestions(data))
 });
 
+/* function random() {
+  return Math.floor((Math.random() * 3))
+} */
+
+
 function renderQuestions(data) {
     const question = document.querySelector('#question')
-    const answer = document.querySelector('.firstAnswer')
+    let answer = document.querySelector('.answer')
     const answer2 = document.querySelector('.secondAnswer')
     const answer3 = document.querySelector('.thirdAnswer')
-    console.log(data)
-    let newData =  data.Answers[Math.floor(Math.random() * 3)]['answer']
-   
-    let newData2 = data.Answers[Math.floor(Math.random() * 3)]['answer']
-    let newData3 = data.Answers[Math.floor(Math.random() * 3)]['answer']
-    console.log(newData)
-    console.log(newData2)
-    console.log(newData3)
-  
 
+    let list = [1, 2, 3]
+    list = list.sort(() => Math.random() - 0.5)
+    console.log(list)
+
+
+
+    let newData =  data.Answers[Math.floor(Math.random() * 3)]['answer']
+
+
+    console.log(newData)
+  
     question.innerHTML = data.questions;
     answer.innerHTML = newData
-    answer2.innerHTML = newData2
-    answer3.innerHTML = newData3
+
+    
+   
 }
 
 //FETCH API FOR ANSWER
