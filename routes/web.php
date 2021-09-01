@@ -57,13 +57,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/editEmail/{id}', [UserController::class, 'email'])->name('edit.email');
     Route::post('/editEmail/{id}', [UserController::class, 'updateEmail']);
 }); # End of the middleware "auth" group function
-Route::get('/change-password', [ChangePasswordController::class, 'index'])->name('password.reset');
-Route::post('change-password', [ChangePasswordController::class, 'store'])->name('change.password');
 
-# :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
+    # :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
+    Route::get('/change-password', [ChangePasswordController::class, 'index'])->name('password.reset');
+    Route::post('change-password', [ChangePasswordController::class, 'store'])->name('change.password');
 
 
-require __DIR__ . '/auth.php';
+
+    require __DIR__ . '/auth.php';
 
 
 
