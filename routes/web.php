@@ -27,6 +27,15 @@ use App\Http\Controllers\UserController;
 ########### Route with all the Middlewares Auth using the group function  ###########
 Route::middleware(['auth'])->group(function () {
 
+    ########### Route for the About page (about.blade.php in Views )  ###########
+    Route::get('/about', [MainController::class, 'about'])->name('about');
+
+    ###########  Route for the Contact page (contact.blade.php in Views )  ###########
+    Route::get('/contact', [MainController::class, 'contact'])->name('contact');
+
+    ###########  Route for the home page (home.blade.php in viwes)  ###########
+    Route::get('/home', [MainController::class, 'home'])->name('home');
+
     ###########  Route for the quiz page (quiz.blade.php in viwes)  ###########
     Route::get('/quiz', [QuizController::class, 'getQuiz'])->name('quiz');
 
@@ -72,13 +81,13 @@ Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('edit.e
 Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('ADMdelete.user');
 
 ###########  Route for the Home page (home.blade.php in views)  ###########
-Route::get('/', [MainController::class, 'home'])->name('home');
+Route::get('/', [MainController::class, 'welcome'])->name('welcome');
 
-###########  Route for the Contact page (contact.blade.php in Views )  ###########
-Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
-########### Route for the About page (about.blade.php in Views )  ###########
-Route::get('/about', [MainController::class, 'about'])->name('about');
+
+
+
+
 
 Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
 Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
