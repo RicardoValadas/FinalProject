@@ -2,7 +2,8 @@
 <header>
     <nav>
         {{-- Logo --}}
-        <a href="{{ route('home') }}"><img class="logo" src="{{ asset('images/logo.png') }}" alt=""></a>
+        <a href="{{ route('home') }}"><img class="logo" src="{{ asset('images/logoWhite.png') }}"
+                alt=""></a>
         <ul class="desktop">
             {{-- Nav Links desktop --}}
             <li><a href="{{ route('home') }}">Home</a></li>
