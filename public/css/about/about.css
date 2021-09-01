@@ -11,7 +11,7 @@ h1 {
   padding-bottom: -10px;
 }
 
-section {
+.aboutUs {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -21,10 +21,10 @@ article {
   height: 220px;
   width: 250px;
   margin: auto;
-  border: solid #f7d19d 3px;
+  border: solid #e9c46a;
   border-radius: 15px;
   transition: box-shadow 0.3s;
-  background: #fff;
+  background: #e9c46a;
 }
 article h2 {
   text-align: center;

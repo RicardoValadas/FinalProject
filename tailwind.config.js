@@ -10,7 +10,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['ZCOOL KuaiLe', ...defaultTheme.fontFamily.sans],
+                sans: ['Ubuntu', ...defaultTheme.fontFamily.sans],
+                
             },
         },
     },

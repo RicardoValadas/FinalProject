@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate in the web.php for the routes
 
@@ -56,15 +57,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/editEmail/{id}', [UserController::class, 'email'])->name('edit.email');
     Route::post('/editEmail/{id}', [UserController::class, 'updateEmail']);
 }); # End of the middleware "auth" group function
+Route::get('/change-password', [ChangePasswordController::class, 'index'])->name('password.reset');
+Route::post('change-password', [ChangePasswordController::class, 'store'])->name('change.password');
 
 # :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
 
 
 require __DIR__ . '/auth.php';
 
-
-//Route::get('password/reset/{token}', [NewPasswordController::class, 'create'])->name('passchange');
-//Route::post('password/reset', [NewPasswordController::class, 'store'])->name('storeit');
 
 
 ###########  Route for User Avatar uploading image during the register process  ###########
@@ -85,3 +85,8 @@ Route::get('/about', [MainController::class, 'about'])->name('about');
 
 Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
 Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
+
+//CORS
+Route::middleware(['cors'])->group(function () {
+    Route::post('/quiz', [QuizController::class, 'getQuiz']);
+});

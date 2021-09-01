@@ -5,8 +5,13 @@
 
 //MOBILE VIEW
 //HEADER
+
+body
+    background-color: #2a9d8f
+    font-family: font-family: 'Ubuntu', sans-serif
+
 header
-    background-color: #ffd29d
+    background-color: #e76f51
     display: flex
     justify-content: space-between
     align-items: center
@@ -18,12 +23,16 @@ header
         align-items: center
         .logo
             width: 100px
+
 .username
     font-size: 20px
-    text-shadow: 0px 1px 6px #ce694a
+    text-shadow: 0px 1px 6px
 //Mobile Dropdown menu
 .dropdownRes
     position: relative
+    color: #fff
+    background-color: #fff
+
 .contentDropdownLayoutRes
     position: absolute
     display: none
@@ -31,13 +40,13 @@ header
     width: 87px
     padding: 10px
     left: 5px
-    background-color: #fde4d4
+    background-color: #fff
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
 .contentDropdownLinksRes
     font-size: 18px
     &:hover
         color: orange
-   
+
 .contentDropdownLayoutResShow
     display: block
 
@@ -54,7 +63,7 @@ header
 
 //mobile menu for dropdown    
 #menu
-    color: orange
+    color: #fff
     margin: 0 30px
     font-size: 40px
 
@@ -63,7 +72,7 @@ header
     display: none
 #arrow
     display: none
-    color: orange
+    color: #fff
     font-size: 20px
 .LoginRegister
     padding: 5px
@@ -72,16 +81,15 @@ header
         margin: 5px
         &:hover
             color: white
-            
-
 
 // BODY MAIN TEMPLATE
 main
     width: 300px
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px
     padding: 10px
     margin: 60px auto
-
+    background-color: #fff
+    border-radius: 5px
 
 // -----DESKTOP----------- 
 @media screen and ( min-width:600px  )
@@ -91,7 +99,7 @@ main
         display: none
 
     .dropButton
-        display: block       
+        display: block
 
     #arrow
         display: block
@@ -101,7 +109,7 @@ main
         padding: 5px
         margin: 15px
         li
-            padding: 5px   
+            padding: 5px
         // Username and arrow with dropdown js function
     .dropdown
         position: relative
@@ -119,11 +127,12 @@ main
         width: 100px
         top: 46px
         left: 32px
-        background-color: #FFECD1
+        background-color: #fff
+        border-radius: 5px
         display: none
 
     .dropHiddenFalse
-        display: block 
+        display: block
 
     .desktop
         display: flex
@@ -145,10 +154,3 @@ main
         //main
     main
         width: 1400px
-
-
-
-      
-        
-
-    

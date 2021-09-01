@@ -15,10 +15,10 @@ function renderQuestions(data) {
     const answer2 = document.querySelector('.secondAnswer')
     const answer3 = document.querySelector('.thirdAnswer')
     console.log(data)
-    let newData = JSON.stringify( data.Answers[0],['answer'])
+    let newData =  data.Answers[0]['answer']
    
-    let newData2 = JSON.stringify(data.Answers[1],['answer'])
-    let newData3 = JSON.stringify(data.Answers[2],['answer'])
+    let newData2 = data.Answers[1]['answer']
+    let newData3 = data.Answers[2]['answer']
     console.log(newData)
     console.log(newData2)
     console.log(newData3)
