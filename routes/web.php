@@ -36,7 +36,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/quizAnswer', [QuizController::class, 'getAnswer'])->name('quizAnswer');
 
     ###########  Route for Profile page (user_profile.blade.php in Views )  ###########
-    Route::get('/ ', [UserController::class, 'index'])->name('profile');
+    Route::get('/profile ', [UserController::class, 'index'])->name('profile');
 
     ###########  test route to test implementations  ###########
     Route::get('/test', [Controller::class, 'index'])->name('test');
