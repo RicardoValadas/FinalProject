@@ -26,7 +26,8 @@ class ChangePasswordController extends Controller
      */
     public function index()
     {
-        return view('changePassword');
+        $user = User::find(auth()->user()->id);
+        return view('changePassword',['user' => $user]);
     } 
    
     /**

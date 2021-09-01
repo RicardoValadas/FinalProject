@@ -21,7 +21,7 @@
         <p>Email: {{ $user->email }}     <a href="{{ route('edit.email', [$user->id]) }}">edit</a></p><br>
         <ul>
             <li><a href="{{ route('edit.user', [$user->id]) }}">Edit Profile</a></li>
-            <li><a href="">Change Password</a></li>
+            <li><a href="{{ route('password.reset', [$user->id]) }}">Change Password</a></li>
             <li><a href="{{ route('admineditpage', [$user->id]) }}">delete account</a></li>
         </ul>
         
