@@ -55,7 +55,7 @@ class RegisteredUserController extends Controller
             'images' => $image,
         ]);
 
-        ## ---------- [ Upload image ] --------- ##
+        ## ---------- [ Upload image into the folder (in local) ] --------- ##
 
 
         $request->image->move(public_path('uploads'), $image);

@@ -9,6 +9,7 @@
 
 
     <div id="pic">
+        {{-- This link the user image avatar with the user profile and display it --}}
         <img src="uploads/{{ $user->images}}" width="300px">
     </div>
 
