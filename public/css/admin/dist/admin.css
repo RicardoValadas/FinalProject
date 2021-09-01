@@ -12,3 +12,11 @@ body #functions .info {
 body #functions .info #visible {
   font-size: 70px;
 }
+body #edit {
+  margin-left: 50px;
+  border: 1px solid blue;
+}
+body #delete {
+  margin-left: 10px;
+  border: 1px solid red;
+}

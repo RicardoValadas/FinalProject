@@ -35,7 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/quizAnswer', [QuizController::class, 'getAnswer'])->name('quizAnswer');
 
     ###########  Route for Profile page (user_profile.blade.php in Views )  ###########
-    Route::get('/profile', [UserController::class, 'index'])->name('profile');
+    Route::get('/ ', [UserController::class, 'index'])->name('profile');
 
     ###########  test route to test implementations  ###########
     Route::get('/test', [Controller::class, 'index'])->name('test');
@@ -68,7 +68,7 @@ require __DIR__ . '/auth.php';
 
 
 
-Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('edit.email');
+Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('admin.page');
 Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('ADMdelete.user');
 
 ###########  Route for the Home page (home.blade.php in views)  ###########
@@ -82,3 +82,8 @@ Route::get('/about', [MainController::class, 'about'])->name('about');
 
 Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
 Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
+
+
+//Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
+Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
+//Route::post('/displayusers', [AdminController::class, 'displayUsers'])->name('getusers');

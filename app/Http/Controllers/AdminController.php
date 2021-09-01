@@ -50,8 +50,9 @@ class AdminController extends Controller
             ->uncompromised()],
         ]);
         $user->save();    
-        
-        return $this->displayAdmin();
+        if($user->save())
+            return 'change saved';
+        //return $this->displayAdmin();
         
     } 
     
