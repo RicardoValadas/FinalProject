@@ -11,6 +11,6 @@
     </section>
 
     <section class="copyrights">
-        <i class="far fa-copyright">SafeForNet 2021</i>
+        <i class="far fa-copyright">Safe4Net 2021</i>
     </section>
 </footer>

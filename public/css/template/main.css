@@ -6,7 +6,7 @@
 }
 
 header {
-  background-color: #ffd29d;
+  background-color: #e76f51;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,7 +165,7 @@ main {
     width: 100px;
     top: 46px;
     left: 32px;
-    background-color: #FFECD1;
+    background-color: #e9c46a;
     display: none;
   }
   .dropHiddenFalse {
