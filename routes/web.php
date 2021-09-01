@@ -85,5 +85,5 @@ Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('up
 
 //CORS
 Route::middleware(['cors'])->group(function () {
-    Route::post('/quiz', 'Controller@quiz');
+    Route::post('/quiz', [QuizController::class, 'getQuiz']);
 });
