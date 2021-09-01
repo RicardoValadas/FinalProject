@@ -19,14 +19,14 @@
 
         <div class="quizActive">
             <input type="radio" id="answer3" name="answer" value="wrong">
-            <label for="answer2">Mais merda</label>
-            <p class="firstAnswer"></p>
+            <label for="answer2"></label>
+            <p class="secondAnswer"></p>
         </div>
 
         <div class="quizActive">
             <input type="radio" id="answer3" name="answer" value="right">
-            <label for="answer3">Resposta certa</label>
-            <p class="firstAnswer"></p>
+            <label for="answer3"></label>
+            <p class="thirdAnswer"></p>
         </div>
         <input type="submit" value="Submit">
     </form>
