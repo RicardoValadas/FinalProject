@@ -67,6 +67,9 @@ require __DIR__ . '/auth.php';
 
 
 
+###########  Route for User Avatar uploading image during the register process  ###########
+Route::post('image/upload', [MainController::class, 'uploadImage']);
+
 
 Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('edit.email');
 Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('ADMdelete.user');

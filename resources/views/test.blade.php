@@ -1,5 +1,5 @@
 @extends('layouts.template')
 @section('content')
-    <h1>good thank you</h1>
+    <h2>good thank you</h2>
 
 @endsection
