@@ -1,1 +1,55 @@
 /* No CSS *//*# sourceMappingURL=home_page.css.map */
+
+
+h1 {
+    color: #e76f51;
+    font-size: 4.5em;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+  }
+  h2 {
+    color: #264653;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+
+  #imghead {
+      
+
+  }
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 2fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 4px;
+    }
+
+    .heading-tertiary2 , .heading-tertiary3
+    {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    }
+
+    .parent1 {
+        display: grid;
+        padding-top: 30px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 4px;
+        grid-row-gap: 4px;
+        }
+
+        .parent2 {
+            display: grid;
+            padding-top: 30px;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-column-gap: 4px;
+            grid-row-gap: 4px;
+            }

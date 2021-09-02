@@ -18,6 +18,17 @@ body
             height: 150px
             margin-bottom: 30px
 
+    .userscore
+        text-align: center
+        justify-content: center
+        width: 260px
+        background-color: #EBF5DF
+        border-radius: 5px
+        font-size: 20px
+        line-height: 10px
+        padding-top: 12px
+        margin-left: 10px
+
     .edit
         background-color: #e9c46a
         border-radius: 5px
@@ -33,6 +44,7 @@ body
         ul
             width: 260px
             text-align: center
+            justify-content: center
 
             li
                 padding: 5px
@@ -40,20 +52,33 @@ body
                 background-color: #f4a261
                 border-radius: 5px
                 font-size: 15px
-                margin-bottom: 5px
+                margin-bottom: 20px
 
             li:hover
                 color: #fff
                 box-shadow: 0 0 11px rgba(33,33,33,.4)
 
+            a:hover
+                color: #fff
+
+    .buttons
+        text-align: center
+
     #achi
         margin-top: 50px
+
         h2
             text-align: center
             margin-bottom: 30px
         button
-            background-color: white
-            border: 2px solid gray
+            width: 260px
+            padding: 5px
+            border: 1px solid orange
+            background-color: #f4a261
+            border-radius: 5px
+            font-size: 15px
+            margin-bottom: 5px
+
         .achievments
             display: none
             article
@@ -72,3 +97,37 @@ body
                 transition-duration: 0.4s
         .achievments.visible
             display: block
+
+/* -------------------------------------------Desktop------------------ */    
+$breakpoint-desktop: 600px
+@media (min-width: $breakpoint-desktop)
+
+    main
+        position: relative
+
+        p
+            font-size: 1.2em
+
+    .info
+        ul
+            position: absolute
+            right: 250px
+            top: 320px
+
+    section
+        .userinfo
+            margin-top: 50px
+            margin-left: 250px
+
+    .userscore
+        text-align: center
+        justify-content: center
+        width: 260px
+        background-color: #EBF5DF
+        border-radius: 5px
+        font-size: 25px
+        position: absolute
+        right: 574px
+        top: 220px
+        line-height: 10px
+        padding-top: 12px
