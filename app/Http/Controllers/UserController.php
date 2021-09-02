@@ -103,12 +103,7 @@ password will be redirected to the premade reset password*/
                 'email'=> "required|unique:users,email,$id",
                 'first_name'=> 'required|min:3|max:15',
                 'last_name'=> 'required|min:3|max:15',
-                'password'=> ['required','confirmed','min:3','max:60', Password::min(8)
-                ->letters(5)
-                ->mixedCase(1)
-                ->numbers(2)
-                ->symbols(1)
-                ->uncompromised()],
+              
                 ]);
             $user->save();
             return view('user_profile',['user' => $user])->with('success', 'user updated');
