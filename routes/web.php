@@ -59,6 +59,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/editProfile/{id}', [UserController::class, 'update']);
 
     ###########  Route to delete the user profile (delete.blade.php in Views )  ###########
+                                ###########  Obsolete  ###########
     Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');
 
     Route::get('/editUsername/{id}', [UserController::class, 'meh'])->name('edit.username');
@@ -69,6 +70,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/editEmail/{id}', [UserController::class, 'email'])->name('edit.email');
     Route::post('/editEmail/{id}', [UserController::class, 'updateEmail']);
+       ##################################################################################
 }); # End of the middleware "auth" group function
 
 # :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
@@ -110,12 +112,14 @@ Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('ADMdelete
 
 Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
 
-Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
-
 
 //Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
 Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
 Route::get('/displayusers', [AdminController::class, 'showusers'])->name('getusers');
+
+//to add
+Route::post('/adduser', [AdminController::class, 'create'])->name('create.in.admin');
+
 
 ###################################################################################################
 
