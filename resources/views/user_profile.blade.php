@@ -2,23 +2,24 @@
 
 @section('style')
     <link rel="stylesheet" href="{{ URL::asset('/css/profile/profile.css') }}">
-@endsection
+    @endsection
 
 @section('content')
     <h1 id="pageIdentifier">{{ $user->username }}'s Profile</h1>
 
 
     <div id="pic">
+        {{-- This link the user image avatar with the user profile and display it --}}
         <img src="uploads/{{ $user->images}}" width="300px">
     </div>
 
     <section class="info">
         <p>Score: 420 {{ $user->user_score }} points</p>
         <hr>
-        <p>Username: {{ $user->username }} <a href="{{ route('edit.username', [$user->id]) }}">edit</a></p>
-        <p>Firstname: {{ $user->first_name }} <a href="{{ route('edit.names', [$user->id]) }}">edit</a></p>
-        <p>Lastname: {{ $user->last_name }} <a href="{{ route('edit.names', [$user->id]) }}">edit</a></p>
-        <p>Email: {{ $user->email }} <a href="{{ route('edit.email', [$user->id]) }}">edit</a></p><br>
+        <p>Username: {{ $user->username }} </p>
+        <p>Firstname: {{ $user->first_name }} </p>
+        <p>Lastname: {{ $user->last_name }} </p>
+        <p>Email: {{ $user->email }} </p><br>
         <ul>
             <li><a href="{{ route('edit.user', [$user->id]) }}">Edit Profile</a></li>
             <li><a href="{{ route('change.password', [$user->id]) }}">Change Password</a></li>
