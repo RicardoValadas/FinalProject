@@ -1,6 +1,7 @@
 body {
-  background-color: #ffa60086;
+  background-color: #2a9d8f;
 }
+
 body #pageIdentifier {
   font-weight: bolder;
   font-size: 30px;
@@ -8,41 +9,89 @@ body #pageIdentifier {
   margin-bottom: 15px;
   text-align: center;
 }
-body #pic {
-  height: 300px;
+
+body div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
+body div img {
+  border-radius: 59%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
+}
+
+body .edit {
+  background-color: #e9c46a;
+  border-radius: 5px;
+  padding: 1px 10px 1px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-items: center;
+}
+
+body .info p {
+  padding-bottom: 20px;
+}
+
 body .info ul {
   width: 260px;
   text-align: center;
 }
+
 body .info ul li {
   padding: 5px;
   border: 1px solid orange;
-  background-color: #ff8000;
+  background-color: #f4a261;
+  border-radius: 5px;
   font-size: 15px;
   margin-bottom: 5px;
-  box-shadow: 0px -1px 28px 5px rgba(0, 0, 0, 0.41);
 }
+
+body .info ul li:hover {
+  color: #fff;
+  -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
+          box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
+}
+
 body #achi {
   margin-top: 50px;
 }
+
 body #achi h2 {
   text-align: center;
   margin-bottom: 30px;
 }
+
 body #achi button {
   background-color: white;
   border: 2px solid gray;
 }
+
 body #achi .achievments {
   display: none;
 }
+
 body #achi .achievments article {
   width: 260px;
   height: 310px;
   background-color: #fff;
   border-radius: 20px;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.671);
+  -webkit-box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.671);
+          box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.671);
   padding: 20px;
   margin: 10px;
   text-align: center;
@@ -50,8 +99,11 @@ body #achi .achievments article {
   position: relative;
   /* I don't want to see elements flowing out of me*/
   overflow: hidden;
-  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
+
 body #achi .achievments.visible {
   display: block;
 }
+/*# sourceMappingURL=profile.css.map */

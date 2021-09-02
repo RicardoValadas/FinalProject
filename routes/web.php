@@ -27,6 +27,15 @@ use App\Http\Controllers\UserController;
 ########### Route with all the Middlewares Auth using the group function  ###########
 Route::middleware(['auth'])->group(function () {
 
+    ########### Route for the About page (about.blade.php in Views )  ###########
+    Route::get('/about', [MainController::class, 'about'])->name('about');
+
+    ###########  Route for the Contact page (contact.blade.php in Views )  ###########
+    Route::get('/contact', [MainController::class, 'contact'])->name('contact');
+
+    ###########  Route for the home page (home.blade.php in viwes)  ###########
+    Route::get('/home', [MainController::class, 'home'])->name('home');
+
     ###########  Route for the quiz page (quiz.blade.php in viwes)  ###########
     Route::get('/quiz', [QuizController::class, 'getQuiz'])->name('quiz');
 
@@ -36,7 +45,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/quizAnswer', [QuizController::class, 'getAnswer'])->name('quizAnswer');
 
     ###########  Route for Profile page (user_profile.blade.php in Views )  ###########
-    Route::get('/profile', [UserController::class, 'index'])->name('profile');
+    Route::get('/profile ', [UserController::class, 'index'])->name('profile');
 
     ###########  test route to test implementations  ###########
     Route::get('/test', [Controller::class, 'index'])->name('test');
@@ -57,13 +66,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/editEmail/{id}', [UserController::class, 'email'])->name('edit.email');
     Route::post('/editEmail/{id}', [UserController::class, 'updateEmail']);
 }); # End of the middleware "auth" group function
-Route::get('/change-password', [ChangePasswordController::class, 'index'])->name('password.reset');
-Route::post('change-password', [ChangePasswordController::class, 'store'])->name('change.password');
 
-# :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
+    # :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
+    Route::get('/change-password', [ChangePasswordController::class, 'index'])->name('password.reset');
+    Route::post('change-password', [ChangePasswordController::class, 'store'])->name('change.password');
 
 
-require __DIR__ . '/auth.php';
+
+    require __DIR__ . '/auth.php';
 
 
 
@@ -71,20 +81,35 @@ require __DIR__ . '/auth.php';
 Route::post('image/upload', [MainController::class, 'uploadImage']);
 
 
-Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('edit.email');
+###########  Route for the Home page (home.blade.php in views)  ###########
+Route::get('/', [MainController::class, 'welcome'])->name('welcome');
+
+
+
+
+
+
+
+
+
+###########                 Admin Routes                           ###########
+
+//display page
+Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('admin.page');
+
+//delete users on admin dashboard
 Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('ADMdelete.user');
 
-###########  Route for the Home page (home.blade.php in views)  ###########
-Route::get('/', [MainController::class, 'home'])->name('home');
-
-###########  Route for the Contact page (contact.blade.php in Views )  ###########
-Route::get('/contact', [MainController::class, 'contact'])->name('contact');
-
-########### Route for the About page (about.blade.php in Views )  ###########
-Route::get('/about', [MainController::class, 'about'])->name('about');
-
 Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
+
 Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
+
+
+//Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
+Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
+Route::get('/displayusers', [AdminController::class, 'showusers'])->name('getusers');
+
+###################################################################################################
 
 //CORS
 Route::middleware(['cors'])->group(function () {
