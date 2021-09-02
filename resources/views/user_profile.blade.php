@@ -15,22 +15,21 @@
 
 <section class="info">
     <p>Score: 420 {{ $user->user_score }} points</p>
-    <br>
-
-    <article class="editable">
-        <p>Username: {{ $user->username }} <a class="edit" href="{{ route('edit.username', [$user->id]) }}">Edit</a></p>
-        <p>Firstname: {{ $user->first_name }} <a class="edit" href="{{ route('edit.names', [$user->id]) }}">Edit</a></p>
-        <p>Lastname: {{ $user->last_name }} <a class="edit" href="{{ route('edit.names', [$user->id]) }}">Edit</a></p>
-        <p>Email: {{ $user->email }} <a class="edit" href="{{ route('edit.email', [$user->id]) }}">Edit</a></p><br>
-    </article>
-
+    <hr>
+    <p>Username: {{ $user->username }} </p>
+    <p>Firstname: {{ $user->first_name }} </p>
+    <p>Lastname: {{ $user->last_name }} </p>
+    <p>Email: {{ $user->email }} </p><br>
     <ul>
         <li><a href="{{ route('edit.user', [$user->id]) }}">Edit Profile</a></li>
         <li><a href="{{ route('change.password', [$user->id]) }}">Change Password</a></li>
         <li><a href="{{ route('admineditpage', [$user->id]) }}">delete account</a></li>
     </ul>
-</section>
 
+
+
+
+</section>
 <!--/////////////////////////////////////////////////////////////////-->
 <hr>
 <section id="achi">
@@ -44,6 +43,7 @@
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, in.</p>
         </article>
     </section>
+</section>
 </section>
 
 @yield('script')
