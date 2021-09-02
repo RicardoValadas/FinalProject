@@ -27,11 +27,7 @@ use App\Http\Controllers\UserController;
 ########### Route with all the Middlewares Auth using the group function  ###########
 Route::middleware(['auth'])->group(function () {
 
-    ########### Route for the About page (about.blade.php in Views )  ###########
-    Route::get('/about', [MainController::class, 'about'])->name('about');
 
-    ###########  Route for the Contact page (contact.blade.php in Views )  ###########
-    Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
     ###########  Route for the home page (home.blade.php in viwes)  ###########
     Route::get('/home', [MainController::class, 'home'])->name('home');
@@ -67,13 +63,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/editEmail/{id}', [UserController::class, 'updateEmail']);
 }); # End of the middleware "auth" group function
 
-    # :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
-    Route::get('/change-password', [ChangePasswordController::class, 'index'])->name('password.reset');
-    Route::post('change-password', [ChangePasswordController::class, 'store'])->name('change.password');
+# :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
+Route::get('/change-password', [ChangePasswordController::class, 'index'])->name('password.reset');
+Route::post('change-password', [ChangePasswordController::class, 'store'])->name('change.password');
 
 
 
-    require __DIR__ . '/auth.php';
+require __DIR__ . '/auth.php';
 
 
 
@@ -86,7 +82,11 @@ Route::get('/', [MainController::class, 'welcome'])->name('welcome');
 
 
 
+########### Route for the About page (about.blade.php in Views )  ###########
+Route::get('/about', [MainController::class, 'about'])->name('about');
 
+###########  Route for the Contact page (contact.blade.php in Views )  ###########
+Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
 
 
