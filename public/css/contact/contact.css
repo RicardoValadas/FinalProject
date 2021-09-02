@@ -1,256 +1,240 @@
-@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
 
-#contact {
-    width: 500px;
-    margin: 2em auto;
-    background: white;
-    position: relative;
+body,
+html {
+  height: 100%;
+ 
 }
-#contact::after {
-    content: "";
-    display: block;
-    height: 30px;
-    width: 90%;
-    left: 5%;
-    bottom: 0;
-    position: absolute;
-    -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
-    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 100%;
-    z-index: -1;
+
+body {
+  
+  margin: 0;
+  
+  font-weight: 400;
+  min-height: 100%;
+  box-sizing: border-box;
 }
-#contact article {
-    padding: 1em;
+
+h1 {
+  font-size: 2.5em;
+  padding: .125em 0 .25em .5em;
 }
-#contact h1 {
-    background: orange;
-    font-family: Oswald, sans-serif;
-    font-size: 1.75em;
-    padding: 0.6em 0 0.6em 0.4em;
-    color: white;
-    text-shadow: 0 0.06em 0 #424242;
-    position: relative;
+
+h1,
+h3 {
+  font-family: "Fira Sans", AvenirNextCondensed-Demibold, "Segoe UI", "Trebuchet MS", Tahoma, sans-serif;
+  margin: 0;
+  
+  font-weight: 500;
 }
-.contactbutton {
-    background: orange;
-    -webkit-box-shadow: 1px 1px 0 0 #832032, 2px 2px 0 0 #832032,
-        3px 3px 0 0 #832032;
-    box-shadow: 1px 1px 0 0 #832032, 2px 2px 0 0 #832032, 3px 3px 0 0 #832032;
+
+img,
+svg {
+  border: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+.footer {
+  padding-top: 3em;
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+.footer .small a {
+  text-decoration: none;
+  padding: .25em;
+}
+
+.footer .small a:hover {
+  background-color: #5ec5ce;
+  color: #fff;
+}
+
+
+
+.container {
+  max-width: 40em;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.main {
+  min-height: calc(100vh - 13em);
+  padding: 2em 3em;
+  background-color: #fff;
+}
+
+main {
+    background-color: transparent;
     text-align: center;
-    display: block;
-    width: 100%;
-    height: 50px;
-    margin-top: 20px;
-    margin-bottom: 2px;
-    cursor: pointer;
-}
-.contactbutton:hover {
-    -webkit-box-shadow: 1px 1px 0 0 #832032, 0px 0px 0 0 #832032,
-        0px 0px 0 0 #832032;
-    box-shadow: 1px 1px 0 0 #832032, 0px 0px 0 0 #832032, 0px 0px 0 0 #832032;
-    margin-top: 22px;
-    margin-left: 2px;
-    margin-bottom: 0px;
-}
-.mail {
-    margin-top: 11px;
-    font-size: 15px;
-    display: inline-block;
-    border-top: 2em solid transparent;
-    border-left: 2.6em solid white;
-    height: 0;
-    width: 0;
-    position: relative;
-}
-.mail:before {
-    content: "";
-    top: -2.5em;
-    left: -2.95em;
-    display: block;
-    position: absolute;
-    border-top: 1.2em solid white;
-    border-left: 1.6em solid transparent;
-    border-right: 1.6em solid transparent;
-    border-bottom: 1em solid transparent;
-    font-size: 0.8em;
-}
-.mail::after {
-    display: block;
-    content: "";
-    position: absolute;
-    border-top: 2em solid transparent;
-    border-right: 2.6em solid white;
-    height: 0;
-    width: 0;
-    left: -2.18em;
-    bottom: 0;
-}
-#checkcontact {
-    position: absolute;
-    left: -9999px;
-}
-.contactform {
-    overflow: hidden;
-    max-height: 0px;
-    -webkit-transition: all linear 1s;
-    -moz-transition: all linear 1s;
-    -o-transition: all linear 1s;
-    -ms-transition: all linear 1s;
-    transition: all linear 1s;
-}
-#checkcontact:checked + .contactform {
-    max-height: 1000px;
-}
-.input_wrapper {
-    position: relative;
-}
-.textarea_wrapper textarea {
-    margin-top: 20px;
-    display: block;
-    width: 100%;
-    background: white;
-    border: 1px solid #dadada;
-    box-shadow: 0 0 1px 0 #e4e4e4;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 1em;
-    -webkit-transition: all 250ms ease;
-    -moz-transition: all 250ms ease;
-    -ms-transition: all 250ms ease;
-    -o-transition: all 250ms ease;
-    transition: all 250ms ease;
-    color: #5e5e5e;
-}
-.input_wrapper input[type="text"] {
-    margin-top: 1em;
-    display: block;
-    width: 100%;
-    background: white;
-    border: 1px solid #dadada;
-    box-shadow: 0 0 1px 0 #e4e4e4;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 1em;
-    -webkit-transition: all 250ms ease;
-    -moz-transition: all 250ms ease;
-    -ms-transition: all 250ms ease;
-    -o-transition: all 250ms ease;
-    transition: all 250ms ease;
-    color: #5e5e5e;
-    text-indent: 15%;
-}
-.input_wrapper input[type="text"]:focus {
-    background: rgba(242, 56, 90, 0.05);
-    box-shadow: inset 2px 2px 5px 0 #dadada;
-    outline: none;
-    text-indent: 0;
-}
-.input_wrapper label {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background: orange;
-    color: white;
-    font-family: Oswald, sans-serif;
-    box-sizing: border-box;
-    width: 15%;
-    text-align: center;
-    line-height: 2.8em;
-    -webkit-transition: all 250ms ease;
-    -moz-transition: all 250ms ease;
-    -ms-transition: all 250ms ease;
-    -o-transition: all 250ms ease;
-    transition: all 250ms ease;
-}
-.input_wrapper input[type="text"]:focus + label {
-    left: 85%;
-}
-.textarea_wrapper textarea {
-    margin-top: 20px;
-    display: block;
-    width: 100%;
-    min-height: 150px;
-    background: white;
-    border: 1px solid #dadada;
-    box-shadow: 0 0 1px 0 #e4e4e4;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 1em;
-    -webkit-transition: all 250ms ease;
-    -moz-transition: all 250ms ease;
-    -ms-transition: all 250ms ease;
-    -o-transition: all 250ms ease;
-    transition: all 250ms ease;
-    color: #5e5e5e;
-}
-.textarea_wrapper textarea:focus {
-    background: rgba(242, 56, 90, 0.05);
-    box-shadow: inset 2px 2px 5px 0 #dadada;
-    outline: none;
-}
-.submit_wrapper {
-    text-align: center;
-}
-.submit_wrapper input {
-    text-align: center;
-    display: inline-block;
-    width: 40%;
-    height: 50px;
-    margin-top: 1em;
-    margin-bottom: 6px;
-    cursor: pointer;
-    background: orange;
-    color: white;
-    font-family: Oswald, sans-serif;
-    font-size: 1em;
-    border: none;
-    -webkit-box-shadow: 1px 1px 0 0 #832032, 2px 2px 0 0 #832032,
-        3px 3px 0 0 #832032;
-    box-shadow: 1px 1px 0 0 #832032, 2px 2px 0 0 #832032, 3px 3px 0 0 #832032;
-    -webkit-appearance: none;
-    -webkit-transition: all 250ms ease;
-    -moz-transition: all 250ms ease;
-    -ms-transition: all 250ms ease;
-    -o-transition: all 250ms ease;
-    transition: all 250ms ease;
-}
-.submit_wrapper input:hover {
-    -webkit-box-shadow: 1px 1px 0 0 #832032, 0px 0px 0 0 #832032,
-        0px 0px 0 0 #832032;
-    box-shadow: 1px 1px 0 0 #832032, 0px 0px 0 0 #832032, 0px 0px 0 0 #832032;
-    margin-top: 22px;
-    margin-left: 2px;
-    margin-bottom: 0px;
+    margin-top: 15px;
 }
 
-@media (max-width: 500px) {
-    #contact {
-        width: 100%;
-    }
-    .input_wrapper label {
-        line-height: 3.5em;
-        font-size: 0.8em;
-    }
+#contactLogo {
+   display: flex;
+   justify-content: center;
+}
+#contactGif {
+    display: flex;
+    justify-content: center;
+ }
+#contactLogo img {
+    height: 335px;
+}
+
+.header {
+  min-height: 5em;
+  padding-left: 2em;
+}
+
+.subfooter {
+  min-height: 2em;
+  padding-top: 3em;
+}
+
+.footer {
+  min-height: 3em;
 }
 
 
 
-/* Paste this css to your style sheet file or under head tag */
-/* This only works with JavaScript,
-if it's not present, don't show loader */
-/*.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
+
+
+.button:hover,
+.form input[type=submit]:hover {
+  background: #0f89bc;
+  text-decoration: none;
+}
+
+.button:active,
+.form input[type=submit]:active {
+  background: #0d78a5;
+  box-shadow: inset rgba(0, 0, 0, .25) 0 1px 2px 0;
+  border-color: #063346;
+}
+
+.button::-moz-focus-inner,
+.form input[type=submit]::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.accordion h3 {
+  font-size: 1.25em;
+  padding-top: .35em;
+  padding-bottom: .175em;
+  padding-left: 1em;
+  color: #165b65;
+  background-color: #dce9ee;
+  border-left: 1px solid transparent;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #b5c3c9;
+  cursor: pointer;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  position: relative;
+}
+
+.accordion .toggle-active:before,
+.accordion h3:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin-right: 1.1em;
+  width: .8em;
+}
+
+.accordion h3:nth-of-type(even) {
+  background-color: #edf4f7;
+  border-top-color: #fff;
+  border-bottom-color: #d2dbdf;
+}
+
+/* blue downward triangle for toggle header */
+.accordion h3:after {
+  margin-top: 16px;
+  height: 8px;
+  background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpolygon fill='rgb(31,127,142)' points='8,12 0,0 16,0'/%3E%3C/svg%3E") no-repeat;
+}
+
+.accordion .toggle-active,
+.accordion h3:nth-of-type(even).toggle-active {
+  background-color: #79b8d2;
+  color: #fff;
+  text-shadow: 1px 1px 3px #265c72;
+  border-top-color: #fff;
+  border-bottom-color: #649cb4;
+  font-weight: 300;
+}
+
+/* swap blue downward triangle with white upward triangle for active header */ 
+.accordion .toggle-active:after {
+  background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpolygon fill='rgb(255,255,255)' points='8,0 16,12 0,12'/%3E%3C/svg%3E") no-repeat;
+}
+
+.accordion>div {
+  max-height: 999px;
+  overflow: visible;
+  -webkit-transition: max-height .3s;
+  transition: max-height .3s;
+}
+
+.accordion .closed {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.core .closed {
+  display: none;
+}
+
+.accordion_inner {
+  background-color: #ebf8f9;
+}
+
+.contact-list {
+  margin: 0;
+  padding: .5em 2.5em 1em;
+  list-style: none;
+}
+
+.contact-list li {
+  position: relative;
+  margin: 0 0 0 -.75em;
+  padding: 0 0 0 1em;
+}
+
+.content-contact {
+  padding-top: 1em;
+}
+
+.content-contact p {
+  margin: 0;
+  padding: .5em 3em 1.5em;
+}
+
+.icon-svg-use {
+  position: absolute;
+  top: .27em;
+  left: -.5em;
+  height: 16px;
+  width: 16px;
+  fill: #3aa5bf;
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 0;
+}
+
+.footer .small a,
+.login-remember {
+  display: inline-block;
 }
