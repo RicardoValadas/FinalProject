@@ -1,55 +1,112 @@
 /* No CSS *//*# sourceMappingURL=home_page.css.map */
 
-
-h1 {
+h1
+{
     color: #e76f51;
     font-size: 4.5em;
     font-weight: bold;
     text-align: center;
     padding-top: 15px;
     padding-bottom: 10px;
-  }
-  h2 {
+}
+
+/* style  for the h2 after the h1 safefornet */
+h2
+{
     color: #264653;
     font-size: 2.5em;
     font-weight: bold;
     text-align: center;
     padding-bottom: 40px;
-  }
+}
 
-  #imghead {
-      
+/* style  for the first image after title */
+#imghome1
+{
+    width: 90%;
+    height: 500px;
+    border-radius: 30px;
+    margin: auto;
+}
 
-  }
-.parent {
+.parent
+{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 2fr;
     grid-column-gap: 20px;
     grid-row-gap: 4px;
-    }
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
 
     .heading-tertiary2 , .heading-tertiary3
     {
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
+        background-image: linear-gradient(to bottom right, #e9c46a, #e76f51);
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        border-radius: 30px;
     }
 
-    .parent1 {
+    .parent1
+    {
         display: grid;
         padding-top: 30px;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         grid-column-gap: 4px;
         grid-row-gap: 4px;
-        }
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
 
-        .parent2 {
-            display: grid;
-            padding-top: 30px;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr;
-            grid-column-gap: 4px;
-            grid-row-gap: 4px;
-            }
+    .parent2
+    {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 4px;
+        grid-row-gap: 4px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .heading-tertiary4 , .heading-tertiary5
+    {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .heading-tertiary6 , .heading-tertiary7
+    {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .heading-tertiary8 , .heading-tertiary9
+    {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .heading-tertiary10
+    {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
