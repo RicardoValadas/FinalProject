@@ -11,18 +11,18 @@
         <form id="form">
             <p id='question'>Question 1</p>
             <div class="quizActive">
-                <input type="radio" id="answer1" name="answer">
+                <input type="radio" name="quiz" id="answer1" name="answer" value="">
                 <label for="answer1" class="answer">
                 </label>
             </div>
 
             <div class="quizActive">
-                <input type="radio" id="answer2" name="answer">
+                <input type="radio" name="quiz" id="answer2" name="answer" value="">
                 <label for="answer2" class="answer2"></label>
             </div>
 
             <div class="quizActive">
-                <input type="radio" id="answer3" name="answer">
+                <input type="radio" name="quiz" id="answer3" name="answer" value="">
                 <label for="answer3" class="answer3"></label>
             </div>
             <input type="submit" value="Submit">
