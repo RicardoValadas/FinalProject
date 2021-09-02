@@ -1,25 +1,51 @@
 body
-    background-color: #ffa60086
+    background-color: #2a9d8f
     #pageIdentifier
         font-weight: bolder
         font-size: 30px
-        text-transform: uppercase 
+        text-transform: uppercase
         margin-bottom: 15px
         text-align: center
-    #pic
-        height: 300px
+
+    div
+        display: flex
+        justify-content: center
+        align-items: center
+
+        img
+            border-radius: 59%
+            width: 150px
+            height: 150px
+            margin-bottom: 30px
+
+    .edit
+        background-color: #e9c46a
+        border-radius: 5px
+        padding: 1px 10px 1px 10px
+        display: flex
+        flex-direction: row
+        justify-items: center
+
     .info
+        p
+            padding-bottom: 20px
+
         ul
             width: 260px
             text-align: center
+
             li
                 padding: 5px
                 border: 1px solid orange
-                background-color: #ff8000
+                background-color: #f4a261
+                border-radius: 5px
                 font-size: 15px
                 margin-bottom: 5px
-                box-shadow: 0px -1px 28px 5px rgba(0,0,0,0.41)
+
             li:hover
+                color: #fff
+                box-shadow: 0 0 11px rgba(33,33,33,.4)
+
     #achi
         margin-top: 50px
         h2
@@ -43,7 +69,6 @@ body
                 position: relative
                 /* I don't want to see elements flowing out of me*/
                 overflow: hidden
-                transition-duration: 0.4s 
+                transition-duration: 0.4s
         .achievments.visible
             display: block
-
