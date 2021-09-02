@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -13,8 +14,11 @@ h1 {
 
 .aboutUs {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 article {
@@ -26,9 +30,11 @@ article {
   transition: box-shadow 0.3s;
   background: #e9c46a;
 }
+
 article h2 {
   text-align: center;
 }
+
 article p {
   padding: 0 15px 0 15px;
 }
@@ -57,14 +63,20 @@ h2 {
 }
 
 .image {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding-top: 60px;
 }
 
 .image img {
   height: 200px;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /* -------------------------------------------Tablet------------------ */
@@ -72,30 +84,35 @@ h2 {
   main {
     width: auto;
   }
-
   .card-4 {
     margin-top: 0;
   }
 }
+
 /* -------------------------------------------Desktop------------------ */
 @media (min-width: 1080px) {
   h1 {
     padding-bottom: 40px;
   }
-
   section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
   }
   section article:hover {
-    box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
+    -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
+            box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
   }
   section .card-4 {
     margin-top: 0;
   }
-
   main {
     width: 1080px;
   }
 }
+/*# sourceMappingURL=about.css.map */
