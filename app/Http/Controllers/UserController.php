@@ -56,26 +56,21 @@ remove type and password
 password will be redirected to the premade reset password*/
 public function update(Request $request,$id){
             $user = User::find($id);
-            $user->type=$request->type;
             $user->username=$request->username;
             $user->first_name=$request->first_name;
             $user->last_name=$request->last_name;
             $user->email=$request->email;
-            $user->password= Hash::make($request->password);    //hash and store the pass
+
             $this->validate($request,[
                 'username'=> "required|unique:users,username,$id",
                 'email'=> "required|unique:users,email,$id",
                 'first_name'=> 'required|min:3|max:15',
                 'last_name'=> 'required|min:3|max:15',
-                'password'=> ['required','confirmed','min:3','max:60', Password::min(8)
-                ->letters(5)
-                ->mixedCase(1)
-                ->numbers(2)
-                ->symbols(1)
-                ->uncompromised()],
+
                 ]);
                 $user->save();
-                return view('user_profile',['user' => $user])->with('success', 'user updated');
+                return $this->index();
+                //return view('user_profile',['user' => $user])->with('success', 'user updated');
             }
             //to delete user
             public function destroy($id){
@@ -89,7 +84,7 @@ public function update(Request $request,$id){
                 return view('editFLname',['user' => $user]);
             }
             ////////////////////////////////////////update////////////////////////       
-            
+            /* obsolete
             public function updateUsername(Request $request,$id){
                 $user = User::find(auth()->user()->id);        
                 $user->username=$request->username;
@@ -119,6 +114,6 @@ public function update(Request $request,$id){
                     ]);
                 $user->save();    
                 return view('user_profile',['user' => $user])->with('success', 'user updated');
-                }
+                }*/
         }
         
