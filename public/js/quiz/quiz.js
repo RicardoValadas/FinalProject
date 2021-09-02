@@ -1,74 +1,58 @@
-
-//FETCH API FOR QUESTION
+//Store start variable for button
 const start = document.querySelector('.start');
-
+  
+//Add event listener when click
 start.addEventListener('click', function() {
 
+//FETCH API FOR QUESTION
 fetch('http://127.0.0.1:8000/quizTest')
 .then(response => response.json())
 .then(data => renderQuestions(data))
 });
 
-/* function random() {
-  return Math.floor((Math.random() * 3))
-} */
+//Randomize possible numbers and check if the number assigned is already being used later with ranNums.next().value
+function* shuffle(array) {
+
+  let i = array.length;
+
+  while (i--) {
+      yield array.splice(Math.floor(Math.random() * (i+1)), 1)[0];
+  }
+}  
+
+let ranNums = shuffle([0,1,2]);
+
+let store1 = ranNums.next().value
+let store2 = ranNums.next().value
+let store3 = ranNums.next().value
 
 
 function renderQuestions(data) {
+  console.log(JSON.stringify(data.id))
+  console.log(JSON.stringify(data.Answers[store1]['id']))
+  let idquestion = JSON.stringify(data.id)
+  //Get html classes to display the values
     const question = document.querySelector('#question')
     let answer = document.querySelector('.answer')
-    const answer2 = document.querySelector('.secondAnswer')
-    const answer3 = document.querySelector('.thirdAnswer')
+    const answer2 = document.querySelector('.answer2')
+    const answer3 = document.querySelector('.answer3') 
 
-
-  /*   let list = [1, 2, 3]
-    list = list.sort(() => Math.random() - 0.5)
-    console.log(list)
- 
-    let usedNumbers = []
-let counter = 0
-
-while(counter < 3){
-    let math = Math.floor(Math.random() * 3)
-    
-    if(!usedNumbers.includes(math)){
-        usedNumbers[counter] = math
-        counter++
-    }
-}
-
-console.log(usedNumbers.sort())
- */
-
-
-    let newData =  data.Answers[Math.floor(Math.random() * 3)]['answer']
-
-
-    console.log(newData)
   
+
+    //Get the data with random numbers
+    let newData =  data.Answers[store1]['answer']
+    let newData2 =  data.Answers[store2]['answer']
+    let newData3 =  data.Answers[store3]['answer']
+    //Insert in html
     question.innerHTML = data.questions;
     answer.innerHTML = newData
-
-    
-   
+    answer2.innerHTML = newData2
+    answer3.innerHTML = newData3  
+    ola=1
+    formSubmit()
 }
 
-//FETCH API FOR ANSWER
-/* start.addEventListener('click', function() {
-  const setup = document.querySelector('.firstAnswer')
-  fetch('http://127.0.0.1:8000/quizAnswer')
-  .then((response) => response.json())
-  .then((data) => renderAnswers(data))
-  });
-  
-  function renderAnswers(data) {
-      const setup = document.querySelector('.firstAnswer')
-      setup.innerHTML = data.answer;
-  }
-   */
- 
 //DISPLAY CONTENT WHEN START
-
 start.addEventListener('click',function(){
   const game = document.querySelector('#questionsView')
 
@@ -77,4 +61,17 @@ start.addEventListener('click',function(){
   }
   start.classList.add('questionsViewHide')
 })
+
+const form = document.querySelector('#form')
+form.addEventListener('submit',formSubmit())
+    function formSubmit(idquestion){
+      console.log(idquestion)
+     if(store1 == 0){
+       console.log('correct')
+     } else if (store2 == 0) {
+      console.log('correct')
+     } else if(store3 == 0){
+      console.log('correct')
+     }
+    }
 

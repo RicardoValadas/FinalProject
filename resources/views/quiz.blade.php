@@ -8,26 +8,22 @@
 @section('content')
     <button class="start" type='button'>Start</button>
     <div id="questionsView" class="questionsViewHide">
-        <form action="">
+        <form id="form">
             <p id='question'>Question 1</p>
             <div class="quizActive">
                 <input type="radio" id="answer1" name="answer">
-
-                <label for="answer1">
-                    <p class="answer"></p>
+                <label for="answer1" class="answer">
                 </label>
             </div>
 
             <div class="quizActive">
-                <input type="radio" id="answer3" name="answer">
-                <label for="answer2"></label>
-                <p class="answer"></p>
+                <input type="radio" id="answer2" name="answer">
+                <label for="answer2" class="answer2"></label>
             </div>
 
             <div class="quizActive">
                 <input type="radio" id="answer3" name="answer">
-                <label for="answer3"></label>
-                <p class="answer"></p>
+                <label for="answer3" class="answer3"></label>
             </div>
             <input type="submit" value="Submit">
         </form>
