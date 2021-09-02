@@ -9,13 +9,26 @@ use Illuminate\Validation\Rules\Password;
 class AdminController extends Controller
 {
     //
+//admit to create new users
+    public function store(){
+    }
+
+    //
+
+
+
 
     public function displayAdmin(){
         $allusers = User::all();
         return view('adminPage',['allusers' => $allusers]);
     }
-    
-    
+    public function showusers(){
+        $allusers = User::all();
+        
+        return [$allusers];
+
+        
+    }
     
     public function destroy($id){
         User::destroy($id);

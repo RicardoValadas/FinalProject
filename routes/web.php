@@ -71,9 +71,6 @@ require __DIR__ . '/auth.php';
 Route::post('image/upload', [MainController::class, 'uploadImage']);
 
 
-Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('admin.page');
-Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('ADMdelete.user');
-
 ###########  Route for the Home page (home.blade.php in views)  ###########
 Route::get('/', [MainController::class, 'home'])->name('home');
 
@@ -83,13 +80,26 @@ Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 ########### Route for the About page (about.blade.php in Views )  ###########
 Route::get('/about', [MainController::class, 'about'])->name('about');
 
+
+
+###########                 Admin Routes                           ###########
+
+//display page
+Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('admin.page');
+
+//delete users on admin dashboard
+Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('ADMdelete.user');
+
 Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
+
 Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
 
 
 //Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
 Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
-//Route::post('/displayusers', [AdminController::class, 'displayUsers'])->name('getusers');
+Route::get('/displayusers', [AdminController::class, 'showusers'])->name('getusers');
+
+###################################################################################################
 
 //CORS
 Route::middleware(['cors'])->group(function () {
