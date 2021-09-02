@@ -1,5 +1,5 @@
 body {
-  background-color: #ffa60086;
+  background-color: #2a9d8f;
 }
 
 body #pageIdentifier {
@@ -10,8 +10,41 @@ body #pageIdentifier {
   text-align: center;
 }
 
-body #pic {
-  height: 300px;
+body div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body div img {
+  border-radius: 59%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
+}
+
+body .edit {
+  background-color: #e9c46a;
+  border-radius: 5px;
+  padding: 1px 10px 1px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-items: center;
+}
+
+body .info p {
+  padding-bottom: 20px;
 }
 
 body .info ul {
@@ -22,11 +55,16 @@ body .info ul {
 body .info ul li {
   padding: 5px;
   border: 1px solid orange;
-  background-color: #ff8000;
+  background-color: #f4a261;
+  border-radius: 5px;
   font-size: 15px;
   margin-bottom: 5px;
-  -webkit-box-shadow: 0px -1px 28px 5px rgba(0, 0, 0, 0.41);
-          box-shadow: 0px -1px 28px 5px rgba(0, 0, 0, 0.41);
+}
+
+body .info ul li:hover {
+  color: #fff;
+  -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
+          box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
 }
 
 body #achi {

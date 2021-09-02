@@ -28,8 +28,8 @@ let store3 = ranNums.next().value
 
 
 function renderQuestions(data) {
-  console.log(JSON.stringify(data.id))
-  console.log(JSON.stringify(data.Answers[store1]['id']))
+ /*  console.log(JSON.stringify(data.id))
+  console.log(JSON.stringify(data.Answers[store1]['id'])) */
  
   //Get html classes to display the values
     const question = document.querySelector('#question')
@@ -61,13 +61,14 @@ start.addEventListener('click',function(){
   start.classList.add('questionsViewHide')
 })
 
-const form = document.querySelector('#form')
+/* const form = document.querySelector('#form')
 form.addEventListener('submit',formSubmit())
-    function formSubmit(event){
-      event.preventDefault()
+    function formSubmit(){
       const answer = document.querySelector('#answer1').value
       const answer2 = document.querySelector('#answer2').value
       const answer3 = document.querySelector('#answer3').value 
+      let score = document.querySelector('input[name="quiz"]:checked').value;
+      console.log(score + ' was selected!');
 }
-    
+     */
 
