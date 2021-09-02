@@ -29,6 +29,20 @@ body div img {
   margin-bottom: 30px;
 }
 
+body .userscore {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 260px;
+  background-color: #EBF5DF;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 10px;
+  padding-top: 12px;
+  margin-left: 10px;
+}
+
 body .edit {
   background-color: #e9c46a;
   border-radius: 5px;
@@ -50,6 +64,9 @@ body .info p {
 body .info ul {
   width: 260px;
   text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body .info ul li {
@@ -67,6 +84,10 @@ body .info ul li:hover {
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
 }
 
+body .buttons {
+  text-align: center;
+}
+
 body #achi {
   margin-top: 50px;
 }
@@ -77,8 +98,13 @@ body #achi h2 {
 }
 
 body #achi button {
-  background-color: white;
-  border: 2px solid gray;
+  width: 260px;
+  padding: 5px;
+  border: 1px solid orange;
+  background-color: #f4a261;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-bottom: 5px;
 }
 
 body #achi .achievments {
@@ -105,5 +131,36 @@ body #achi .achievments article {
 
 body #achi .achievments.visible {
   display: block;
+}
+
+/* -------------------------------------------Desktop------------------ */
+@media (min-width: 600px) {
+  main {
+    position: relative;
+  }
+  .info ul {
+    position: absolute;
+    right: 250px;
+    top: 320px;
+  }
+  section .userinfo {
+    margin-top: 50px;
+    margin-left: 250px;
+  }
+  .userscore {
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 260px;
+    background-color: #EBF5DF;
+    border-radius: 5px;
+    font-size: 25px;
+    position: absolute;
+    right: 574px;
+    top: 200px;
+    line-height: 10px;
+    padding-top: 12px;
+  }
 }
 /*# sourceMappingURL=profile.css.map */

@@ -14,18 +14,23 @@
 </div>
 
 <section class="info">
-    <p>Score: 420 {{ $user->user_score }} points</p>
-    <hr>
-    <p>Username: {{ $user->username }} </p>
-    <p>Firstname: {{ $user->first_name }} </p>
-    <p>Lastname: {{ $user->last_name }} </p>
-    <p>Email: {{ $user->email }} </p><br>
-    <ul>
-        <li><a href="{{ route('edit.user', [$user->id]) }}">Edit Profile</a></li>
-        <li><a href="{{ route('change.password', [$user->id]) }}">Change Password</a></li>
-        <li><a href="{{ route('admineditpage', [$user->id]) }}">delete account</a></li>
-    </ul>
 
+    <article class="userinfo">
+        <p class="userscore">Score: 420 {{ $user->user_score }} points</p>
+        <br>
+        <p>Username: {{ $user->username }} </p>
+        <p>Firstname: {{ $user->first_name }} </p>
+        <p>Lastname: {{ $user->last_name }} </p>
+        <p>Email: {{ $user->email }} </p><br>
+    </article>
+
+    <div class="buttons">
+        <ul>
+            <li><a href="{{ route('edit.user', [$user->id]) }}">Edit Profile</a></li>
+            <li><a href="{{ route('change.password', [$user->id]) }}">Change Password</a></li>
+            <li><a href="{{ route('admineditpage', [$user->id]) }}">Delete Account</a></li>
+        </ul>
+    </div>
 
 
 
@@ -33,13 +38,15 @@
 <!--/////////////////////////////////////////////////////////////////-->
 <hr>
 <section id="achi">
-    <h2>Achievments</h2>
-    <button id="showachi">show achievments</button>
+    <h2>Achievements</h2>
+    <div class="buttons">
+        <button id="showachi">Show Achievements</button>
+    </div>
     <section class="achievments">
         <!-- aqui vai ser necessario fazer clone dos trofeus.... usar ajax e clones....criar js file que contenha tudo-->
         <article>
             <img src="{{ asset('img/Profileex.png') }}" alt="imagem" height="50px">
-            <h7> <strong> Ran achievment</strong></h7>
+            <h7> <strong> Ran Achievement</strong></h7>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, in.</p>
         </article>
     </section>
