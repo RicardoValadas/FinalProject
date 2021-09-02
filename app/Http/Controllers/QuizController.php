@@ -23,6 +23,7 @@ class QuizController extends Controller
 
     public static function getQuestion()
     {
+
         $question = Questions::all()->random();
 
         $Answers  = Answers::where('questionId', '=', $question->id)->get();

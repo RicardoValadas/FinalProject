@@ -7,9 +7,9 @@ body
     width: auto
 
 h1
-    font-size: 100px
-    margin-top: -100px
-    margin-bottom: 100px
+    font-size: 30px
+    margin-top: -50px
+    margin-bottom: 50px
 
 .image
     display: flex
@@ -47,3 +47,20 @@ h1
 .register:hover
     color: #fff
     box-shadow: 0 0 11px rgba(33,33,33,.4)
+
+/* -------------------------------------------Tablet------------------ */
+$breakpoint-tablet: 600px
+@media (min-width: $breakpoint-tablet)
+    main
+        width: auto
+/* -------------------------------------------Desktop------------------ */
+$breakpoint-desktop: 1080px
+@media (min-width: $breakpoint-desktop)
+
+    h1
+        font-size: 100px
+        margin-top: -100px
+        margin-bottom: 100px
+
+    main
+        width: 1080px
