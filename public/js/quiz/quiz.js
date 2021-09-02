@@ -30,10 +30,10 @@ let store3 = ranNums.next().value
 function renderQuestions(data) {
   console.log(JSON.stringify(data.id))
   console.log(JSON.stringify(data.Answers[store1]['id']))
-  let idquestion = JSON.stringify(data.id)
+ 
   //Get html classes to display the values
     const question = document.querySelector('#question')
-    let answer = document.querySelector('.answer')
+    const answer = document.querySelector('.answer')
     const answer2 = document.querySelector('.answer2')
     const answer3 = document.querySelector('.answer3') 
 
@@ -48,8 +48,7 @@ function renderQuestions(data) {
     answer.innerHTML = newData
     answer2.innerHTML = newData2
     answer3.innerHTML = newData3  
-    ola=1
-    formSubmit()
+
 }
 
 //DISPLAY CONTENT WHEN START
@@ -64,14 +63,11 @@ start.addEventListener('click',function(){
 
 const form = document.querySelector('#form')
 form.addEventListener('submit',formSubmit())
-    function formSubmit(idquestion){
-      console.log(idquestion)
-     if(store1 == 0){
-       console.log('correct')
-     } else if (store2 == 0) {
-      console.log('correct')
-     } else if(store3 == 0){
-      console.log('correct')
-     }
-    }
+    function formSubmit(event){
+      event.preventDefault()
+      const answer = document.querySelector('#answer1').value
+      const answer2 = document.querySelector('#answer2').value
+      const answer3 = document.querySelector('#answer3').value 
+}
+    
 
