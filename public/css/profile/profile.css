@@ -75,13 +75,17 @@ body .info ul li {
   background-color: #f4a261;
   border-radius: 5px;
   font-size: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 body .info ul li:hover {
   color: #fff;
   -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
           box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
+}
+
+body .info ul a:hover {
+  color: #fff;
 }
 
 body .buttons {
@@ -138,6 +142,9 @@ body #achi .achievments.visible {
   main {
     position: relative;
   }
+  main p {
+    font-size: 1.2em;
+  }
   .info ul {
     position: absolute;
     right: 250px;
@@ -158,7 +165,7 @@ body #achi .achievments.visible {
     font-size: 25px;
     position: absolute;
     right: 574px;
-    top: 200px;
+    top: 220px;
     line-height: 10px;
     padding-top: 12px;
   }
