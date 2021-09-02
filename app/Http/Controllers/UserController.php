@@ -42,55 +42,19 @@ class UserController extends Controller
             $user = User::find($id);
             return view('editEmail',['user' => $user]);
         }
-        public function firstLastName($id){
-            $user = User::find($id);
-            return view('editFLname',['user' => $user]);
-        }
- ////////////////////////////////////////update////////////////////////       
         
-        public function updateUsername(Request $request,$id){
-            $user = User::find(auth()->user()->id);        
-            $user->username=$request->username;
-            $this->validate($request,[
-                'username'=> "required|unique:users,username,$id",
-                ]);
-            $user->save();    
-            return view('user_profile',['user' => $user])->with('success', 'user updated');
-            }
-        public function updateFirstLastName(Request $request,$id){
-            $user = User::find(auth()->user()->id);
-            $user->first_name=$request->first_name;
-            $user->last_name=$request->last_name;
-            $this->validate($request,[
-                'first_name'=> 'required|min:3|max:15',
-                'last_name'=> 'required|min:3|max:15',
-                ]);
-            $user->save();    
-            return view('user_profile',['user' => $user])->with('success', 'user updated');
-            }
-        public function updateEmail(Request $request,$id){
-            $user = User::find(auth()->user()->id);
-            $user->email=$request->email;
-            $this->validate($request,[
-                'email'=> "required|email|unique:users,email,$id",
-                
-                ]);
-            $user->save();    
-            return view('user_profile',['user' => $user])->with('success', 'user updated');
-            }
-    
+        
+        
+        
 
-
-
-
-
-
-    //this function will allow the user to edit its account
-    //-------------------can be improved----------------//
-/*need to change... i will create a password only becauseit will always send a new password since is hashed
+        
+        
+        //this function will allow the user to edit its account
+        //-------------------can be improved----------------//
+        /*need to change... i will create a password only becauseit will always send a new password since is hashed
 remove type and password
 password will be redirected to the premade reset password*/
-        public function update(Request $request,$id){
+public function update(Request $request,$id){
             $user = User::find($id);
             $user->type=$request->type;
             $user->username=$request->username;
@@ -110,12 +74,51 @@ password will be redirected to the premade reset password*/
                 ->symbols(1)
                 ->uncompromised()],
                 ]);
-            $user->save();
-            return view('user_profile',['user' => $user])->with('success', 'user updated');
+                $user->save();
+                return view('user_profile',['user' => $user])->with('success', 'user updated');
+            }
+            //to delete user
+            public function destroy($id){
+                User::destroy($id);
+                return view('home');
+            }
+
+            //obsolete
+            public function firstLastName($id){
+                $user = User::find($id);
+                return view('editFLname',['user' => $user]);
+            }
+            ////////////////////////////////////////update////////////////////////       
+            
+            public function updateUsername(Request $request,$id){
+                $user = User::find(auth()->user()->id);        
+                $user->username=$request->username;
+                $this->validate($request,[
+                    'username'=> "required|unique:users,username,$id",
+                    ]);
+                $user->save();    
+                return view('user_profile',['user' => $user])->with('success', 'user updated');
+                }
+            public function updateFirstLastName(Request $request,$id){
+                $user = User::find(auth()->user()->id);
+                $user->first_name=$request->first_name;
+                $user->last_name=$request->last_name;
+                $this->validate($request,[
+                    'first_name'=> 'required|min:3|max:15',
+                    'last_name'=> 'required|min:3|max:15',
+                    ]);
+                $user->save();    
+                return view('user_profile',['user' => $user])->with('success', 'user updated');
+                }
+            public function updateEmail(Request $request,$id){
+                $user = User::find(auth()->user()->id);
+                $user->email=$request->email;
+                $this->validate($request,[
+                    'email'=> "required|email|unique:users,email,$id",
+                    
+                    ]);
+                $user->save();    
+                return view('user_profile',['user' => $user])->with('success', 'user updated');
+                }
         }
-//to delete user
-    public function destroy($id){
-        User::destroy($id);
-        return view('home');
-    }
-}
+        

@@ -5,14 +5,6 @@
   padding: 0;
 }
 
-* body {
-  background-color: green;
-}
-
-* body main {
-  background-color: blue;
-}
-
 h1 {
   font-size: 2.5em;
   font-weight: bold;
@@ -21,6 +13,8 @@ h1 {
 }
 
 .aboutUs {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -35,7 +29,10 @@ article {
   margin: auto;
   border: solid #e9c46a;
   border-radius: 15px;
-  transition: box-shadow 0.3s;
+  -webkit-transition: -webkit-box-shadow .3s;
+  transition: -webkit-box-shadow .3s;
+  transition: box-shadow .3s;
+  transition: box-shadow .3s, -webkit-box-shadow .3s;
   background: #e9c46a;
 }
 
