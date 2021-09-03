@@ -85,6 +85,15 @@ class UserController extends Controller
 
 
 
+
+
+
+
+
+
+
+
+
     //this function will allow the user to edit its account
     //-------------------can be improved----------------//
 /*need to change... i will create a password only becauseit will always send a new password since is hashed

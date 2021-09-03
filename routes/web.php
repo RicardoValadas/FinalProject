@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
@@ -18,6 +18,8 @@ use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate 
 use Illuminate\Http\Request;
 #use App\Http\Middleware\IsAdminMiddleware;
 use App\Http\Controllers\UserController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -103,7 +105,28 @@ Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 ###########                 Admin Routes                           ###########
 
 //display page
-Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('admin.page');
+//Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('admin.page');
+
+//know if it is admin
+
+Route::get('/adminOrnot/{id}', [AdminController::class, 'adminOrnot'])->name('adminOrnot');
+
+
+Route::get('/adminpage', function () {
+    $admin = Auth::user();
+    if ($admin != null) {
+        if ($admin->admin == '1') { 
+            $allusers = User::all();
+            return view('adminPage',['allusers' => $allusers]); 
+        } else {
+
+            return redirect('home');
+        }
+    }
+    return view('profile');
+
+})->name('admin.page');
+
 
 //delete users on admin dashboard
 Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('ADMdelete.user');
@@ -116,11 +139,11 @@ Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('up
 Route::get('/displayusers', [AdminController::class, 'showusers'])->name('getusers');
 
 //to add
-Route::post('/adduser', [AdminController::class, 'create'])->name('create.in.admin');
-Route::get('/adminADD', [AdminController::class, 'add'])->name('addPage');
+Route::get('/adduser', [AdminController::class, 'displayAdd'])->name('addPage');
+Route::get('/adduser', [AdminController::class, 'create'])->name('create.in.admin');
+
+
 ###################################################################################################
-
-
 
 //CORS
 Route::middleware(['cors'])->group(function () {
@@ -135,7 +158,7 @@ Route::get('/email/verify', function () {
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
 
-    return redirect('/home')->name('home');
+    return redirect('/home');
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::post('/email/verification-notification', function (Request $request) {

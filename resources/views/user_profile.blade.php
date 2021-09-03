@@ -22,13 +22,15 @@
         <p>Firstname: {{ $user->first_name }} </p>
         <p>Lastname: {{ $user->last_name }} </p>
         <p>Email: {{ $user->email }} </p><br>
+        <p>admin: {{ $user->admin }} </p><br>
     </article>
 
     <div class="buttons">
-        <ul>
+        <ul id="Blist" >
             <li><a href="{{ route('edit.user', [$user->id]) }}">Edit Profile</a></li>
             <li><a href="{{ route('change.password', [$user->id]) }}">Change Password</a></li>
             <li><a href="{{ route('delete.user', [$user->id]) }}">Delete Account</a></li>
+            
         </ul>
     </div>
 
@@ -69,10 +71,36 @@
     </section>
 </section>
 </section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+                   //console.log('second');
+               $.ajax({
+                       url: "{{ route('adminOrnot', [Auth::user()->id]) }}",
+                       method: 'get',
+                     
+                   })
+                   .done(function(result) {
+                      // $('#test').html(result);
+                      console.log(result.admin);
+                      const admin =result.admin
 
+                      if (admin===1) {
+                        $('#Blist').append("<li id=><a href=" + "{{ route('admin.page')}}" + ">admin dashboard</a></li>");
+                        
+                      }
+               })
+               .fail(function(result) {
+                       console.log('AJAX FAILED');
+                   })
+               });
+</script>
+@endsection
 @yield('script')
 <script src="{{ URL::asset('js/profilejs/profile.js') }}"></script>
-@endsection
+
+
 
 @section('script')
 <script src="{{ URL::asset('js/profile/profile.js') }}"></script>

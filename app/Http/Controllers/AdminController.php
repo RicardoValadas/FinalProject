@@ -15,7 +15,10 @@ class AdminController extends Controller
     //
 
 
-
+    public function adminOrnot($id){//I'LL DELETE THE ID SINCE I CAN GET THE LOGGED USER FROM AUTH ...//nvm
+        $user = User::find($id);
+        return  $user;
+        }
 
     public function displayAdmin(){
         $allusers = User::all();
@@ -51,6 +54,10 @@ class AdminController extends Controller
     }
     
     public function displayEdit($id){
+        $allusers = User::find($id);
+        return view('ADMINeditU',['user' => $allusers]);
+    }
+    public function displayAdd($id){
         $allusers = User::find($id);
         return view('ADMINeditU',['user' => $allusers]);
     }

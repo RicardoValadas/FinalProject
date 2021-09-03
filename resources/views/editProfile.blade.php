@@ -1,4 +1,4 @@
-s@extends('layouts.template')
+@extends('layouts.template')
 
 @section('content')
     <h3>Edit your profile</h3>

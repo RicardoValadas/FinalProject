@@ -14,7 +14,7 @@
     <button id="editUsers"> edit users</button>
     <button id="addUsers" > add users</button>
     <button id="delete"> delete users</button>
-    <a href="{{ route('addPage')}}">add users</a>
+    <a href="">add users</a>
 </section>
 <br><hr><br>
 
