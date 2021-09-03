@@ -8,6 +8,7 @@
 @section('content')
     <button class="start" type='button'>Start</button>
     <div id="questionsView" class="questionsViewHide">
+        <button id="next">next</button>
         <form id="form">
             <p id='question'>Question 1</p>
             <div class="quizActive">

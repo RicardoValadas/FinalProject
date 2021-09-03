@@ -1,8 +1,9 @@
 //Store start variable for button
 const start = document.querySelector('.start');
+const next = document.querySelector('#next');
   
 //Add event listener when click
-start.addEventListener('click', function() {
+next.addEventListener('click', function() {
 
 //FETCH API FOR QUESTION
 fetch('http://127.0.0.1:8000/quizTest')
@@ -35,9 +36,11 @@ function renderQuestions(data) {
     const question = document.querySelector('#question')
     const answer = document.querySelector('.answer')
     const answer2 = document.querySelector('.answer2')
-    const answer3 = document.querySelector('.answer3') 
+    const answer3 = document.querySelector('.answer3')
 
-  
+     let value = document.querySelector('#answer1')
+     let value2 = document.querySelector('#answer2')
+     let value3 = document.querySelector('#answer3')
 
     //Get the data with random numbers
     let newData =  data.Answers[store1]['answer']
@@ -46,9 +49,11 @@ function renderQuestions(data) {
     //Insert in html
     question.innerHTML = data.questions;
     answer.innerHTML = newData
+   
     answer2.innerHTML = newData2
     answer3.innerHTML = newData3  
-
+    //store to use in another function
+    sessionStorage.setItem("correct",data.Answers[0]['answer'])
 }
 
 //DISPLAY CONTENT WHEN START
@@ -61,14 +66,17 @@ start.addEventListener('click',function(){
   start.classList.add('questionsViewHide')
 })
 
-/* const form = document.querySelector('#form')
+const form = document.querySelector('#form')
 form.addEventListener('submit',formSubmit())
     function formSubmit(){
-      const answer = document.querySelector('#answer1').value
-      const answer2 = document.querySelector('#answer2').value
-      const answer3 = document.querySelector('#answer3').value 
-      let score = document.querySelector('input[name="quiz"]:checked').value;
-      console.log(score + ' was selected!');
+      const answer = document.querySelector('.answer1')
+      const answer2 = document.querySelector('#answer2')
+      const answer3 = document.querySelector('#answer3')
+      let oi = sessionStorage.getItem('answer');
+      console.log(oi)
+    
+    
+
 }
-     */
+     
 
