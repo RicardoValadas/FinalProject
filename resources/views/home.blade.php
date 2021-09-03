@@ -12,7 +12,7 @@
     </h2><br>
     <section id=imghead>
         <a href="/">
-            <img src="{{ asset('home_images/kidandparents.jpg') }}" alt="">
+            <img id="imghome1" src="{{ asset('home_images/kidandparents.jpg') }}" alt="">
         </a>
     </section>
     <section id="firstSec">
@@ -48,8 +48,37 @@
                 The majority of Internet browsers (including Mozilla Firefox, Google Chrome, Safari and many others) have an Internet options folder where you can easily set up security safeguards and content filters for language, nudity, sex, and violence. Or skip the filter fiddling and only allow your kids to use squeaky clean browsers created just for kids.
             </p>
         </div>
+        <div class="head6">
+            <h3 class="heading-tertiary6">Take advantage of your browser's parental controls</h3><br>
+            <p class="paragraph5">
+                The majority of Internet browsers (including Mozilla Firefox, Google Chrome, Safari and many others) have an Internet options folder where you can easily set up security safeguards and content filters for language, nudity, sex, and violence. Or skip the filter fiddling and only allow your kids to use squeaky clean browsers created just for kids.
+            </p>
+        </div>
+        <div class="head7">
+            <h3 class="heading-tertiary7">Take advantage of your browser's parental controls</h3><br>
+            <p class="paragraph6">
+                The majority of Internet browsers (including Mozilla Firefox, Google Chrome, Safari and many others) have an Internet options folder where you can easily set up security safeguards and content filters for language, nudity, sex, and violence. Or skip the filter fiddling and only allow your kids to use squeaky clean browsers created just for kids.
+            </p>
+        </div>
+        <div class="head8">
+            <h3 class="heading-tertiary8">Take advantage of your browser's parental controls</h3><br>
+            <p class="paragraph7">
+                The majority of Internet browsers (including Mozilla Firefox, Google Chrome, Safari and many others) have an Internet options folder where you can easily set up security safeguards and content filters for language, nudity, sex, and violence. Or skip the filter fiddling and only allow your kids to use squeaky clean browsers created just for kids.
+            </p>
+        </div>
+        <div class="head9">
+            <h3 class="heading-tertiary9">Take advantage of your browser's parental controls</h3><br>
+            <p class="paragraph8">
+                The majority of Internet browsers (including Mozilla Firefox, Google Chrome, Safari and many others) have an Internet options folder where you can easily set up security safeguards and content filters for language, nudity, sex, and violence. Or skip the filter fiddling and only allow your kids to use squeaky clean browsers created just for kids.
+            </p>
+        </div>
+        <div class="head10">
+            <h3 class="heading-tertiary10">Take advantage of your browser's parental controls</h3><br>
+            <p class="paragraph9">
+                The majority of Internet browsers (including Mozilla Firefox, Google Chrome, Safari and many others) have an Internet options folder where you can easily set up security safeguards and content filters for language, nudity, sex, and violence. Or skip the filter fiddling and only allow your kids to use squeaky clean browsers created just for kids.
+            </p>
+        </div>
     </div>
-
 </section>
 
 @endsection

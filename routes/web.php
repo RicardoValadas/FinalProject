@@ -119,8 +119,6 @@ Route::post('/adduser', [AdminController::class, 'create'])->name('create.in.adm
 Route::middleware(['cors'])->group(function () {
     Route::post('/quiz', [QuizController::class, 'getQuiz']);
 });
-<<<<<<< Updated upstream
-=======
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
@@ -184,4 +182,3 @@ Route::post('/reset-password', function (Request $request) {
         ? redirect()->route('login')->with('status', __($status))
         : back()->withErrors(['email' => [__($status)]]);
 })->middleware('guest')->name('password.update');
->>>>>>> Stashed changes
