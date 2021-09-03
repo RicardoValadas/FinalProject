@@ -1,3 +1,9 @@
+let counter = 0;
+function increment(){
+    counter++;
+    console.log(counter);
+}
+
 //Store start variable for button
 const start = document.querySelector('.start');
   
@@ -35,9 +41,7 @@ function renderQuestions(data) {
     const question = document.querySelector('#question')
     const answer = document.querySelector('.answer')
     const answer2 = document.querySelector('.answer2')
-    const answer3 = document.querySelector('.answer3') 
-
-  
+    const answer3 = document.querySelector('.answer3')
 
     //Get the data with random numbers
     let newData =  data.Answers[store1]['answer']
@@ -45,10 +49,12 @@ function renderQuestions(data) {
     let newData3 =  data.Answers[store3]['answer']
     //Insert in html
     question.innerHTML = data.questions;
+
     answer.innerHTML = newData
     answer2.innerHTML = newData2
     answer3.innerHTML = newData3  
-
+    //store to use in another function
+    sessionStorage.setItem("correct",data.Answers[0]['answer'])
 }
 
 //DISPLAY CONTENT WHEN START
@@ -61,14 +67,51 @@ start.addEventListener('click',function(){
   start.classList.add('questionsViewHide')
 })
 
-/* const form = document.querySelector('#form')
+  let button1 = document.querySelector('.answer')
+  button1.addEventListener('click', function(){
+    let buttonValue1 = button1.innerHTML
+    sessionStorage.setItem("answer1",buttonValue1)
+    let correctAnswer = sessionStorage.getItem('correct');
+    
+  })
+
+  let button2 = document.querySelector('.answer2')
+  button2.addEventListener('click', function(){
+    let buttonValue2 = button2.innerHTML
+    sessionStorage.setItem("answer2",buttonValue2)
+    let correctAnswer = sessionStorage.getItem('correct');
+   
+  })
+
+  let button3 = document.querySelector('.answer3')
+  button3.addEventListener('click', function(){
+    let buttonValue3 = button3.innerHTML
+    sessionStorage.setItem("answer3",buttonValue3)
+    let correctAnswer = sessionStorage.getItem('correct');
+    
+  })
+
+
+const form = document.querySelector('#form')
 form.addEventListener('submit',formSubmit())
+
     function formSubmit(){
-      const answer = document.querySelector('#answer1').value
-      const answer2 = document.querySelector('#answer2').value
-      const answer3 = document.querySelector('#answer3').value 
-      let score = document.querySelector('input[name="quiz"]:checked').value;
-      console.log(score + ' was selected!');
+      let answer1 = sessionStorage.getItem('answer1');
+      let answer2 = sessionStorage.getItem('answer2');
+      let answer3 = sessionStorage.getItem('answer3');
+      let correct = sessionStorage.getItem('correct');
+     
+      if(answer1 == correct){
+        alert('Correct you got 1 point')
+        increment()
+      } else if(answer2 == correct){
+        alert('Correct you got 1 point')
+        increment()
+      } else if(answer3 == correct){
+        alert('Correct you got 1 point')
+        increment()
+      } 
+
 }
-     */
+
 
