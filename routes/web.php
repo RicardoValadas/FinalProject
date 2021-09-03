@@ -59,7 +59,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/editProfile/{id}', [UserController::class, 'update']);
 
     ###########  Route to delete the user profile (delete.blade.php in Views )  ###########
-                                ###########  Obsolete  ###########
+    ###########  Obsolete  ###########
     Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');
 
     Route::get('/editUsername/{id}', [UserController::class, 'meh'])->name('edit.username');
@@ -70,7 +70,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/editEmail/{id}', [UserController::class, 'email'])->name('edit.email');
     Route::post('/editEmail/{id}', [UserController::class, 'updateEmail']);
-       ##################################################################################
+    ##################################################################################
 }); # End of the middleware "auth" group function
 
 # :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
@@ -128,6 +128,7 @@ Route::middleware(['cors'])->group(function () {
     Route::post('/quiz', [QuizController::class, 'getQuiz']);
 });
 
+//email verification
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
@@ -146,47 +147,3 @@ Route::post('/email/verification-notification', function (Request $request) {
 
 
 //reset
-Route::get('/forgot-password', function () {
-    return view('auth.forgot-password');
-})->middleware('guest')->name('password.request');
-
-Route::post('/forgot-password', function (Request $request) {
-    $request->validate(['email' => 'required|email']);
-
-    $status = Password::sendResetLink(
-        $request->only('email')
-    );
-
-    return $status === Password::RESET_LINK_SENT
-        ? back()->with(['status' => __($status)])
-        : back()->withErrors(['email' => __($status)]);
-})->middleware('guest')->name('password.email');
-
-Route::get('/reset-password/{token}', function ($token) {
-    return view('auth.reset-password', ['token' => $token]);
-})->middleware('guest')->name('password.reset');
-
-Route::post('/reset-password', function (Request $request) {
-    $request->validate([
-        'token' => 'required',
-        'email' => 'required|email',
-        'password' => 'required|min:8|confirmed',
-    ]);
-
-    $status = Password::reset(
-        $request->only('email', 'password', 'password_confirmation', 'token'),
-        function ($user, $password) {
-            $user->forceFill([
-                'password' => Hash::make($password)
-            ])->setRememberToken(Str::random(60));
-
-            $user->save();
-
-            event(new PasswordReset($user));
-        }
-    );
-
-    return $status === Password::PASSWORD_RESET
-        ? redirect()->route('login')->with('status', __($status))
-        : back()->withErrors(['email' => [__($status)]]);
-})->middleware('guest')->name('password.update');
