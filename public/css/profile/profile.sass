@@ -64,6 +64,7 @@ body
     .buttons
         text-align: center
 
+/*show achivements!!!!!!!!!!!*/    
     #achi
         margin-top: 50px
 
@@ -79,24 +80,42 @@ body
             font-size: 15px
             margin-bottom: 5px
 
-        .achievments
-            display: none
-            article
-                width: 260px
-                height: 310px
-                background-color: #fff
-                border-radius: 20px
-                box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.671)
-                padding: 20px
-                margin: 10px
-                text-align: center
+.achievments
+    display: none
+
+article
+    width: auto
+    height: auto
+    background-color: #fff
+    border-radius: 20px
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.671)
+    padding: 20px
+    margin: 10px
+    text-align: center
                 /*The card is the reference point of the .sliding*/
-                position: relative
+    position: relative
                 /* I don't want to see elements flowing out of me*/
-                overflow: hidden
-                transition-duration: 0.4s
+    overflow: hidden
+    transition-duration: 0.4s
+
+    h3
+        font-size: 1.2em
+        margin-top: 5px
+        margin-bottom: 10px
+
         .achievments.visible
             display: block
+
+    /*medals!!!!!!!!!!*/
+
+    #participation
+        display: block
+    #bronze
+        display: block
+    #silver
+        display: block
+    #gold
+        display: block
 
 /* -------------------------------------------Desktop------------------ */    
 $breakpoint-desktop: 600px
@@ -104,7 +123,6 @@ $breakpoint-desktop: 600px
 
     main
         position: relative
-
         p
             font-size: 1.2em
 
@@ -131,3 +149,7 @@ $breakpoint-desktop: 600px
         top: 220px
         line-height: 10px
         padding-top: 12px
+
+    .participation
+        .medal
+            background-color: red

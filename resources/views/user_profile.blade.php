@@ -44,10 +44,27 @@
     </div>
     <section class="achievments">
         <!-- aqui vai ser necessario fazer clone dos trofeus.... usar ajax e clones....criar js file que contenha tudo-->
-        <article>
-            <img src="{{ asset('img/Profileex.png') }}" alt="imagem" height="50px">
-            <h7> <strong> Ran Achievement</strong></h7>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, in.</p>
+        <article class="medal" id="participation">
+            <img src="{{ asset('images/participation.png') }}" alt="participation" height="50px">
+            <h3> <strong>Participation Medal</strong></h3>
+            <p>You played the quiz!</p>
+        </article>
+        <article class="medal" id="bronze">
+            <img src="{{ asset('images/bronze.png') }}" alt="bronze" height="50px">
+            <h3> <strong>Bronze Medal</strong></h3>
+            <p>You surpassed the 10 points mark!</p>
+        </article>
+        <article class="medal" id="silver">
+            <img src="{{ asset('images/silver.png') }}" alt="silver" height="50px">
+            <h3> <strong>Silver</strong></h3>
+            <p>Congratulations! You surpassed the 30 points mark!</p>
+            <p>You are becoming an expert</p>
+        </article>
+        <article class="medal" id="gold">
+            <img src="{{ asset('images/gold.png') }}" alt="gold" height="50px">
+            <h3> <strong>Gold</strong></h3>
+            <p>Amazing! You've reached the 50 points mark!</p>
+            <p>You are a pro now!</p>
         </article>
     </section>
 </section>
