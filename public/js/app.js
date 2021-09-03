@@ -21047,6 +21047,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
+/***/ "./resources/css/app.css":
+/*!*******************************!*\
+  !*** ./resources/css/app.css ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./public/css/template/main.sass":
 /*!***************************************!*\
   !*** ./public/css/template/main.sass ***!
@@ -21096,10 +21109,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
+/***/ "./public/css/login_register/login_register.sass":
+/*!*******************************************************!*\
+  !*** ./public/css/login_register/login_register.sass ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -21414,10 +21427,11 @@ process.umask = function() { return 0; };
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"css/app": 0,
+/******/ 			"css/login_register/login_register": 0,
 /******/ 			"css/about/about": 0,
 /******/ 			"css/profile/profile": 0,
-/******/ 			"css/quiz/quiz": 0
+/******/ 			"css/quiz/quiz": 0,
+/******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -21467,12 +21481,13 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./public/css/template/main.sass")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./public/css/quiz/quiz.sass")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./public/css/profile/profile.sass")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./public/css/about/about.sass")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/login_register/login_register","css/about/about","css/profile/profile","css/quiz/quiz","css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/login_register/login_register","css/about/about","css/profile/profile","css/quiz/quiz","css/app"], () => (__webpack_require__("./public/css/template/main.sass")))
+/******/ 	__webpack_require__.O(undefined, ["css/login_register/login_register","css/about/about","css/profile/profile","css/quiz/quiz","css/app"], () => (__webpack_require__("./public/css/quiz/quiz.sass")))
+/******/ 	__webpack_require__.O(undefined, ["css/login_register/login_register","css/about/about","css/profile/profile","css/quiz/quiz","css/app"], () => (__webpack_require__("./public/css/profile/profile.sass")))
+/******/ 	__webpack_require__.O(undefined, ["css/login_register/login_register","css/about/about","css/profile/profile","css/quiz/quiz","css/app"], () => (__webpack_require__("./public/css/about/about.sass")))
+/******/ 	__webpack_require__.O(undefined, ["css/login_register/login_register","css/about/about","css/profile/profile","css/quiz/quiz","css/app"], () => (__webpack_require__("./public/css/login_register/login_register.sass")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/login_register/login_register","css/about/about","css/profile/profile","css/quiz/quiz","css/app"], () => (__webpack_require__("./resources/css/app.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
