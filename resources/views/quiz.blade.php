@@ -20,9 +20,6 @@
 @endsection
 
 
-
-
-
 {{-- script url --}}
 @section('script')
     <script src="{{ URL::asset('js/quiz/quiz.js') }}"></script>
