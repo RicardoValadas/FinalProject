@@ -49,6 +49,7 @@ class UserController extends Controller
                 $user->first_name=$request->first_name;
                 $user->last_name=$request->last_name;
                 $user->email=$request->email;
+                $user->password=$request->password;
                 $this->validate($request,[
                     'username'=> "required|unique:users,username,$id",
                     'email'=> "required|unique:users,email,$id",

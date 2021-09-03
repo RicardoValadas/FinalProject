@@ -24,8 +24,10 @@ class AdminController extends Controller
     public function showusers(){
         
         
+        $allusers = User::all();
         
-        return $this->users();
+        return $allusers;
+        //return $this->users();
         
         
     }
@@ -42,7 +44,8 @@ class AdminController extends Controller
     public function destroy($id){
         User::destroy($id);
         $allusers = User::all();
-        return view('adminPage',['allusers' => $allusers]);
+        return  $this->showusers();
+        //return view('adminPage',['allusers' => $allusers]);
     }
     
     public function displayEdit($id){
@@ -52,25 +55,26 @@ class AdminController extends Controller
     
     public function create(Request $request){
         $user = new User;
-        $user->name = $request->name;
-        $user->type=$request->type;
-        $user->username=$request->username;
         $user->first_name=$request->first_name;
         $user->last_name=$request->last_name;
+        $user->type=$request->type;
+        $user->username=$request->username;
         $user->email=$request->email;
         $user->password= Hash::make($request->password); 
         $user->save();
+        if($user->save()){
+            return  $this->showusers();
+        }else
+            return 'oriblem adding to db';
     }
     public function update(Request $request,$id){
-        $user = User::find($id);        
+        $user = User::find($request->id);        
         $user->first_name=$request->first_name;
         $user->last_name=$request->last_name;
         $user->username=$request->username;
         $user->email=$request->email;
         $user->type=$request->type;
-        $user->images='1630565986.jpg';
-        $user->created_at='2021-09-02 13:25:54';
-        $user->updated_at='2021-09-02 13:25:54';
+
         $user->password= Hash::make($request->password);    //hash and store the pass
         $this->validate($request,[
             'username'=> "required|unique:users,username,$id",
@@ -79,10 +83,16 @@ class AdminController extends Controller
             'last_name'=> 'required|min:3|max:15',
 
         ]);
+        
+
+
+
         $user->save();    
         
-        if($user->save())
-            return $this->users();
+        if($user->save()){
+           
+            return  $this->showusers();
+        }
         //return $this->displayAdmin();
         
     } 
