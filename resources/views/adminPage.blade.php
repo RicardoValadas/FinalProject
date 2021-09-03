@@ -11,27 +11,27 @@
 
 <section id="functions">
     <button id="showUsers"> display users</button>
-    <button> edit users</button>
-    <button> add users</button>
+    <button id="editUsers"> edit users</button>
+    <button id="addUsers" > add users</button>
     <button id="delete"> delete users</button>
+    <a href="{{ route('addPage')}}">add users</a>
 </section>
-
 <br><hr><br>
 
 <h2><strong>users </strong></h2>
   <section id="test">
         <p id="dani"></p>
           
-        @foreach ($allusers as $user)
-        
-                    <h1>{{ $user->username }}   |   {{ $user->first_name }}   |   {{ $user->last_name }}   |
-                           {{ $user->email }}     {{ $user->created_at }}    <button id="edit"><a href="{{ route('admineditpage', [$user->id]) }}">edit</a></button> 
-                           <button id="delete"><a href="{{ route('ADMdelete.user', [$user->id]) }}">delete</a></button></h1>  
-                           <hr>
-                           @endforeach
-</section>
-        
-<section class="info">
+    </section>
+    
+    @foreach ($allusers as $user)
+    
+                <h1>{{ $user->username }}   |   {{ $user->first_name }}   |   {{ $user->last_name }}   |
+                       {{ $user->email }}     {{ $user->created_at }}    <button id="edit"><a href="{{ route('admineditpage', [$user->id]) }}">edit</a></button> 
+                       <button id="delete"><a href="{{ route('ADMdelete.user', [$user->id]) }}">delete</a></button></h1>  
+                       <hr>
+                       @endforeach
+    <section class="info">
                        
                 
     
@@ -52,6 +52,7 @@
     </div>
 @endif
 <h1>edit</h1>
+<!--
 <input type="number" name="id" >
 
     <label for="username">username:</label>
@@ -61,7 +62,7 @@
     <input type="text" id="first_name" name="first_name" placeholder="first name" value="{{ $user->first_name }}" ><br>
     
     <label for="last_name">last name:</label>
-    <input type="text" id="last_name" name="last_name" placeholder="last name" value="{{ $user->last_name }}"><br><!--verificar como colocar os nomes junto do old(...-->
+    <input type="text" id="last_name" name="last_name" placeholder="last name" value="{{ $user->last_name }}"><br>
     
     <label for="email">email:</label>
     <input type="text" id="email" name="email" placeholder="email" value="{{ $user->email }}"><br>
@@ -99,7 +100,7 @@
                 <input type="text" id="first_name1" name="first_name" placeholder="first name" value="" ><br>
                 
                 <label for="last_name1">last name:</label>
-                <input type="text" id="last_name1" name="last_name" placeholder="last name" value=""><br><!--verificar como colocar os nomes junto do old(...-->
+                <input type="text" id="last_name1" name="last_name" placeholder="last name" value=""><br>
                 
                 <label for="email1">email:</label>
                 <input type="text" id="email1" name="email" placeholder="email" value=""><br>
@@ -120,7 +121,7 @@
                 <input type="submit">
         </form>
     </section>
-
+    -->
     <section id="deleteSection">
         <h1>Delete users</h1>
 
@@ -136,7 +137,7 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
         <script>
-
+/*
             //ajax for the first form
              $(function() {
             
@@ -153,8 +154,8 @@
                         for (let i = 0; i < result.length; i++) {
                            console.log(result[i].id + '  |  '+ result[i].username + '  |  ' + result[i].first_name +'  |  ' + result[i].last_name +'  |  ' + result[i].email +'  |  ' + result[i].type);
                            $('#test').append('<h1>'+result[i].id + '  |  '+ result[i].username + '  |  ' + result[i].first_name +'  |  ' + result[i].last_name +'  |  ' + result[i].email +'  |  ' + result[i].type+'</h1>');
-                            
                         }
+
                 })
                 .fail(function(result) {
                         console.log(result.responseJSON.message);
@@ -162,7 +163,7 @@
                             console.log(result);
                     })
                 });
-             });
+             });*/
 //-----------------------------------------------------//
             //ajax for the second form//
             $(function() {
@@ -215,14 +216,14 @@
                        //console.log(JSON.stringify(users["username"]));
                        //console.log(users);
                       
-                       for (let i = 0; i < result.length; i++) {
+                       /*for (let i = 0; i < result.length; i++) {
                            //console.log(result[i].id + '  |  '+ result[i].username + '  |  ' + result[i].first_name +'  |  ' + result[i].last_name +'  |  ' + result[i].email +'  |  ' + result[i].type);
                            $('#test').append('<h1>'+result[i].id + '  |  '+ result[i].username + '  |  ' + result[i].first_name +'  |  ' + result[i].last_name +'  |  ' + result[i].email +'  |  ' + result[i].type+'</h1>');
-                        }
+                        }*/
                         for (let i = 0; i < result.length; i++) {
                              //console.log(result[i].id + '  |  '+ result[i].username + '  |  ' + result[i].first_name +'  |  ' + result[i].last_name +'  |  ' + result[i].email +'  |  ' + result[i].type);
-                             $('#deleteSection').append('<h1>'+result[i].id + '  |  '+ result[i].username + '  |  ' + result[i].first_name +'  |  ' + result[i].last_name +'  |  ' + result[i].email +'  |  ' + result[i].type+'</h1> ');
-                             $('#deleteSection').append('<span><a href="/delete/'+result[i].id+'"> Delete</a></span>');
+                             //$('#deleteSection').append('<h1>'+result[i].id + '  |  '+ result[i].username + '  |  ' + result[i].first_name +'  |  ' + result[i].last_name +'  |  ' + result[i].email +'  |  ' + result[i].type+'</h1> ');
+                             //$('#deleteSection').append('<span><a href="/delete/'+result[i].id+'"> Delete</a></span>');
                             }
                })
                .fail(function(result) {
@@ -253,8 +254,8 @@
                         }
                          for (let i = 0; i < result.length; i++) {
                              //console.log(result[i].id + '  |  '+ result[i].username + '  |  ' + result[i].first_name +'  |  ' + result[i].last_name +'  |  ' + result[i].email +'  |  ' + result[i].type);
-                             $('#deleteSection').append('<h1>'+result[i].id + '  |  '+ result[i].username + '  |  ' + result[i].first_name +'  |  ' + result[i].last_name +'  |  ' + result[i].email +'  |  ' + result[i].type+'</h1> ');
-                             $('#deleteSection').append('<span><a href="/delete/'+result[i].id+'"> Delete</a></span>');
+                             //$('#deleteSection').append('<h1>'+result[i].id + '  |  '+ result[i].username + '  |  ' + result[i].first_name +'  |  ' + result[i].last_name +'  |  ' + result[i].email +'  |  ' + result[i].type+'</h1> ');
+                             //$('#deleteSection').append('<span><a href="/delete/'+result[i].id+'"> Delete</a></span>');
                             }
 
                             

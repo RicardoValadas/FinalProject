@@ -1,15 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
-use Symfony\Component\HttpFoundation\Request;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChangePasswordController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\Auth\NewPasswordController;
+use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Str;
+use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate in the web.php for the routes
-
+use Illuminate\Http\Request;
 #use App\Http\Middleware\IsAdminMiddleware;
 use App\Http\Controllers\UserController;
 
@@ -111,9 +117,10 @@ Route::get('/displayusers', [AdminController::class, 'showusers'])->name('getuse
 
 //to add
 Route::post('/adduser', [AdminController::class, 'create'])->name('create.in.admin');
-
-
+Route::get('/adminADD', [AdminController::class, 'add'])->name('addPage');
 ###################################################################################################
+
+
 
 //CORS
 Route::middleware(['cors'])->group(function () {

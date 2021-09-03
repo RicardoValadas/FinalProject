@@ -28,7 +28,7 @@
         <ul>
             <li><a href="{{ route('edit.user', [$user->id]) }}">Edit Profile</a></li>
             <li><a href="{{ route('change.password', [$user->id]) }}">Change Password</a></li>
-            <li><a href="{{ route('admineditpage', [$user->id]) }}">Delete Account</a></li>
+            <li><a href="{{ route('delete.user', [$user->id]) }}">Delete Account</a></li>
         </ul>
     </div>
 

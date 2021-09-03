@@ -28,8 +28,10 @@ class AdminController extends Controller
         
         return $allusers;
         //return $this->users();
+    }
+    public function add(){
         
-        
+        return view('adminAddUser');
     }
     
     public function users(){
@@ -44,8 +46,8 @@ class AdminController extends Controller
     public function destroy($id){
         User::destroy($id);
         $allusers = User::all();
-        return  $this->showusers();
-        //return view('adminPage',['allusers' => $allusers]);
+        
+        return redirect('adminpage');
     }
     
     public function displayEdit($id){
@@ -61,11 +63,15 @@ class AdminController extends Controller
         $user->username=$request->username;
         $user->email=$request->email;
         $user->password= Hash::make($request->password); 
+        $this->validate($request,[
+            'username'=> "required|unique:users,username",
+            'email'=> "required|unique:users,email",
+            'first_name'=> 'required|min:3|max:15',
+            'last_name'=> 'required|min:3|max:15',
+
+        ]);
         $user->save();
-        if($user->save()){
-            return  $this->showusers();
-        }else
-            return 'oriblem adding to db';
+        return redirect('adminpage');
     }
     public function update(Request $request,$id){
         $user = User::find($request->id);        
@@ -89,10 +95,10 @@ class AdminController extends Controller
 
         $user->save();    
         
-        if($user->save()){
+   
            
-            return  $this->showusers();
-        }
+        return redirect('adminpage');
+        
         //return $this->displayAdmin();
         
     } 
