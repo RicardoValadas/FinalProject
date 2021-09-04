@@ -22,7 +22,7 @@
         <div class="col head2">
             <article id="art1"> <!-- Article 1 with images -->
                 <h3 class="heading-tertiary2">How to protect young kids from inappropriate Internet</h3><br>
-                <img id="imgart1" src="{{ asset('home_images/leon-seibert-2m71l9fA6mg-unsplash.jpg') }}" alt=""><br><br>
+                <img id="imgart1" src="{{ asset('home_images/kidandparents.jpg') }}" alt=""><br><br>
                 <p class="paragraph1">
                     Setting strict rules for your young children's Internet adventures protects them from inappropriate content, cyberbullies, identity thieves and child predators. Installing popup blockers and reminding your little one to never, ever give out her real name, age, or address online is a solid start.
                 </p><br><br>
@@ -32,9 +32,9 @@
         </div>
 <!-- Article 2 with images -->
         <div class="col head3">
-            <article id=""art2>
+            <article id="art2">
             <h3 class="heading-tertiary3">Prevention of phishing attack</h3><br>
-                <img id="imgart2" src="{{ asset('home_images/max-bender-XIVDN9cxOVc-unsplash.jpg') }}" alt=""><br><br>
+                <img id="imgart2" src="{{ asset('home_images/thisisengineering-raeng-8hgmG03spF4-unsplash.jpg') }}" alt=""><br><br>
                     <p class="paragraph2">
                         Use anti-phishing protection and anti-spam software to protect yourself when malicious messages slip through to your computer. Anti-malware is included to prevent other types of threats. Similar to anti-spam software, anti-malware software is programmed by security researchers to spot even the stealthiest malware.
                     </p><br><br>
@@ -58,7 +58,7 @@
     <div class="col head4">
         <article id="art3">
             <h3 class="heading-tertiary4">Teach them to keep private their personal informations</h3><br>
-            <img id="imgart3" src="{{ asset('home_images/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg') }}" alt=""><br><br>
+            <img id="imgart3" src="{{ asset('home_images/max-bender-XIVDN9cxOVc-unsplash.jpg') }}" alt=""><br><br>
                 <p class="paragraph3">
                     Always insist that your kids never reveal their real names (first, last, or imaginary) or where they live, go to school, hang out or play. The same rule goes for any other personal and confidential information. Repeat this rule often until they say it in their sleep, even if they kick and scream and roll their eyes. While you're at it, tell them not to share your personal information or their siblings', either.
                 </p><br>
@@ -89,7 +89,7 @@
         <div class="col head6">
 
             <h3 class="heading-tertiary6">Take advantage of your browser's parental controls</h3><br><br>
-            <img id="imgart5" src="{{ asset('home_images/thisisengineering-raeng-8hgmG03spF4-unsplash.jpg') }}" alt=""><br><br>
+            <img id="imgart5" src="{{ asset('home_images/170908-online-child-safety-767x438@2x.jpg') }}" alt=""><br><br>
             <p class="paragraph5">
                 The majority of Internet browsers (including Mozilla Firefox, Google Chrome, Safari and many others) have an Internet options folder where you can easily set up security safeguards and content filters for language, nudity, sex, and violence. Or skip the filter fiddling and only allow your kids to use squeaky clean browsers created just for kids.
             </p><br>
@@ -106,7 +106,7 @@
 
         <div class="col head7">
             <h3 class="heading-tertiary7">Talk openly with your child about their online activity </h3><br>
-            <img id="imgart6" src="{{ asset('home_images/thisisengineering-raeng-8hgmG03spF4-unsplash.jpg') }}" alt=""><br><br>
+            <img id="imgart6" src="{{ asset('home_images/girlandpc.jpg') }}" alt=""><br><br>
             <p class="paragraph6">
                 As soon as your child starts accessing the internet, talk to them about what they are reading, watching and who they are communicating with online – and keep the conversation going as they grow older. Ask your child what sites they visit or apps they use, write a list, and look at them together. Talk to your child about what you think is appropriate, and remind them that this may be different for other parents and their children.
             </p><br>
