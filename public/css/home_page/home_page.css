@@ -63,6 +63,8 @@ h2
     background: url('../../home_images/fly-d-zAhAUSdRLJ8-unsplash.jpg') no-repeat 50% 50%/auto 600px;
     height: 200px;
     background-attachment: fixed;
+    background-color: #264653;
+    border-radius: 5px;
 }
 /* Second  Image */
 #imghome2
@@ -70,6 +72,8 @@ h2
     background: url('../../home_images/max-bender-XIVDN9cxOVc-unsplash.jpg') no-repeat 50% 50%/auto 600px;
     height: 200px;
     background-attachment: fixed;
+    background-color: #f4a261;
+    border-radius: 5px;
 }
 
 #imgart1
