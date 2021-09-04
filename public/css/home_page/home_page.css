@@ -60,19 +60,17 @@ h2
 /*  background image with paralax effect */
 #imghead
 {
-    background: url('../../home_images/fly-d-zAhAUSdRLJ8-unsplash.jpg') no-repeat 50% 50%/auto 600px;
+    background: url('../../home_images/fly-d-zAhAUSdRLJ8-unsplash.jpg') no-repeat 50% 50%/auto 580px;
     height: 200px;
     background-attachment: fixed;
-    background-color: #264653;
     border-radius: 5px;
 }
 /* Second  Image */
 #imghome2
 {
-    background: url('../../home_images/max-bender-XIVDN9cxOVc-unsplash.jpg') no-repeat 50% 50%/auto 600px;
+    background: url('../../home_images/max-bender-XIVDN9cxOVc-unsplash.jpg') no-repeat 50% 50%/auto 580px;
     height: 200px;
     background-attachment: fixed;
-    background-color: #f4a261;
     border-radius: 5px;
 }
 
@@ -123,16 +121,16 @@ h2
 .buttons, #btnprot, #btnphis, #callQ,
 #call1, #call2, #call3, #call4
  {
-    text-align: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+
+    display: flex;
+    justify-content: center;
     align-items: center;
     background-color: #f4a261;
+    text-align: center;
     width: 200px;
     padding: 5px;
     margin-bottom: 20px;
     border-radius: 5px;
-    justify-content: center;
     text-transform: uppercase;
   }
 
@@ -339,15 +337,16 @@ h3
 
 #imghead
 {
-    background-size: auto 900px;
-    height: 600px;
+    background-size: 1080px;
+    height: 1200px;
     border-radius: 10px;
     margin: auto;
+
 }
 
 #imghome2
 {
-    background-size: auto 900px;
+    background-size: auto 1080px;
     height: 600px;
     border-radius: 10px;
     margin: auto;
