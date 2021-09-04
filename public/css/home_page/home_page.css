@@ -286,11 +286,16 @@ h1
 }
 h2
 {
+    padding: auto;
     font-size: 2.5em;
 }
 h3
 {
-    font-size: 2em;
+    font-size: 20PX;
+}
+p
+{
+font-size: 18px;
 }
 
 #imghead

@@ -10,11 +10,11 @@
 
     <h2 class="heading-secondary">
         Is where you learn how to protect your kids on the web
-    </h2><br><br><br>
+    </h2><br><br>
     <!--    ***  first image  ***    -->
     <section id="imghead">
         {{-- <img id="imghome1" src="{{ asset('home_images/kidandparents.jpg') }}" alt=""> --}}
-    </section><br>
+    </section><br><br>
 
  <!--    ***  First Section   ***    -->
 <section id="firstSec">
@@ -22,7 +22,7 @@
         <div class="col head2">
             <article id="art1"> <!-- Article 1 with images -->
                 <h3 class="heading-tertiary2">How to protect young kids from inappropriate Internet</h3><br>
-                <img id="imgart1" src="{{ asset('home_images/kidandparents.jpg') }}" alt=""><br><br>
+                <img id="imgart1" src="{{ asset('home_images/leon-seibert-2m71l9fA6mg-unsplash.jpg') }}" alt=""><br><br>
                 <p class="paragraph1">
                     Setting strict rules for your young children's Internet adventures protects them from inappropriate content, cyberbullies, identity thieves and child predators. Installing popup blockers and reminding your little one to never, ever give out her real name, age, or address online is a solid start.
                 </p><br><br>
@@ -88,7 +88,7 @@
         </div>
         <div class="col head6">
 
-            <h3 class="heading-tertiary6">Take advantage of your browser's parental controls</h3><br><br>
+            <h3 class="heading-tertiary6">Take advantage of your browser's parental controls</h3><br>
             <img id="imgart5" src="{{ asset('home_images/170908-online-child-safety-767x438@2x.jpg') }}" alt=""><br><br>
             <p class="paragraph5">
                 The majority of Internet browsers (including Mozilla Firefox, Google Chrome, Safari and many others) have an Internet options folder where you can easily set up security safeguards and content filters for language, nudity, sex, and violence. Or skip the filter fiddling and only allow your kids to use squeaky clean browsers created just for kids.
@@ -96,7 +96,7 @@
             <p class="paragraph5">
                 Innocent searches online can lead to not-so-innocent results, so it’s wise to know how to use the parental controls/search restrictions offered by web browsers, internet service provider and devices. For example, the SafeSearch Filters feature on Google will block sites with explicit sexual material. To turn it on, go to Settings/SafeSearch Filters. Although not 100 per cent accurate, parental controls can help prevent your child from seeing and accessing most violent or sexual material. Paid for security tools and features will offer extra protection and control.
             </p><br>
-            <button id="call2"><a href="#">How to set up a parental control</a></button>
+            <button id="call2"><a href="#">Set up a parental control</a></button>
         </div>
     </div><br><br><br>
     <section id="imghome2">
