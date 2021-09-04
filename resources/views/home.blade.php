@@ -14,7 +14,7 @@
     <!--    ***  first image  ***    -->
     <section id="imghead">
         {{-- <img id="imghome1" src="{{ asset('home_images/kidandparents.jpg') }}" alt=""> --}}
-    </section><br><br><br>
+    </section>
 
  <!--    ***  First Section   ***    -->
 <section id="firstSec">
@@ -22,7 +22,7 @@
         <div class="col head2">
             <article id="art1"> <!-- Article 1 with images -->
                 <h3 class="heading-tertiary2">How to protect young kids from inappropriate Internet</h3><br>
-                <img id="imgart1" src="{{ asset('home_images/fly-d-zAhAUSdRLJ8-unsplash.jpg') }}" alt=""><br><br>
+                <img id="imgart1" src="{{ asset('home_images/leon-seibert-2m71l9fA6mg-unsplash.jpg') }}" alt=""><br><br>
                 <p class="paragraph1">
                     Setting strict rules for your young children's Internet adventures protects them from inappropriate content, cyberbullies, identity thieves and child predators. Installing popup blockers and reminding your little one to never, ever give out her real name, age, or address online is a solid start.
                 </p><br><br>
@@ -57,8 +57,8 @@
 
     <div class="col head4">
         <article id="art3">
-            <h3 class="heading-tertiary4">Teach them to keep private info private</h3><br>
-            <img id="imgart3" src="{{ asset('home_images/nahel-abdul-hadi-flha0KwRrRc-unsplash.jpg') }}" alt=""><br><br>
+            <h3 class="heading-tertiary4">Teach them to keep private their personal info </h3><br>
+            <img id="imgart3" src="{{ asset('home_images/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg') }}" alt=""><br><br>
                 <p class="paragraph3">
                     Always insist that your kids never reveal their real names (first, last, or imaginary) or where they live, go to school, hang out or play. The same rule goes for any other personal and confidential information. Repeat this rule often until they say it in their sleep, even if they kick and scream and roll their eyes. While you're at it, tell them not to share your personal information or their siblings', either.
                 </p><br>
@@ -74,6 +74,7 @@
     <div class="row cont2">
         <div class="col head5">
             <h3 class="heading-tertiary5">Know who your children’s online friends are</h3><br>
+            <img id="imgart4" src="{{ asset('home_images/nahel-abdul-hadi-flha0KwRrRc-unsplash.jpg') }}" alt=""><br><br>
             <p class="paragraph4">
                 As adults, we know that some people online aren’t who they say they are, but children and young people can be alarming naïve about who they are chatting with if they are not taught to be cyber wise from an early age.
             </p><br>
@@ -87,7 +88,8 @@
         </div>
         <div class="col head6">
 
-            <h3 class="heading-tertiary6">Take advantage of your browser's parental controls</h3><br>
+            <h3 class="heading-tertiary6">Take advantage of your browser's parental controls</h3><br><br>
+            <img id="imgart5" src="{{ asset('home_images/thisisengineering-raeng-8hgmG03spF4-unsplash.jpg') }}" alt=""><br><br>
             <p class="paragraph5">
                 The majority of Internet browsers (including Mozilla Firefox, Google Chrome, Safari and many others) have an Internet options folder where you can easily set up security safeguards and content filters for language, nudity, sex, and violence. Or skip the filter fiddling and only allow your kids to use squeaky clean browsers created just for kids.
             </p><br>
@@ -97,10 +99,9 @@
             <button id="call2"><a href="#">How to set up a parental control</a></button>
         </div>
     </div><br><br><br>
-
-    <div class=imghead>
-        <img id="imghome2" src="{{ asset('home_images/max-bender-XIVDN9cxOVc-unsplash.jpg') }}" alt="">
-    </div><br><br>
+    <section id="imghome2">
+        {{-- <img id="imghome1" src="{{ asset('home_images/kidandparents.jpg') }}" alt=""> --}}
+    </section>
     <div class="row cont3">
 
         <div class="col head7">
