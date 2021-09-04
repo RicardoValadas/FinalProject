@@ -84,7 +84,7 @@ $(document).ready(function() {
                    .done(function(result) {
                       // $('#test').html(result);
                       console.log(result.admin);
-                      const admin =result.admin
+                      let admin =result.admin
 
                       if (admin===1) {
                         $('#Blist').append("<li id=><a href=" + "{{ route('admin.page')}}" + ">admin dashboard</a></li>");
@@ -96,12 +96,12 @@ $(document).ready(function() {
                    })
                });
 </script>
+<script src="{{ URL::asset('js/profile/profile.js') }}"></script>
 @endsection
 @yield('script')
-<script src="{{ URL::asset('js/profilejs/profile.js') }}"></script>
+
 
 
 
 @section('script')
-<script src="{{ URL::asset('js/profile/profile.js') }}"></script>
 @endsection
