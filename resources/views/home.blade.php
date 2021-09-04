@@ -116,6 +116,7 @@
             <p class="paragraph6">
                 Listen to your child and reach an agreement about what is right for your family. Remember the time will come when they will access the internet outside the safety of home and you want them to be prepared for that.
             </p><br><br>
+            <button id="call3"><a href="#">Online activity</a></button>
         </div>
         <div class="col head8">
             <h3 class="heading-tertiary8">Keep control of your family’s digital footprint </h3><br>
@@ -126,7 +127,8 @@
             </p><br>
             <p class="paragraph7">
                 Teach your child to stay in control of their digital footprint, by only sharing with people who they know and trust. Rather than posting to all their friends on social media, encourage them to be selective and use the privacy settings on the social media platforms they use.
-            </p><br>
+            </p><br><br>
+            <button id="call4"><a href="#">More about vpn</a></button>
         </div>
 </section>
 @endsection
