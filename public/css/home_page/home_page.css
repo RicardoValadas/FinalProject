@@ -60,7 +60,7 @@ h2
 /*  background image with paralax effect */
 #imghead
 {
-    background: url('../../home_images/fly-d-zAhAUSdRLJ8-unsplash.jpg') no-repeat 50% 50%/auto 580px;
+    background: url('../../home_images/kidandparents.jpg') no-repeat 50% 50%/auto 580px;
     height: 200px;
     background-attachment: fixed;
     border-radius: 5px;
@@ -121,7 +121,6 @@ h2
 .buttons, #btnprot, #btnphis, #callQ,
 #call1, #call2, #call3, #call4
  {
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,7 +147,7 @@ h2
 
 .cont2
 {
-    background-image: linear-gradient(to bottom right, #2a9d8f, #2a9d8f);
+    background-image: linear-gradient(to bottom right, #2a9d8f, #e76f51);
     margin: auto;
     height: 100%;
     padding-top: 20px;
@@ -158,7 +157,12 @@ h2
 }
 
 /* #####################  HEADINGS , SECTIONS AND PARAGRAPHS #################### */
-.heading-tertiary2 , .heading-tertiary3
+
+/* Headings */
+.heading-tertiary2 , .heading-tertiary3,
+.heading-tertiary4 , .heading-tertiary5,
+.heading-tertiary6 , .heading-tertiary7,
+.heading-tertiary8 , .heading-tertiary9
 {
     font-size: 1.5em;
     font-weight: bold;
@@ -172,45 +176,10 @@ h2
 p
 {
     text-align: center;
+    font-size: 1,5 rem;
     padding-bottom: -10px;
     padding-top: -20px;
 }
-
-.heading-tertiary4 , .heading-tertiary5
-{
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.heading-tertiary6 , .heading-tertiary7
-{
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.heading-tertiary8 , .heading-tertiary9
-{
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-#secondSec
-{
-padding-top: 10px;
-padding-bottom: 10px;
-gap: 30px;
-justify-content:space-between;
-}
-
 
 /* -------------------------   Tablet       ------------------ */
 @media (min-width: 600px) {
@@ -296,28 +265,17 @@ margin-right: auto;
     margin: auto;
 }
 
-/* heading - tertiary */
-.heading-tertiary4 , .heading-tertiary5
-{
-    display: flexbox;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-}
 
 }
 
 /* -------------------------   Desktop      ------------------ */
 @media (min-width: 1080px) {
 
-    .container
-    {
-    width: 1080px;
-    }
-    .row
+.container
+{
+width: 1080px;
+}
+.row
 {
     display: flex;
     flex-direction: row;
@@ -337,8 +295,8 @@ h3
 
 #imghead
 {
-    background-size: 1080px;
-    height: 1200px;
+    background-size: 1500px;
+    height: 600px;
     border-radius: 10px;
     margin: auto;
 
@@ -346,7 +304,7 @@ h3
 
 #imghome2
 {
-    background-size: auto 1080px;
+    background-size: 1500px;
     height: 600px;
     border-radius: 10px;
     margin: auto;
@@ -407,18 +365,5 @@ h3
     border-radius: 10px;
     margin: auto;
 }
-
-/* heading - tertiary */
-.heading-tertiary4 , .heading-tertiary5
-{
-    display: flexbox;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-
-}
-
 
 }
