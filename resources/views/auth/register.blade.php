@@ -9,7 +9,7 @@
         <img src="{{ asset('images/logo.png') }}" alt="">
 
         <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <x-auth-validation-errors class="flex justify-center mb-4" :errors="$errors" />
 
         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
             @csrf

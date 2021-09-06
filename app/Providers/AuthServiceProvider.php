@@ -27,9 +27,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         VerifyEmail::toMailUsing(function ($notifiable, $url) {
             return (new MailMessage)
-                ->subject('Do you want to be rich?')
-                ->line('Please click here to get money')
-                ->action('Not a Virus', $url);
+                ->subject('Safe4Net Email Verification')
+                ->line('This email was sent to you by the Safe4Net team to confirm your email adress')
+                ->action('Click Here', $url);
         });
 
         //

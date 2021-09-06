@@ -6,8 +6,16 @@
 }
 
 body {
-  background-color: #2a9d8f;
-  font-family: 'Ubuntu', sans-serif;
+  background: hsla(173, 58%, 39%, 1);
+
+background: linear-gradient(225deg, hsla(173, 58%, 39%, 0.8) 48%, hsla(43, 74%, 66%, 1) 48%);
+
+background: -moz-linear-gradient(225deg, hsla(173, 58%, 39%, 0.8) 48%, hsla(43, 74%, 66%, 1) 48%);
+
+background: -webkit-linear-gradient(225deg, hsla(173, 58%, 39%, 0.8) 48%, hsla(43, 74%, 66%, 1) 48%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2A9D8F", endColorstr="#E9C46A", GradientType=1 );
+  font-family: "Ubuntu", sans-serif;
 }
 
 header {
@@ -16,15 +24,16 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 10px;
   margin: -16px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+      rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 header nav {
@@ -37,7 +46,7 @@ header nav {
 }
 
 header nav .logo {
-  width: 100px;
+  width: 120px;
 }
 
 .username {
@@ -48,23 +57,28 @@ header nav .logo {
 .dropdownRes {
   position: relative;
   color: #fff;
-  background-color: #fff;
+  background-color: #e76f51;
 }
 
 .contentDropdownLayoutRes {
   position: absolute;
   display: none;
-  height: 210px;
-  width: 87px;
+  height: 220px;
+  width: 95px;
   padding: 10px;
+  top: 41px;
   left: 5px;
+  border-radius: 5px;
+  color: #e76f51;
   background-color: #fff;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .contentDropdownLinksRes {
   font-size: 18px;
+  display: flex;
+  flex-direction: column;
 }
 
 .contentDropdownLinksRes:hover {
@@ -119,8 +133,9 @@ header nav .logo {
 
 main {
   width: 300px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-          box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 15px -3px,
+   rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   padding: 10px;
   margin: 60px auto;
   background-color: #fff;
@@ -156,11 +171,11 @@ main {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
   }
   .dropButton {
     display: -webkit-box;

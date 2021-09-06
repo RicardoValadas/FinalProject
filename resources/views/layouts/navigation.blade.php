@@ -6,10 +6,10 @@
         <ul class="desktop">
             {{-- Nav Links desktop --}}
             <li><a href="{{ route('home') }}">Home</a></li>
-            <li><a href="{{ route('about') }}">About</a></li>
-            <li><a href="{{ route('contact') }}">Contact</a></li>
             <li><a href="{{ route('tutorials') }}">Tutorials</a></li>
             <li><a href="{{ route('quiz') }}">Quiz</a></li>
+            <li><a href="{{ route('about') }}">About</a></li>
+            <li><a href="{{ route('contact') }}">Contact</a></li>
         </ul>
     </nav>
 
@@ -61,10 +61,10 @@
 
             <div class="contentDropdownLinksRes">
                 <a href="{{ route('home') }}">Home</a>
-                <a href="{{ route('about') }}">About</a>
-                <a href="{{ route('contact') }}">Contact</a>
                 <a href="{{ route('tutorials') }}">Tutorials</a>
                 <a href="{{ route('quiz') }}">Quiz</a>
+                <a href="{{ route('about') }}">About</a>
+                <a href="{{ route('contact') }}">Contact</a>
                 @if (Auth::user() == true)
                 <a href="{{ route('profile') }}">Profile</a>
 

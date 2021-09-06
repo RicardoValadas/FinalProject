@@ -108,7 +108,7 @@ function gameShow() {
       restart.classList.add('show')
       let view = document.querySelector('#questionsView')
       view.classList.toggle('questionsViewShow')
-      ssubmit.classList.remove('hide')
+      submit.classList.remove('hide')
       submit.classList.add('show')
     }
   

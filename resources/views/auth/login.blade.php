@@ -9,10 +9,10 @@
         <div>
 
             <!-- Session Status -->
-            <x-auth-session-status class="mb-4" :status="session('status')" />
+            <x-auth-session-status class="flex justify-center mb-4" :status="session('status')" />
 
             <!-- Validation Errors -->
-            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+            <x-auth-validation-errors class="flex justify-center mb-4" :errors="$errors" />
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf
@@ -21,7 +21,7 @@
                 <div>
                     <x-label for="email" class="labelMob" :value="__('Email')" />
 
-                    <x-input id="email" class="block mt-1 w-full InputMob" type="email" name="email" :value="old('email')"
+                    <x-input id="email" class="block mt-1 w-full  InputMob" type="email" name="email" :value="old('email')"
                         required autofocus />
                 </div>
 
