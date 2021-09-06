@@ -1,24 +1,28 @@
 .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
+
 .logo img {
   width: 300px;
-  transition: 1s;
   margin: -40px;
-}
-.logo img:hover {
-  transform: scale(130%);
 }
 
 .InputMob {
-  color: white;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
+
 .InputMob:focus {
-  background-color: #E76F51;
-  transform: scale(105%);
+  background-color: #ff914d;
+  -webkit-transform: scale(105%);
+          transform: scale(105%);
 }
 
 .labelMob {
@@ -26,5 +30,158 @@
   font-size: 20px;
   padding: 4px;
   margin: 10px;
-  border-bottom: 1px solid black;
+  color: black;
 }
+
+.containerLog {
+  margin: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 10px;
+}
+
+.containerLog .buttonLog {
+  text-align: center;
+  width: 200px;
+  padding: 6px;
+  background-color: #ff914d;
+  border-radius: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: black;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.containerLog .buttonLog:hover {
+  background-color: #e8c468;
+}
+
+.containerLog .forgotPassword {
+  color: black;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.containerLog .forgotPassword:hover {
+  text-decoration: underline;
+  -webkit-transform: scale(105%);
+          transform: scale(105%);
+  color: #ff914d;
+}
+
+.checkbox {
+  color: #ff914d;
+}
+
+.rememberText {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.rememberText:hover {
+  color: #ff914d;
+  -webkit-transform: scale(105%);
+          transform: scale(105%);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.alreadyRegister {
+  color: black;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.alreadyRegister:hover {
+  text-decoration: underline;
+  -webkit-transform: scale(105%);
+          transform: scale(105%);
+  color: #ff914d;
+}
+
+.buttonReg {
+  text-align: center;
+  width: 150px;
+  padding: 6px;
+  background-color: #ff914d;
+  border-radius: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: black;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.buttonReg:hover {
+  background-color: #e8c468;
+}
+
+.uploadImg {
+  display: inline-block;
+  padding-top: 15px;
+}
+
+.uploadImg .browse {
+  padding: 5px;
+  border: 1px solid #878282;
+  border-radius: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.uploadImg .browse:hover {
+  background-color: #ff914d;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.uploadContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (min-width: 600px) {
+  .logo {
+    display: block;
+  }
+  .logo img {
+    width: 500px;
+    margin: -170px auto;
+  }
+  .InputMob {
+    width: auto;
+    margin: auto;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  .InputMob:focus {
+    -webkit-transform: scaleX(115%);
+            transform: scaleX(115%);
+  }
+  .checkContainer {
+    text-align: center;
+  }
+  .alreadyRegister {
+    margin: 0 10px;
+  }
+}
+/*# sourceMappingURL=login_register.css.map */

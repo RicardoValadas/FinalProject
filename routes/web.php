@@ -36,12 +36,12 @@ use App\Http\Controllers\UserController;
 Route::middleware(['auth'])->group(function () {
 
 
-
     ###########  Route for the home page (home.blade.php in viwes)  ###########
     Route::get('/home', [MainController::class, 'home'])->name('home');
 
     ###########  Route for the quiz page (quiz.blade.php in viwes)  ###########
     Route::get('/quiz', [QuizController::class, 'getQuiz'])->name('quiz');
+    Route::post('/quiz', [QuizController::class, 'addScore'])->name('score');
 
     ###########  Route for the quiz !!!!Test json!!!! page (quiz.blade.php in viwes)  ###########
     Route::get('/quizTest', [QuizController::class, 'getQuestion'])->name('quizTest');
