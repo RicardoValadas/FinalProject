@@ -29,4 +29,9 @@ class MainController extends Controller
     {
         return view('welcome');
     }
+
+    public function tutorials()
+    {
+        return view('tutorials');
+    }
 }

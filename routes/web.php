@@ -99,6 +99,8 @@ Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
 
+###########  Route for the Tutorilas page (tutorials.blade.php in Views )  ###########
+Route::get('/tutorials', [MainController::class, 'tutorials'])->name('tutorials');
 
 
 
