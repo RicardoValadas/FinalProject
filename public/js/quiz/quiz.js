@@ -1,5 +1,6 @@
 let score = 0
 let limit = 0
+let submit = document.querySelector('#submit')
 
 //Store start variable for button
 const start = document.querySelector('.start');
@@ -65,8 +66,6 @@ function gameShow() {
   start.classList.add('questionsViewHide')
 }
  
-
-
   let button1 = document.querySelector('.answer')
   button1.addEventListener('click', function(event){
     event.preventDefault()
@@ -74,7 +73,6 @@ function gameShow() {
     sessionStorage.setItem("answer1",buttonValue1)
     let correctAnswer = sessionStorage.getItem('correct')
     if(buttonValue1 == correctAnswer){
-      alert('Correct you got 1 point')
       score++
     } 
     document.querySelector('.score').innerHTML = score
@@ -86,6 +84,8 @@ function gameShow() {
       restart.classList.add('show')
       let view = document.querySelector('#questionsView')
       view.classList.toggle('questionsViewShow')
+      submit.classList.remove('hide')
+      submit.classList.add('show')
     }
   
     begin()
@@ -97,7 +97,6 @@ function gameShow() {
     let buttonValue2 = button2.innerHTML
     let correctAnswer = sessionStorage.getItem('correct')
     if(buttonValue2 == correctAnswer){
-      alert('Correct you got 1 point')
       score++
     }
     document.querySelector('.score').innerHTML = score
@@ -109,6 +108,8 @@ function gameShow() {
       restart.classList.add('show')
       let view = document.querySelector('#questionsView')
       view.classList.toggle('questionsViewShow')
+      ssubmit.classList.remove('hide')
+      submit.classList.add('show')
     }
   
     begin()
@@ -120,7 +121,6 @@ function gameShow() {
     let buttonValue3 = button3.innerHTML
     let correctAnswer = sessionStorage.getItem('correct');
     if(buttonValue3 == correctAnswer){
-      alert('Correct you got 1 point')
       score++
     } 
     document.querySelector('.score').innerHTML = score
@@ -132,6 +132,8 @@ function gameShow() {
       restart.classList.add('show')
       let view = document.querySelector('#questionsView')
       view.classList.toggle('questionsViewShow')
+      submit.classList.remove('hide')
+      submit.classList.add('show')
     }
 
     begin()
@@ -142,10 +144,14 @@ function gameShow() {
     restartGame.classList.remove('show')
     restartGame.classList.add('restart')
     limit = 0
+    document.querySelector('.score').innerHTML = 0
+    document.querySelector('#hiddenScore').innerHTML = 0
     gameShow()
     begin()
   })
  
+
+
 
 
 

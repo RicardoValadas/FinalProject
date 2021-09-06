@@ -16,7 +16,6 @@
             <button value="" class="answer3"></button>
         </div>
 
-
     </div>
     <div id="restartContainer">
         <button id="restart" class="restart">Restart</button>
@@ -27,7 +26,7 @@
         <form action="" method="post">
             @csrf
             <input type="hidden" id="hiddenScore" name="score" value="">
-            <input type="submit" value="submit">
+            <input type="submit" id="submit" class="hide" value="Submit Score">
         </form>
     </div>
 @endsection
