@@ -4,22 +4,19 @@
     box-sizing: inherit;
 }
 
-body,
-html {
-    height: 100%;
-}
-
 body {
     margin: 0;
-
     font-weight: 400;
     min-height: 100%;
     box-sizing: border-box;
 }
 
+body main {
+    background-color: white;
+    margin-top: 50px;
+}
 h1 {
     font-size: 2.5em;
-    padding: 0.125em 0 0.25em 0.5em;
 }
 
 h1,
@@ -49,11 +46,6 @@ svg {
     padding: 0.25em;
 }
 
-.footer .small a:hover {
-    background-color: #5ec5ce;
-    color: #fff;
-}
-
 .container {
     max-width: 40em;
     margin: 0 auto;
@@ -72,6 +64,11 @@ main {
     margin-top: 15px;
 }
 
+section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
 #contactLogo {
     display: flex;
     justify-content: center;
@@ -80,8 +77,8 @@ main {
     display: flex;
     justify-content: center;
 }
-#contactLogo img {
-    height: 335px;
+#teamLogo img {
+    height: 50px;
 }
 
 .header {
@@ -160,11 +157,11 @@ main {
 
 .accordion .toggle-active,
 .accordion h3:nth-of-type(even).toggle-active {
-    background-color: #79b8d2;
+    background-color: rgb(230, 111, 81);
     color: #fff;
-    text-shadow: 1px 1px 3px #265c72;
+    text-shadow: 1px 1px 3px black;
     border-top-color: #fff;
-    border-bottom-color: #649cb4;
+    border-bottom-color: #fff;
     font-weight: 300;
 }
 
@@ -172,6 +169,14 @@ main {
 .accordion .toggle-active:after {
     background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpolygon fill='rgb(255,255,255)' points='8,0 16,12 0,12'/%3E%3C/svg%3E")
         no-repeat;
+}
+
+li {
+    word-wrap: break-word;
+}
+
+li a {
+    word-wrap: break-word;
 }
 
 .accordion > div {
@@ -191,7 +196,7 @@ main {
 }
 
 .accordion_inner {
-    background-color: #ebf8f9;
+    background-color: white;
 }
 
 .contact-list {
@@ -221,7 +226,7 @@ main {
     left: -0.5em;
     height: 16px;
     width: 16px;
-    fill: #3aa5bf;
+    fill: black;
     background-color: transparent;
     border-color: transparent;
     border-radius: 0;
@@ -230,4 +235,26 @@ main {
 .footer .small a,
 .login-remember {
     display: inline-block;
+}
+
+/*desktop*/
+
+@media (min-width: 1080px) {
+    section {
+        width: 800px;
+        margin: auto;
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+
+    .accordion h3 {
+        font-size: 1.5em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+
+    .contactLogo {
+        height: 400px;
+        margin: auto;
+    }
 }
