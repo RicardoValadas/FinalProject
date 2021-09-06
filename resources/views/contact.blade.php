@@ -119,7 +119,6 @@
 
 </section>
 
-<div id="team"><img class="contactLogo" src="{{ asset('images/team.jpg') }}" alt=""></div>
 
 <p> <strong>SAFE4NET Team ♥</strong> </p>
 
