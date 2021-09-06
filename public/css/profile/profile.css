@@ -1,161 +1,211 @@
 body {
-  background-color: #2a9d8f;
+    background-color: #2a9d8f;
+    /*medals!!!!!!!!!!*/
 }
 body #pageIdentifier {
-  font-weight: bolder;
-  font-size: 30px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  text-align: center;
+    font-weight: bolder;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center;
 }
 body div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 body div img {
-  border-radius: 59%;
-  width: 150px;
-  height: 150px;
-  margin-bottom: 30px;
+    border-radius: 59%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
 }
 body .userscore {
-  text-align: center;
-  justify-content: center;
-  width: 260px;
-  background-color: #EBF5DF;
-  border-radius: 5px;
-  font-size: 20px;
-  line-height: 10px;
-  padding-top: 12px;
-  margin-left: 10px;
-}
-body .edit {
-  background-color: #e9c46a;
-  border-radius: 5px;
-  padding: 1px 10px 1px 10px;
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
-}
-body .info p {
-  padding-bottom: 20px;
-}
-body .info ul {
-  width: 260px;
-  text-align: center;
-  justify-content: center;
-}
-body .info ul li {
-  padding: 5px;
-  border: 1px solid orange;
-  background-color: #f4a261;
-  border-radius: 5px;
-  font-size: 15px;
-  margin-bottom: 20px;
-}
-body .info ul li:hover {
-  color: #fff;
-  box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
-}
-body .info ul a:hover {
-  color: #fff;
-}
-body .buttons {
-  text-align: center;
-}
-
-/*show achivements!!!!!!!!!!!*/    
- *  #achi
- *      margin-top: 50px
- *
- *      h2
- *          text-align: center
- *          margin-bottom: 30px
- *      button
- *          width: 260px
- *          padding: 5px
- *          border: 1px solid orange
- *          background-color: #f4a261
- *          border-radius: 5px
- *          font-size: 15px
- *          margin-bottom: 5px */
-.achievments {
-  display: none;
-}
-
-article {
-  width: auto;
-  height: auto;
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.671);
-  padding: 20px;
-  margin: 10px;
-  text-align: center;
-  /*The card is the reference point of the .sliding*/
-  position: relative;
-  /* I don't want to see elements flowing out of me*/
-  overflow: hidden;
-  transition-duration: 0.4s;
-  /*medals!!!!!!!!!!*/
-}
-article h3 {
-  font-size: 1.2em;
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-article h3 .achievments.visible {
-  display: block;
-}
-article #participation {
-  display: block;
-}
-article #bronze {
-  display: block;
-}
-article #silver {
-  display: block;
-}
-article #gold {
-  display: block;
-}
-
-/* -------------------------------------------Desktop------------------ */    
-@media (min-width: 600px) {
-  main {
-    position: relative;
-  }
-  main p {
-    font-size: 1.2em;
-  }
-
-  .info ul {
-    position: absolute;
-    right: 250px;
-    top: 320px;
-  }
-
-  section .userinfo {
-    margin-top: 50px;
-    margin-left: 250px;
-  }
-
-  .userscore {
     text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     width: 260px;
-    background-color: #EBF5DF;
+    background-color: #ebf5df;
     border-radius: 5px;
-    font-size: 25px;
-    position: absolute;
-    right: 574px;
-    top: 220px;
+    font-size: 20px;
     line-height: 10px;
     padding-top: 12px;
-  }
-
-  .participation .medal {
-    background-color: red;
-  }
+    margin-left: 10px;
 }
+body .edit {
+    background-color: #e9c46a;
+    border-radius: 5px;
+    padding: 1px 10px 1px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    justify-items: center;
+}
+body .info p {
+    padding-bottom: 20px;
+}
+body .info ul {
+    width: 260px;
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+body .info ul li {
+    padding: 5px;
+    border: 1px solid orange;
+    background-color: #f4a261;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+body .info ul li:hover {
+    color: #fff;
+    -webkit-box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
+}
+body .info ul a:hover {
+    color: #fff;
+}
+body .buttons {
+    text-align: center;
+}
+body #achi {
+    margin-top: 50px;
+}
+body #achi h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+body #achi button {
+    width: 260px;
+    padding: 5px;
+    border: 1px solid orange;
+    background-color: #f4a261;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+body #achi .achievments {
+    display: none;
+}
+#achi h2 {
+    font-size: 1.5em;
+}
+body #achi .achievments article {
+    width: auto;
+    height: auto;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.671);
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.671);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    /*The card is the reference point of the .sliding*/
+    position: relative;
+    /* I don't want to see elements flowing out of me*/
+    overflow: hidden;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+body #achi .achievments article h3 {
+    font-size: 1.2em;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+body #achi .achievments.visible {
+    display: block;
+}
+
+body #participation {
+    display: block;
+}
+
+body #bronze {
+    display: block;
+}
+
+body #silver {
+    display: block;
+}
+
+body #gold {
+    display: block;
+}
+
+/* -------------------------------------------Desktop------------------ */
+@media (min-width: 600px) {
+    main {
+        position: relative;
+    }
+    main p {
+        font-size: 1.2em;
+    }
+    .info ul {
+        position: absolute;
+        right: 250px;
+        top: 320px;
+    }
+    section .userinfo {
+        margin-top: 50px;
+        margin-left: 250px;
+    }
+    .userscore {
+        text-align: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 260px;
+        background-color: #ebf5df;
+        border-radius: 5px;
+        font-size: 25px;
+        position: absolute;
+        right: 574px;
+        top: 220px;
+        line-height: 10px;
+        padding-top: 12px;
+    }
+    #achi .achievments {
+        display: none;
+    }
+
+    .medal img {
+        margin: auto;
+        padding-bottom: 30px;
+        height: 300px;
+    }
+
+    body #achi .achievments.visible {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    body #achi .achievments.visible article {
+        width: 328px;
+    }
+
+    .achievments {
+        width: 1400;
+        margin: auto;
+        margin-top: 60px;
+    }
+
+    #achi h2 {
+        font-size: 1.4em;
+    }
+}
+/*# sourceMappingURL=profile.css.map */
