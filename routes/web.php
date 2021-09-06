@@ -70,6 +70,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/editEmail/{id}', [UserController::class, 'email'])->name('edit.email');
     Route::post('/editEmail/{id}', [UserController::class, 'updateEmail']);
+
+    ###########  Route for the Tutorilas page (tutorials.blade.php in Views )  ###########
+    Route::get('/tutorials', [MainController::class, 'tutorials'])->name('tutorials');
+
     ##################################################################################
 }); # End of the middleware "auth" group function
 
@@ -99,11 +103,6 @@ Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
 
-###########  Route for the Tutorilas page (tutorials.blade.php in Views )  ###########
-Route::get('/tutorials', [MainController::class, 'tutorials'])->name('tutorials');
-
-
-
 ###########                 Admin Routes                           ###########
 
 //display page
@@ -116,16 +115,15 @@ Route::get('/adminOrnot/{id}', [AdminController::class, 'adminOrnot'])->name('ad
 Route::get('/adminpage', function () {
     $admin = Auth::user();
     if ($admin != null) {
-        if ($admin->admin == '1') { 
+        if ($admin->admin == '1') {
             $allusers = User::all();
-            return view('adminPage',['allusers' => $allusers]); 
+            return view('adminPage', ['allusers' => $allusers]);
         } else {
 
             return redirect('home');
         }
     }
     return view('profile');
-
 })->name('admin.page');
 
 
