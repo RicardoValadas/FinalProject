@@ -96,12 +96,12 @@ $(document).ready(function() {
                    })
                });
 </script>
-<script src="{{ URL::asset('js/profile/profile.js') }}"></script>
 @yield('script')
 
 
 
 
 @section('script')
-    <script src="{{ URL::asset('js/profile/profile.js') }}"></script>
+<script src="{{ URL::asset('js/profile/profile.js') }}"></script>
+    
 @endsection
