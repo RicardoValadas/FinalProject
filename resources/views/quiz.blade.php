@@ -8,20 +8,28 @@
 @section('content')
     <button class="start" type='button'>Start</button>
     <div id="questionsView" class="questionsViewHide">
-        <form id="form">
-            <p id='question'>Question 1</p>
-            <div class="quizActive">
-                <button type="submit" value="" class="answer"></button>
-                <button type="submit" value="" class="answer2"></button>
-                <button type="submit" value="" class="answer3"></button>
-            </div>
+
+        <h2 id='question'>Question 1</h2>
+        <div class="quizActive">
+            <button value="" class="answer"></button>
+            <button value="" class="answer2"></button>
+            <button value="" class="answer3"></button>
+        </div>
+
+    </div>
+    <div id="restartContainer">
+        <button id="restart" class="restart">Restart</button>
+    </div>
+    <div class="userScore">
+        <h2>Score</h2>
+        <p class="score">0</p>
+        <form action="{{ route('quiz') }} " method="post">
+            @csrf
+            <input type="hidden" id="hiddenScore" name="score" value="">
+            <input type="submit" id="submit" class="hide" value="Submit Score">
         </form>
     </div>
 @endsection
-
-
-
-
 
 {{-- script url --}}
 @section('script')

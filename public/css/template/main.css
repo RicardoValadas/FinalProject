@@ -1,216 +1,193 @@
 * {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #2a9d8f;
+  background-color: #2a9d8f;
+  font-family: "Ubuntu", sans-serif;
 }
 
 header {
-    background-color: #e76f51;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 10px;
-    margin: -16px 0;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
-        rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  background-color: #e76f51;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: -16px 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-
 header nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
-
 header nav .logo {
-    width: 100px;
+  width: 100px;
 }
 
 .username {
-    font-size: 20px;
-    text-shadow: 0px 1px 6px;
+  font-size: 20px;
+  text-shadow: 0px 1px 6px;
 }
 
 .dropdownRes {
-    position: relative;
+  position: relative;
+  color: #fff;
+  background-color: #fff;
 }
 
 .contentDropdownLayoutRes {
-    position: absolute;
-    display: none;
-    height: 210px;
-    width: 87px;
-    padding: 10px;
-    left: 5px;
-    background-color: #fff;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  position: absolute;
+  display: none;
+  height: 210px;
+  width: 87px;
+  padding: 10px;
+  left: 5px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .contentDropdownLinksRes {
-    font-size: 18px;
+  font-size: 18px;
 }
-
 .contentDropdownLinksRes:hover {
-    color: orange;
+  color: orange;
 }
 
 .contentDropdownLayoutResShow {
-    display: block;
+  display: block;
 }
 
 .desktop {
-    display: none;
+  display: none;
 }
 
 .showUsername {
-    width: 100px;
-    display: none;
+  width: 100px;
+  display: none;
 }
 
 .showUsernameRes {
-    width: 100px;
+  width: 100px;
 }
 
 #menu {
-    color: #fff;
-    margin: 0 30px;
-    font-size: 40px;
+  color: #fff;
+  margin: 0 30px;
+  font-size: 40px;
 }
 
 .dropHiddenTrue {
-    display: none;
+  display: none;
 }
 
 #arrow {
-    display: none;
-    color: #fff;
-    font-size: 20px;
+  display: none;
+  color: #fff;
+  font-size: 20px;
 }
 
 .LoginRegister {
-    padding: 5px;
+  padding: 5px;
 }
-
 .LoginRegister a {
-    font-size: 20px;
-    margin: 5px;
+  font-size: 20px;
+  margin: 5px;
 }
-
 .LoginRegister a:hover {
-    color: white;
+  color: white;
 }
 
 main {
-    width: 300px;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 15px -3px,
-        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 15px -3px,
-        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    padding: 10px;
-    margin: 60px auto;
-    background-color: #fff;
-    border-radius: 5px;
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  padding: 10px;
+  margin: 60px auto;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 @media screen and (min-width: 600px) {
-    .showUsername {
-        display: block;
-    }
-    .showUsernameRes {
-        display: none;
-    }
-    .dropButton {
-        display: block;
-    }
-    #arrow {
-        display: block;
-    }
-    .desktop {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        padding: 5px;
-        margin: 15px;
-    }
-    .desktop li {
-        padding: 5px;
-    }
-    .dropdown {
-        position: relative;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: end;
-        -ms-flex-pack: end;
-        justify-content: flex-end;
-    }
-    .dropButton {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        padding: 20px;
-    }
-    .dropHiddenTrue {
-        position: absolute;
-        padding: 20px;
-        width: 100px;
-        top: 46px;
-        left: 32px;
-        background-color: #fff;
-        border-radius: 5px;
-        display: none;
-    }
-    .dropHiddenFalse {
-        display: block;
-    }
-    .desktop {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-    }
-    .desktop li {
-        padding: 10px;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-    }
-    .desktop li:hover {
-        -webkit-transform: scale(110%);
-        transform: scale(110%);
-    }
-    .desktop li a {
-        font-size: 25px;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-    }
-    .desktop li a:hover {
-        color: white;
-    }
-    .dropdownRes {
-        display: none;
-    }
-    .username {
-        display: none;
-    }
-    main {
-        width: 1400px;
-    }
+  .showUsername {
+    display: block;
+  }
+
+  .showUsernameRes {
+    display: none;
+  }
+
+  .dropButton {
+    display: block;
+  }
+
+  #arrow {
+    display: block;
+  }
+
+  .desktop {
+    display: flex;
+    padding: 5px;
+    margin: 15px;
+  }
+  .desktop li {
+    padding: 5px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .dropButton {
+    display: flex;
+    padding: 20px;
+  }
+
+  .dropHiddenTrue {
+    position: absolute;
+    padding: 20px;
+    width: 100px;
+    top: 46px;
+    left: 32px;
+    background-color: #fff;
+    border-radius: 5px;
+    display: none;
+  }
+
+  .dropHiddenFalse {
+    display: block;
+  }
+
+  .desktop {
+    display: flex;
+  }
+  .desktop li {
+    padding: 10px;
+    transition: 0.5s;
+  }
+  .desktop li:hover {
+    transform: scale(110%);
+  }
+  .desktop li a {
+    font-size: 25px;
+    transition: 0.5s;
+  }
+  .desktop li a:hover {
+    color: white;
+  }
+
+  .dropdownRes {
+    display: none;
+  }
+
+  .username {
+    display: none;
+  }
+
+  main {
+    width: 1400px;
+  }
 }
-/*# sourceMappingURL=main.css.map */

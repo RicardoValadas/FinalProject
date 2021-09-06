@@ -1,21 +1,19 @@
-let counter = 0;
-function increment(){
-    counter++;
-    console.log(counter);
-}
+let score = 0
+let limit = 0
+let submit = document.querySelector('#submit')
 
 //Store start variable for button
 const start = document.querySelector('.start');
   
 //Add event listener when click
-start.addEventListener('click', function() {
+start.addEventListener('click', begin())
 
 //FETCH API FOR QUESTION
-fetch('http://127.0.0.1:8000/quizTest')
-.then(response => response.json())
-.then(data => renderQuestions(data))
-});
-
+function begin() {
+  fetch('http://127.0.0.1:8000/quizTest')
+  .then(response => response.json())
+  .then(data => renderQuestions(data))
+  }
 //Randomize possible numbers and check if the number assigned is already being used later with ranNums.next().value
 function* shuffle(array) {
 
@@ -58,60 +56,105 @@ function renderQuestions(data) {
 }
 
 //DISPLAY CONTENT WHEN START
-start.addEventListener('click',function(){
-  const game = document.querySelector('#questionsView')
+start.addEventListener('click',gameShow())
+function gameShow() {
+   const game = document.querySelector('#questionsView')
 
   if (game.classList.contains('questionsViewHide')) {
     game.classList.toggle('questionsViewShow')
   }
   start.classList.add('questionsViewHide')
-})
-
+}
+ 
   let button1 = document.querySelector('.answer')
-  button1.addEventListener('click', function(){
+  button1.addEventListener('click', function(event){
+    event.preventDefault()
     let buttonValue1 = button1.innerHTML
     sessionStorage.setItem("answer1",buttonValue1)
-    let correctAnswer = sessionStorage.getItem('correct');
-    
+    let correctAnswer = sessionStorage.getItem('correct')
+    if(buttonValue1 == correctAnswer){
+      score++
+    } 
+    document.querySelector('.score').innerHTML = score
+    document.querySelector('#hiddenScore').value = score
+    limit++
+    if (limit >= 10) {
+      let restart = document.querySelector('#restart')
+      restart.classList.remove('restart')
+      restart.classList.add('show')
+      let view = document.querySelector('#questionsView')
+      view.classList.toggle('questionsViewShow')
+      submit.classList.remove('hide')
+      submit.classList.add('show')
+    }
+  
+    begin()
   })
 
   let button2 = document.querySelector('.answer2')
-  button2.addEventListener('click', function(){
+  button2.addEventListener('click', function(event){
+    event.preventDefault()
     let buttonValue2 = button2.innerHTML
-    sessionStorage.setItem("answer2",buttonValue2)
-    let correctAnswer = sessionStorage.getItem('correct');
-   
+    let correctAnswer = sessionStorage.getItem('correct')
+    if(buttonValue2 == correctAnswer){
+      score++
+    }
+    document.querySelector('.score').innerHTML = score
+    document.querySelector('#hiddenScore').value = score
+    limit++
+    if (limit >= 10) {
+      let restart = document.querySelector('#restart')
+      restart.classList.remove('restart')
+      restart.classList.add('show')
+      let view = document.querySelector('#questionsView')
+      view.classList.toggle('questionsViewShow')
+      ssubmit.classList.remove('hide')
+      submit.classList.add('show')
+    }
+  
+    begin()
   })
 
   let button3 = document.querySelector('.answer3')
-  button3.addEventListener('click', function(){
+  button3.addEventListener('click', function(event){
+    event.preventDefault()
     let buttonValue3 = button3.innerHTML
-    sessionStorage.setItem("answer3",buttonValue3)
     let correctAnswer = sessionStorage.getItem('correct');
-    
+    if(buttonValue3 == correctAnswer){
+      score++
+    } 
+    document.querySelector('.score').innerHTML = score
+    document.querySelector('#hiddenScore').value = score
+    limit++
+    if (limit >= 10) {
+      let restart = document.querySelector('#restart')
+      restart.classList.remove('restart')
+      restart.classList.add('show')
+      let view = document.querySelector('#questionsView')
+      view.classList.toggle('questionsViewShow')
+      submit.classList.remove('hide')
+      submit.classList.add('show')
+    }
+
+    begin()
   })
 
+  let restartGame = document.querySelector('#restart')
+  restartGame.addEventListener('click',function(){
+    restartGame.classList.remove('show')
+    restartGame.classList.add('restart')
+    limit = 0
+    document.querySelector('.score').innerHTML = 0
+    document.querySelector('#hiddenScore').innerHTML = 0
+    gameShow()
+    begin()
+  })
+ 
 
-const form = document.querySelector('#form')
-form.addEventListener('submit',formSubmit())
 
-    function formSubmit(){
-      let answer1 = sessionStorage.getItem('answer1');
-      let answer2 = sessionStorage.getItem('answer2');
-      let answer3 = sessionStorage.getItem('answer3');
-      let correct = sessionStorage.getItem('correct');
-     
-      if(answer1 == correct){
-        alert('Correct you got 1 point')
-        increment()
-      } else if(answer2 == correct){
-        alert('Correct you got 1 point')
-        increment()
-      } else if(answer3 == correct){
-        alert('Correct you got 1 point')
-        increment()
-      } 
 
-}
+
+
+
 
 

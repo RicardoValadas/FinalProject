@@ -16,11 +16,12 @@ class UserController extends Controller
     {
         //$users = auth()->user();
         //it's a way to store logged in user
-        $userinfo =auth()->user();
-        return view('user_profile',['user' => $userinfo]);
+        $userinfo = auth()->user();
+        return view('user_profile', ['user' => $userinfo]);
     }
-    
-    public function showdelete(){
+
+    public function showdelete()
+    {
         return view('delete');
     }
 
