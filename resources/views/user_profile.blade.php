@@ -16,7 +16,7 @@
 <section class="info">
 
     <article class="userinfo">
-        <p class="userscore">Score: {{ $user->user_score }} points</p>
+        <p class="userscore" value="{{ $user->user_score }}">Score: {{ $user->user_score }} points</p>
         <br>
         <p>Username: {{ $user->username }} </p>
         <p>Firstname: {{ $user->first_name }} </p>
