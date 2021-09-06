@@ -1,4 +1,7 @@
+
+
 // NEED TO CHANGE
+
 /*let buttonAchieve = document.querySelector('#buttonAchieve')
 buttonAchieve.addEventListener('click', function(){
     let hidden = document.querySelector('#achieveSection')
@@ -6,10 +9,8 @@ buttonAchieve.addEventListener('click', function(){
         hidden.classList.toggle('achieveShow')
     } 
 })*/
-
-
-let achiev=document.querySelector('#showachi');
-achiev.addEventListener('click', function(){
-    document.querySelector('.achievments').classList.toggle('visible'); 
-    console.log('click');
+var achiev = document.querySelector('#showachi');
+achiev.addEventListener('click', function () {
+  document.querySelector('.achievments').classList.toggle('visible');
+  console.log('click');
 });

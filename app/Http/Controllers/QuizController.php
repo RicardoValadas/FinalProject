@@ -41,16 +41,14 @@ class QuizController extends Controller
         return $question->toJson(JSON_PRETTY_PRINT);
     }
 
-    public function addScore()
+    public function addScore(Request $request)
     {
-        return view('home');
-        /*    $user = User::find(auth()->user()->id);
+
+        $user = User::find(auth()->user()->id);
         $user->user_score = $request->user_score;
         $this->validate($request, [
             'score' => "required",
         ]);
-        $user->save(); */
-
-        /* Request $request */
+        $user->save();
     }
 }

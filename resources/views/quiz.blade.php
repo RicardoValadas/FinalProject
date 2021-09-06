@@ -16,7 +16,6 @@
             <button value="" class="answer3"></button>
         </div>
 
-
     </div>
     <div id="restartContainer">
         <button id="restart" class="restart">Restart</button>
@@ -24,10 +23,10 @@
     <div class="userScore">
         <h2>Score</h2>
         <p class="score">0</p>
-        <form action="" method="post">
+        <form action="{{ route('quiz') }} " method="post">
             @csrf
             <input type="hidden" id="hiddenScore" name="score" value="">
-            <input type="submit" value="submit">
+            <input type="submit" id="submit" class="hide" value="Submit Score">
         </form>
     </div>
 @endsection

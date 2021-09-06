@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
@@ -55,8 +55,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/test', [Controller::class, 'index'])->name('test');
 
     ########### Route to show the edit user page (editProfile.blade.php in Views )  ###########
-    Route::get('/editProfile/{id}', [UserController::class, 'editform'])->name('edit.user');
-    Route::post('/editProfile/{id}', [UserController::class, 'update']);
+    Route::get('/editProfile', [UserController::class, 'editform'])->name('edit.user');
+    Route::post('/editProfile', [UserController::class, 'update'])->name('ajaxcall');
 
     ###########  Route to delete the user profile (delete.blade.php in Views )  ###########
     ###########  Obsolete  ###########
@@ -107,7 +107,27 @@ Route::get('/tutorials', [MainController::class, 'tutorials'])->name('tutorials'
 ###########                 Admin Routes                           ###########
 
 //display page
-Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('admin.page');
+//Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('admin.page');
+
+//know if it is admin
+Route::get('/adminOrnot/{id}', [AdminController::class, 'adminOrnot'])->name('adminOrnot');
+
+//checks if user is admin
+Route::get('/adminpage', function () {
+    $admin = Auth::user();
+    if ($admin != null) {
+        if ($admin->admin == '1') { 
+            $allusers = User::all();
+            return view('adminPage',['allusers' => $allusers]); 
+        } else {
+
+            return redirect('home');
+        }
+    }
+    return view('profile');
+
+})->name('admin.page');
+
 
 //delete users on admin dashboard
 Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('ADMdelete.user');
@@ -120,15 +140,11 @@ Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('up
 Route::get('/displayusers', [AdminController::class, 'showusers'])->name('getusers');
 
 //to add
-Route::post('/adduser', [AdminController::class, 'create'])->name('create.in.admin');
+Route::get('/adduser', [AdminController::class, 'add'])->name('adduser');
+Route::post('/adduser', [AdminController::class, 'create']);
 
 
 ###################################################################################################
-
-//CORS
-Route::middleware(['cors'])->group(function () {
-    Route::post('/quiz', [QuizController::class, 'getQuiz']);
-});
 
 //email verification
 Route::get('/email/verify', function () {
