@@ -20,8 +20,8 @@
 <h2><strong>Admin Dashboard </strong></h2>
 <br><hr><br>
 <h2><strong>List of users: </strong></h2>
-
-    <table  >
+<section class="table-responsive">    
+    <table >
          <tr>
             <th>id</th>
             <th>Username</th>

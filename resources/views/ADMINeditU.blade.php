@@ -1,39 +1,15 @@
 @extends('layouts.template')
 @section('style')
 <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="{{ URL::asset('/css/edit_profile/editprofile.css') }}">
 
-<style>
-    body{
-        text-align: center;
-    }
-    form{
-        font-size: 30px;
-    }
-    input{
-        font-size: 30px;
-        width: 60%;
-        height: 80px;
-        margin-bottom: 20px;
-        text-align: center;
-        border-radius: 10px;
-        border: 1px solid orangered;
-    }
-    input:hover,input:focus{
-        background-color: orangered;
-        color: white;
-        border: none;
-    }
-    select{
-        margin-bottom: 50px;
-    }
-</style>
 @endsection
 @section('content')
     <h1>home</h1>
 
 
 <div id="results"></div>
-    <form action="" method="post">
+    <form action="" id="form" method="post">
     @csrf
 
     @if ($errors->any())

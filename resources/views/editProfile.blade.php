@@ -1,15 +1,15 @@
 @extends('layouts.template')
-
+@section('style')
+    <link rel="stylesheet" href="{{ URL::asset('/css/edit_profile/editprofile.css') }}">
+@endsection
 @section('content')
-    <h3>Edit your profile</h3>
 
 
-    <button><a href="/profile">Back to Profile</a></button><br><br>
+<h1>edit profile</h1>
+
 <div id="results"></div>
 
-<div><p>errors</p>
-<div id="errors"></div>
-</div>
+
 
 
     @if ($errors->any())
@@ -21,13 +21,13 @@
         </ul>
     </div>
 @endif
-<form action=""  method="post">
+<form action="" id="form" method="post">
     @csrf
     <input type="hidden" name="id" value="{{$user->id}}">
     
     <label for="username"> Username:</label><br>
     <input type="text" id="username" name="username" placeholder="username" value="{{ $user->username }}" > <br>
-    <span id="user_name"></span><br>
+    <span id="u_name"></span><br>
     
     <label for="first_name">First Name:</label><br>
     <input type="text" id="first_name" name="first_name" placeholder="first name" value="{{ $user->first_name }}" > <br>
@@ -38,11 +38,11 @@
     <span id="l_name"></span><br>
     
     <label for="email">Email:</label><br>
-    <input type="text" id="email" name="email" placeholder="email" value="{{ $user->email }}"><br>
+    <input type="email" id="email" name="email" placeholder="email" value="{{ $user->email }}"><br>
     <span id="e_mail"> </span><br>
     
     <input type="submit">
-    </form>
+    </form><h1></h1>
 @endsection
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -54,6 +54,10 @@ $(function() {
                e.preventDefault();
                    console.log('dos clcike');
                    //console.log('dos clcike');
+                        $('#e_mail').html('')
+                        $('#l_name').html('')
+                        $('#f_name').html('')
+                        $('#u_name').html('')
                $.ajax({
                 headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  },
                        url: "{{ route('ajaxcall') }}",
@@ -61,25 +65,34 @@ $(function() {
                        data:$("form").serialize(),
                    })
                    .done(function(result) {
-                       console.log('tudo bem');
+                       console.log(result);
+                       $('#form').html('<button ><a id="back" href="/profile">back to profile</a></button>');
+                       $('h1').html(''+result.success+'');
                       
                     })
                     .fail(function(response) {
-                        
                         //let response =result.responseJSON.errors;
                         //console.log(resulterrors)
                         //console.log(response.first_name)
                         //console.log(response.username)
-                        console.log(response)
+                        
                         let errors = response.responseJSON.errors
-                        console.log(errors)
-                        console.log(errors.email[0])
+                        
+                        console.log(errors);
                         
                         
-                        $('#e_mail').text(errors.email[0])
-                        $('#l_name').text(errors.last_name[0])
-                        $('#f_name').text(errors.first_name[0])
-                        $('#u_name').inner(errors.username[0])
+                        let username =response.responseJSON.errors.username[0];
+                        let first_name =response.responseJSON.errors.first_name[0];
+                        let last_name =response.responseJSON.errors.last_name[0];
+                        let email =response.responseJSON.errors.email[0];
+                        
+                        if(username>0)
+                        $('#u_name').html(errors.username[0])
+                            //e.preventDefault();
+                        
+                        $('#l_name').html(errors.last_name[0])
+                        $('#f_name').html(errors.first_name[0])
+                        $('#e_mail').html(errors.email[0])
                         
 
                         

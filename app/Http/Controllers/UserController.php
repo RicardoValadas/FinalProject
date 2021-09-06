@@ -52,11 +52,14 @@ class UserController extends Controller
                 ]);
             $user->save();
     
+                if($user->save())
+                    return (['success' => 'profile is up to date']);
+                    
+
             
             if ($this->validate->fails())
                 return response()->json(['errors' => $this->validate->errors()->all()]);
     
-        //return response()->json(['success' => 'Record is added']);
             //return view('user_profile',['user' => $user])->with('success', 'user updated');
         }
     //to delete user
