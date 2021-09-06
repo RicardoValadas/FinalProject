@@ -149,6 +149,29 @@ function gameShow() {
 
 
 
+<<<<<<< HEAD
+=======
+
+const form = document.querySelector('#form')
+form.addEventListener('submit',formSubmit())
+
+    function formSubmit(){
+      let answer1 = sessionStorage.getItem('answer1');
+      let answer2 = sessionStorage.getItem('answer2');
+      let answer3 = sessionStorage.getItem('answer3');
+      let correct = sessionStorage.getItem('correct');
+     
+      if(answer1 == correct){
+        alert('Correct you got 1 point')
+        increment()
+      } else if(answer2 == correct){
+        alert('Correct you got 1 point')
+        increment()
+      } else if(answer3 == correct){
+        alert('Correct you got 1 point')
+        increment()
+      } 
+>>>>>>> parent of cb35978 (update)
 
 
 

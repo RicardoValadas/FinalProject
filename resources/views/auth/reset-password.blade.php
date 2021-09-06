@@ -11,11 +11,11 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="post" action="{{ route('password.update') }}">
+        <form method="get" action="{{ $request->route('password.update') }}">
             @csrf
 
             <!-- Password Reset Token -->
-            <input type="hidden" name="token" value="{{ $request->route('token') }}">
+            <input type="hidden" name="token" value="{{ $request }}">
 
             <!-- Email Address -->
             <div>

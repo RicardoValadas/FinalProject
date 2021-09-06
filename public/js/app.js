@@ -21047,19 +21047,6 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./public/css/template/main.sass":
 /*!***************************************!*\
   !*** ./public/css/template/main.sass ***!
@@ -21109,11 +21096,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ "./public/css/login_register/login_register.sass":
 /*!*******************************************************!*\
   !*** ./public/css/login_register/login_register.sass ***!
   \*******************************************************/
 /***/ (() => {
+=======
+/***/ "./resources/css/app.css":
+/*!*******************************!*\
+  !*** ./resources/css/app.css ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+>>>>>>> parent of cb35978 (update)
 
 throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: semicolons aren't allowed in the indented syntax.\n   ╷\n36 │         box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;\r\n   │                                                                                     ^\n   ╵\n  public\\css\\login_register\\login_register.sass 36:85  root stylesheet\n    at processResult (C:\\Laravel\\FinalProject\\node_modules\\webpack\\lib\\NormalModule.js:721:19)\n    at C:\\Laravel\\FinalProject\\node_modules\\webpack\\lib\\NormalModule.js:827:5\n    at C:\\Laravel\\FinalProject\\node_modules\\loader-runner\\lib\\LoaderRunner.js:399:11\n    at C:\\Laravel\\FinalProject\\node_modules\\loader-runner\\lib\\LoaderRunner.js:251:18\n    at context.callback (C:\\Laravel\\FinalProject\\node_modules\\loader-runner\\lib\\LoaderRunner.js:124:13)\n    at C:\\Laravel\\FinalProject\\node_modules\\sass-loader\\dist\\index.js:54:7\n    at Function.call$2 (C:\\Laravel\\FinalProject\\node_modules\\sass\\sass.dart.js:94122:16)\n    at _render_closure1.call$2 (C:\\Laravel\\FinalProject\\node_modules\\sass\\sass.dart.js:82377:12)\n    at _RootZone.runBinary$3$3 (C:\\Laravel\\FinalProject\\node_modules\\sass\\sass.dart.js:27674:18)\n    at _FutureListener.handleError$1 (C:\\Laravel\\FinalProject\\node_modules\\sass\\sass.dart.js:26223:19)");
 
@@ -21424,10 +21423,13 @@ process.umask = function() { return 0; };
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
+<<<<<<< HEAD
+=======
+/******/ 			"css/app": 0,
+>>>>>>> parent of cb35978 (update)
 /******/ 			"css/about/about": 0,
 /******/ 			"css/profile/profile": 0,
-/******/ 			"css/quiz/quiz": 0,
-/******/ 			"css/app": 0
+/******/ 			"css/quiz/quiz": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -21477,6 +21479,7 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+<<<<<<< HEAD
 /******/ 	__webpack_require__.O(undefined, ["css/about/about","css/profile/profile","css/quiz/quiz","css/app"], () => (__webpack_require__("./resources/js/app.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/about/about","css/profile/profile","css/quiz/quiz","css/app"], () => (__webpack_require__("./public/css/template/main.sass")))
 /******/ 	__webpack_require__.O(undefined, ["css/about/about","css/profile/profile","css/quiz/quiz","css/app"], () => (__webpack_require__("./public/css/quiz/quiz.sass")))
@@ -21484,6 +21487,14 @@ process.umask = function() { return 0; };
 /******/ 	__webpack_require__.O(undefined, ["css/about/about","css/profile/profile","css/quiz/quiz","css/app"], () => (__webpack_require__("./public/css/about/about.sass")))
 /******/ 	__webpack_require__.O(undefined, ["css/about/about","css/profile/profile","css/quiz/quiz","css/app"], () => (__webpack_require__("./public/css/login_register/login_register.sass")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/about/about","css/profile/profile","css/quiz/quiz","css/app"], () => (__webpack_require__("./resources/css/app.css")))
+=======
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./public/css/template/main.sass")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./public/css/quiz/quiz.sass")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./public/css/profile/profile.sass")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./public/css/about/about.sass")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/about/about","css/profile/profile","css/quiz/quiz"], () => (__webpack_require__("./resources/css/app.css")))
+>>>>>>> parent of cb35978 (update)
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
