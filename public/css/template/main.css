@@ -6,15 +6,7 @@
 }
 
 body {
-background: hsla(173, 58%, 39%, 1);
-
-background: linear-gradient(225deg, hsla(173, 58%, 39%, 0.8) 48%, hsla(43, 74%, 66%, 1) 48%);
-
-background: -moz-linear-gradient(225deg, hsla(173, 58%, 39%, 0.8) 48%, hsla(43, 74%, 66%, 1) 48%);
-
-background: -webkit-linear-gradient(225deg, hsla(173, 58%, 39%, 0.8) 48%, hsla(43, 74%, 66%, 1) 48%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2A9D8F", endColorstr="#E9C46A", GradientType=1 );
+    background-color: #2a9d8f;
 }
 
 header {
@@ -43,11 +35,10 @@ header nav {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    position: sticky;
 }
 
 header nav .logo {
-    width: 120px;
+    width: 100px;
 }
 
 .username {
