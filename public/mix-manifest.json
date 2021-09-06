@@ -3,5 +3,7 @@
     "/css/about/about.css": "/css/about/about.css",
     "/css/profile/profile.css": "/css/profile/profile.css",
     "/css/quiz/quiz.css": "/css/quiz/quiz.css",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/css/template/main.css": "/css/template/main.css",
+    "/css/login_register/login_register.css": "/css/login_register/login_register.css"
 }

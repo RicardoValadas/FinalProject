@@ -76,7 +76,7 @@ function gameShow() {
       score++
     } 
     document.querySelector('.score').innerHTML = score
-    document.querySelector('#hiddenScore').innerHTML = score
+    document.querySelector('#hiddenScore').value = score
     limit++
     if (limit >= 10) {
       let restart = document.querySelector('#restart')
@@ -100,7 +100,7 @@ function gameShow() {
       score++
     }
     document.querySelector('.score').innerHTML = score
-    document.querySelector('#hiddenScore').innerHTML = score
+    document.querySelector('#hiddenScore').value = score
     limit++
     if (limit >= 10) {
       let restart = document.querySelector('#restart')
@@ -124,7 +124,7 @@ function gameShow() {
       score++
     } 
     document.querySelector('.score').innerHTML = score
-    document.querySelector('#hiddenScore').innerHTML = score
+    document.querySelector('#hiddenScore').value = score
     limit++
     if (limit >= 10) {
       let restart = document.querySelector('#restart')

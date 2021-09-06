@@ -125,11 +125,6 @@ Route::post('/adduser', [AdminController::class, 'create'])->name('create.in.adm
 
 ###################################################################################################
 
-//CORS
-Route::middleware(['cors'])->group(function () {
-    Route::post('/quiz', [QuizController::class, 'getQuiz']);
-});
-
 //email verification
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
