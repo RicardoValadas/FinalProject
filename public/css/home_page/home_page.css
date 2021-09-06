@@ -121,16 +121,21 @@ h2
 .buttons, #btnprot, #btnphis, #callQ,
 #call1, #call2, #call3, #call4
  {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4a261;
+
+    background-color: #e76f51;
     text-align: center;
     width: 200px;
     padding: 5px;
     margin-bottom: 20px;
     border-radius: 5px;
     text-transform: uppercase;
+  }
+
+  #firstSec #btnprot, #btnphis {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
   }
 
 /* #####################  CONTAINERS #################### */
@@ -271,6 +276,10 @@ margin-right: auto;
 /* -------------------------   Desktop      ------------------ */
 @media (min-width: 1080px) {
 
+main{
+    width: 1400px;
+}
+
 .container
 {
 width: 1080px;
@@ -300,7 +309,7 @@ font-size: 18px;
 
 #imghead
 {
-    background-size: 1500px;
+    background-size: 1300px;
     height: 600px;
     border-radius: 10px;
     margin: auto;
@@ -309,7 +318,7 @@ font-size: 18px;
 
 #imghome2
 {
-    background-size: 1500px;
+    background-size: 1300px;
     height: 600px;
     border-radius: 10px;
     margin: auto;
