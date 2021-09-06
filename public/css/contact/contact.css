@@ -52,12 +52,6 @@ svg {
     overflow: auto;
 }
 
-.main {
-    min-height: calc(100vh - 13em);
-    padding: 2em 3em;
-    background-color: #fff;
-}
-
 main {
     background-color: transparent;
     text-align: center;
@@ -65,7 +59,6 @@ main {
 }
 
 section {
-    margin-top: 40px;
     margin-bottom: 40px;
 }
 
@@ -84,15 +77,6 @@ section {
 .header {
     min-height: 5em;
     padding-left: 2em;
-}
-
-.subfooter {
-    min-height: 2em;
-    padding-top: 3em;
-}
-
-.footer {
-    min-height: 3em;
 }
 
 .button:hover,
@@ -232,11 +216,6 @@ li a {
     border-radius: 0;
 }
 
-.footer .small a,
-.login-remember {
-    display: inline-block;
-}
-
 /*desktop*/
 
 @media (min-width: 1080px) {
@@ -244,7 +223,6 @@ li a {
         width: 800px;
         margin: auto;
         margin-bottom: 40px;
-        margin-top: 40px;
     }
 
     .accordion h3 {
