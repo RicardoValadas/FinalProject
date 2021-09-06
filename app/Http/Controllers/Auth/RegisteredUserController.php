@@ -37,20 +37,20 @@ class RegisteredUserController extends Controller
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users',
-            'type' => 'required',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => ['required', 'confirmed',
-            'image' => 'required',
+            'password' => [
+                'required', 'confirmed',
+                'image' => 'required',
 
-            Rules\Password::defaults()],
+                Rules\Password::defaults()
+            ],
         ]);
-        $image =  time().'.'.$request->image->extension();
+        $image =  time() . '.' . $request->image->extension();
         $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'username' => $request->username,
             'email' => $request->email,
-            'type' => $request->type,
             'password' => Hash::make($request->password),
             'images' => $image,
         ]);
