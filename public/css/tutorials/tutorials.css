@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+iframe {
+    width: 250px;
+    margin: auto;
+}
+
+.video {
+    margin-top: 40px;
+}
+
+h1 {
+    padding-bottom: 20px;
+    font-size: 1.2em;
+    margin-left: 15px;
+}
+
+p {
+    margin-left: 15px;
+}
+
+@media (min-width: 1080px) {
+    .video {
+        margin-bottom: 100px;
+    }
+    iframe {
+        width: 800px;
+        height: 400px;
+        margin: auto;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        text-align: end;
+        padding-right: 300px;
+        font-size: 1.2em;
+    }
+}
