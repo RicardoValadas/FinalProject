@@ -1,17 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
-use Symfony\Component\HttpFoundation\Request;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ChangePasswordController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\Auth\NewPasswordController;
+use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Str;
+use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Auth\Middleware\Authenticate; # use this illuminate Authenticate in the web.php for the routes
-
+use Illuminate\Http\Request;
 #use App\Http\Middleware\IsAdminMiddleware;
 use App\Http\Controllers\UserController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,12 +36,12 @@ use App\Http\Controllers\UserController;
 Route::middleware(['auth'])->group(function () {
 
 
-
     ###########  Route for the home page (home.blade.php in viwes)  ###########
     Route::get('/home', [MainController::class, 'home'])->name('home');
 
     ###########  Route for the quiz page (quiz.blade.php in viwes)  ###########
     Route::get('/quiz', [QuizController::class, 'getQuiz'])->name('quiz');
+    Route::post('/quiz', [QuizController::class, 'addScore'])->name('score');
 
     ###########  Route for the quiz !!!!Test json!!!! page (quiz.blade.php in viwes)  ###########
     Route::get('/quizTest', [QuizController::class, 'getQuestion'])->name('quizTest');
@@ -51,6 +59,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/editProfile/{id}', [UserController::class, 'update']);
 
     ###########  Route to delete the user profile (delete.blade.php in Views )  ###########
+    ###########  Obsolete  ###########
     Route::get('/deleteProfile/delete/{id}', [UserController::class, 'destroy'])->name('delete.user');
 
     Route::get('/editUsername/{id}', [UserController::class, 'meh'])->name('edit.username');
@@ -61,6 +70,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/editEmail/{id}', [UserController::class, 'email'])->name('edit.email');
     Route::post('/editEmail/{id}', [UserController::class, 'updateEmail']);
+    ##################################################################################
 }); # End of the middleware "auth" group function
 
 # :::::::::::::::::::::::::::::  #################  ::::::::::::::::::::::::::::: #
@@ -89,6 +99,8 @@ Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
 
+###########  Route for the Tutorilas page (tutorials.blade.php in Views )  ###########
+Route::get('/tutorials', [MainController::class, 'tutorials'])->name('tutorials');
 
 
 
@@ -102,12 +114,14 @@ Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('ADMdelete
 
 Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
 
-Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
-
 
 //Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
 Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
 Route::get('/displayusers', [AdminController::class, 'showusers'])->name('getusers');
+
+//to add
+Route::post('/adduser', [AdminController::class, 'create'])->name('create.in.admin');
+
 
 ###################################################################################################
 
@@ -115,3 +129,23 @@ Route::get('/displayusers', [AdminController::class, 'showusers'])->name('getuse
 Route::middleware(['cors'])->group(function () {
     Route::post('/quiz', [QuizController::class, 'getQuiz']);
 });
+
+//email verification
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+
+//reset

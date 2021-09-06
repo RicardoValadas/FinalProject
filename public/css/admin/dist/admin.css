@@ -6,11 +6,18 @@ body #functions button:hover {
   background-color: green;
   color: white;
 }
-body #functions .info {
+body #functions #info {
   display: none;
 }
-body #functions .info #visible {
-  font-size: 70px;
+body .display {
+  display: block;
+  color: red;
+}
+body #invisible {
+  display: none;
+}
+body #visible {
+  display: block;
 }
 body #edit {
   margin-left: 50px;

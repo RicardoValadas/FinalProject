@@ -8,31 +8,29 @@
 @section('content')
     <button class="start" type='button'>Start</button>
     <div id="questionsView" class="questionsViewHide">
-        <form id="form">
-            <p id='question'>Question 1</p>
-            <div class="quizActive">
-                <input type="radio" name="quiz" id="answer1" name="answer" value="">
-                <label for="answer1" class="answer">
-                </label>
-            </div>
 
-            <div class="quizActive">
-                <input type="radio" name="quiz" id="answer2" name="answer" value="">
-                <label for="answer2" class="answer2"></label>
-            </div>
+        <h2 id='question'>Question 1</h2>
+        <div class="quizActive">
+            <button value="" class="answer"></button>
+            <button value="" class="answer2"></button>
+            <button value="" class="answer3"></button>
+        </div>
 
-            <div class="quizActive">
-                <input type="radio" name="quiz" id="answer3" name="answer" value="">
-                <label for="answer3" class="answer3"></label>
-            </div>
-            <input type="submit" value="Submit">
+
+    </div>
+    <div id="restartContainer">
+        <button id="restart" class="restart">Restart</button>
+    </div>
+    <div class="userScore">
+        <h2>Score</h2>
+        <p class="score">0</p>
+        <form action="" method="post">
+            @csrf
+            <input type="hidden" id="hiddenScore" name="score" value="">
+            <input type="submit" value="submit">
         </form>
     </div>
 @endsection
-
-
-
-
 
 {{-- script url --}}
 @section('script')
