@@ -55,8 +55,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/test', [Controller::class, 'index'])->name('test');
 
     ########### Route to show the edit user page (editProfile.blade.php in Views )  ###########
-    Route::get('/editProfile/{id}', [UserController::class, 'editform'])->name('edit.user');
-    Route::post('/editProfile/{id}', [UserController::class, 'update']);
+    Route::get('/editProfile', [UserController::class, 'editform'])->name('edit.user');
+    Route::post('/editProfile', [UserController::class, 'update'])->name('ajaxcall');
 
     ###########  Route to delete the user profile (delete.blade.php in Views )  ###########
     ###########  Obsolete  ###########
@@ -108,10 +108,9 @@ Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 //Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('admin.page');
 
 //know if it is admin
-
 Route::get('/adminOrnot/{id}', [AdminController::class, 'adminOrnot'])->name('adminOrnot');
 
-
+//checks if user is admin
 Route::get('/adminpage', function () {
     $admin = Auth::user();
     if ($admin != null) {
@@ -139,8 +138,8 @@ Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('up
 Route::get('/displayusers', [AdminController::class, 'showusers'])->name('getusers');
 
 //to add
-Route::get('/adduser', [AdminController::class, 'displayAdd'])->name('addPage');
-Route::get('/adduser', [AdminController::class, 'create'])->name('create.in.admin');
+Route::get('/adduser', [AdminController::class, 'add'])->name('adduser');
+Route::post('/adduser', [AdminController::class, 'create']);
 
 
 ###################################################################################################

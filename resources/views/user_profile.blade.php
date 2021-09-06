@@ -27,7 +27,7 @@
 
     <div class="buttons">
         <ul id="Blist" >
-            <li><a href="{{ route('edit.user', [$user->id]) }}">Edit Profile</a></li>
+            <li><a href="{{ route('edit.user') }}">Edit Profile</a></li>
             <li><a href="{{ route('change.password', [$user->id]) }}">Change Password</a></li>
             <li><a href="{{ route('delete.user', [$user->id]) }}">Delete Account</a></li>
             
