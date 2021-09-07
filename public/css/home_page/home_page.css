@@ -132,6 +132,8 @@ h2
     text-transform: uppercase;
   }
 
+
+
   #firstSec #btnprot, #btnphis {
       display: flex;
       align-items: center;
@@ -280,6 +282,7 @@ main{
     width: 1400px;
 }
 
+/* Grid sytem responsive */
 .container
 {
 width: 1080px;
@@ -289,6 +292,8 @@ width: 1080px;
     display: flex;
     flex-direction: row;
 }
+
+
 h1
 {
     font-size: 4.5em;
@@ -302,6 +307,8 @@ h3
 {
     font-size: 20PX;
 }
+
+/* Paragraph font size nonly in Desktop */
 p
 {
 font-size: 18px;
@@ -345,7 +352,7 @@ font-size: 18px;
 #imgart3
 {
     width: 100%;
-    height: 600px;
+    height: 800px;
     border-radius: 10px;
     margin: auto;
 }

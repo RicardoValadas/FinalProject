@@ -6,7 +6,7 @@
 
 @section('content')
 
-<h1>Safefornet</h1><br>
+<h1>Safe4Net</h1><br>
 
     <h2 class="heading-secondary">
         Is where you learn how to protect your kids on the web
