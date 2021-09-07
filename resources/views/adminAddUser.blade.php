@@ -78,7 +78,7 @@ $(function() {
 
                $.ajax({
                 headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  },
-                       url: "{{ route('ajaxcall') }}",
+                       url: "{{ route('AjaxCreateADM') }}",
                        method: 'post',
                        data:$("form").serialize(),
                    })

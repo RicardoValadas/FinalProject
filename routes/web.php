@@ -124,10 +124,10 @@ Route::get('/adminpage', function () {
 Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('ADMdelete.user');
 
 Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
+Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('updateToDate');
 
 
 //Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
-Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('update.in.admin');
 Route::get('/displayusers', [AdminController::class, 'showusers'])->name('getusers');
 
 //to add
