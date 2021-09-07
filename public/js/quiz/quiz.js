@@ -1,5 +1,7 @@
+//Define variables to increment later with quiz
 let score = 0
 let limit = 0
+//When submit send score
 let submit = document.querySelector('#submit')
 
 //Store start variable for button
@@ -14,6 +16,7 @@ function begin() {
   .then(response => response.json())
   .then(data => renderQuestions(data))
   }
+
 //Randomize possible numbers and check if the number assigned is already being used later with ranNums.next().value
 function* shuffle(array) {
 
@@ -30,10 +33,7 @@ let store1 = ranNums.next().value
 let store2 = ranNums.next().value
 let store3 = ranNums.next().value
 
-
 function renderQuestions(data) {
- /*  console.log(JSON.stringify(data.id))
-  console.log(JSON.stringify(data.Answers[store1]['id'])) */
  
   //Get html classes to display the values
     const question = document.querySelector('#question')
@@ -60,24 +60,27 @@ start.addEventListener('click',gameShow())
 function gameShow() {
    const game = document.querySelector('#questionsView')
 
+   //change class 
   if (game.classList.contains('questionsViewHide')) {
     game.classList.toggle('questionsViewShow')
   }
   start.classList.add('questionsViewHide')
 }
- 
+ //when click button
   let button1 = document.querySelector('.answer')
   button1.addEventListener('click', function(event){
     event.preventDefault()
     let buttonValue1 = button1.innerHTML
-    sessionStorage.setItem("answer1",buttonValue1)
+    //get correct answer
     let correctAnswer = sessionStorage.getItem('correct')
+    //if correct add scire
     if(buttonValue1 == correctAnswer){
       score++
     } 
     document.querySelector('.score').innerHTML = score
     document.querySelector('#hiddenScore').value = score
     limit++
+    //when answered 10 questions
     if (limit >= 10) {
       let restart = document.querySelector('#restart')
       restart.classList.remove('restart')
@@ -87,7 +90,6 @@ function gameShow() {
       submit.classList.remove('hide')
       submit.classList.add('show')
     }
-  
     begin()
   })
 
@@ -111,7 +113,6 @@ function gameShow() {
       submit.classList.remove('hide')
       submit.classList.add('show')
     }
-  
     begin()
   })
 
@@ -135,7 +136,6 @@ function gameShow() {
       submit.classList.remove('hide')
       submit.classList.add('show')
     }
-
     begin()
   })
 
