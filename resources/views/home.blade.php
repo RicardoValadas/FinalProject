@@ -21,7 +21,7 @@
     <div class="row cont1">
         <div class="col head2">
             <article id="art1"> <!-- Article 1 with images -->
-                <h3 class="heading-tertiary2">How to protect young kids from inappropriate Internet</h3><br>
+                <h3 class="heading-tertiary2">Protect young kids from inappropriate Internet</h3><br>
                 <img id="imgart1" src="{{ asset('home_images/leon-seibert-2m71l9fA6mg-unsplash.jpg') }}" alt=""><br><br>
                 <p class="paragraph1">
                     Setting strict rules for your young children's Internet adventures protects them from inappropriate content, cyberbullies, identity thieves and child predators. Installing popup blockers and reminding your little one to never, ever give out her real name, age, or address online is a solid start.
