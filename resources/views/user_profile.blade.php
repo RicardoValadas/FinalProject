@@ -30,7 +30,6 @@
             <li><a href="{{ route('edit.user') }}">Edit Profile</a></li>
             <li><a href="{{ route('change.password', [$user->id]) }}">Change Password</a></li>
             <li><a href="{{ route('delete.user', [$user->id]) }}">Delete Account</a></li>
-
         </ul>
     </div>
 
@@ -39,6 +38,7 @@
 </section>
 <!--/////////////////////////////////////////////////////////////////-->
 <hr>
+
 <section id="achi">
     <h2>Achievements</h2>
     <div class="buttons">
