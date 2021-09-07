@@ -60,20 +60,26 @@ class AdminController extends Controller
             'password'=> 'required|min:7|confirmed',
             
         ]);
-        $user->save();
-        return redirect('adminpage');
+        //$user->save();
+        //return redirect('adminpage');
+
+                        if($user->save())
+                    return (['success' => 'profile is up to date']);
+                    
+
+            
+            if ($this->validate->fails())
+                return response()->json(['errors' => $this->validate->errors()->all()]);
     }
     
     //---------Update User----------//
-    public function update(Request $request,$id){
+    public function AdminUpdate(Request $request,$id){
         $user = User::find($request->id);    
         $user->first_name=strip_tags(str_replace(' ', '',$request->first_name));
         $user->last_name=strip_tags(str_replace(' ', '',$request->last_name));
         $user->username=strip_tags(str_replace(' ', '',$request->username));
         
-        if(!filter_var($request->email,FILTER_VALIDATE_EMAIL))
-            echo 'not an email';
-        else
+        if(filter_var($request->email,FILTER_VALIDATE_EMAIL))
             $user->email=$request->email;
         
         /*here i stored the validation inside a variable and if the password is empty there will be no validation for the password*/
@@ -88,14 +94,20 @@ class AdminController extends Controller
             //$user->type=$request->type;
         
         $this->validate($request,[
-            'username'=> "required|unique:users,username,$id",
+            'username'=> "required|unique:users,username,$request->id",
             'email'=> "required|email|unique:users,email,$id",
             'first_name'=> 'required|min:3|max:15',
             'last_name'=> 'required|min:3|max:15',
             'password'=>$passwordVer,
         ]);
         $user->save();         
-        return redirect('adminpage');   
+                if($user->save())
+                    return (['success' => 'profile is up to date']);
+                    
+
+            
+            if ($this->validate->fails())
+                return response()->json(['errors' => $this->validate->errors()->all()]); 
     } 
     
     //----------------------Not used anymore-----------------------//

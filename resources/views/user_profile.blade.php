@@ -90,7 +90,8 @@ integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="ano
 
                 if (admin === 1) {
                     $('#Blist').append("<li id=><a href=" + "{{ route('admin.page') }}" +
-                        ">admin dashboard</a></li>");
+                        ">admin dashboard</a></li> ");
+                    
 
                 }
             })
