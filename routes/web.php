@@ -132,7 +132,7 @@ Route::get('/displayusers', [AdminController::class, 'showusers'])->name('getuse
 
 //to add
 Route::get('/adduser', [AdminController::class, 'add'])->name('adduser');
-Route::post('/adduser', [AdminController::class, 'create']);
+Route::post('/adduser', [AdminController::class, 'create'])->name('AjaxCreateADM');
 
 
 ###################################################################################################

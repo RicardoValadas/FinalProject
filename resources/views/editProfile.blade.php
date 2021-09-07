@@ -9,7 +9,7 @@
 
 <div id="results"></div>
 
-
+<button ><a id="back" href="/profile">back to profile</a></button>
 
 
     @if ($errors->any())
@@ -57,21 +57,18 @@ $(function() {
 
                $.ajax({
                 headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  },
-                       url: "{{ route('ajaxcall') }}",
+                       url: "{{ route('AjaxCreateADM') }}",
                        method: 'post',
                        data:$("form").serialize(),
                    })
                    .done(function(result) {
                        console.log(result);
-                       $('#form').html('<button ><a id="back" href="/profile">back to profile</a></button>');
+                       //$('#form').html('<button ><a id="back" href="/profile">back to profile</a></button>');
                        $('h1').html(''+result.success+'');
                        
                     })
                     .fail(function(response) {
-                        //let response =result.responseJSON.errors;
-                        //console.log(resulterrors)
-                        //console.log(response.first_name)
-                        //console.log(response.username)
+
                         
                         let errors = response.responseJSON.errors
                         
@@ -107,6 +104,7 @@ $(function() {
                                 $('#e_mail').html('');
                             
                             }
+
 
                 });
         });
