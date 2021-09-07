@@ -1,36 +1,36 @@
 @extends('layouts.template')
 @section('style')
 <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ URL::asset('/css/edit_profile/editprofile.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('/css/edit_profile/editprofile.css') }}">
 
 @endsection
 @section('content')
-    <h1>home</h1>
+<button ><a id="back" href="/adminpage">Go Back to Admin dashboard</a></button>
+<h1> Edit User</h1>
 
-    <button ><a id="back" href="/adminpage">Admin dashboard</a></button>
 <div id="results"></div>
-    <form action="" id="form" method="post">
+<form action="" id="form" method="post">
     @csrf
-
-
-<input type="hidden" name="id" value="{{$user->id}}">
-
+    
+    
+    <input type="hidden" name="id" value="{{$user->id}}">
+    
     <label for="username">Username:</label><br>
     <input type="text" id="username" name="username" placeholder="username" value="{{ $user->username }}" ><br>
     <span id="u_name"></span><br>
-
+    
     <label for="username" >First Name:</label><br>
     <input type="text" id="first_name" name="first_name" placeholder="first name" value="{{ $user->first_name }}" ><br>
     <span id="f_name"></span><br>
-
+    
     <label for="username" >Last Name:</label><br>
     <input type="text" id="last_name" name="last_name" placeholder="last name" value="{{ $user->last_name }}"><br><!--verificar como colocar os nomes junto do old(...-->
     <span id="l_name"></span><br>
-
+    
     <label for="username" >Email:</label><br>
     <input type="text" id="email" name="email" placeholder="email" value="{{ $user->email }}"><br>
     <span id="e_mail"> </span><br>
-
+    
     
     <label for="password" >Password:</label><br>
     <input type="password" name="password" placeholder="new password" value=""><br>
@@ -46,35 +46,37 @@
         <option value="child">child</option>
         <option value="parent">parent</option>
     </select><br>-->
-
+    
     <input type="submit">
-    </form>
- 
+</form>
+
+<hr>
 <h3>Note:</h3>
 <p>If Password is empty, nothing will change</p>
 <p>Whatever is not modified nothing will change</p>
 
- @endsection
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+
+@endsection
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script>
-
-
-$(function() {
-    $('form').submit(function(e) {
-               e.preventDefault();
-                   console.log('dos clcike');
+        <script>
+            
+            
+            $(function() {
+                $('form').submit(function(e) {
+                    e.preventDefault();
+                    console.log('dos clcike');
                    //console.log('dos clcike');
-
-               $.ajax({
-                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  },
+                   
+                   $.ajax({
+                       headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  },
                        url: "{{ route('ajaxcall') }}",
                        method: 'post',
                        data:$("form").serialize(),
-                   })
-                   .done(function(result) {
+                    })
+                    .done(function(result) {
                        console.log(result);
-                       //$('#form').html('<button ><a id="back" href="/profile">back to profile</a></button>');
+                       $('#form').html('');
                        $('h1').html(''+result.success+'');
                        
                     })

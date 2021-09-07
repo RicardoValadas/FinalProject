@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-<h1 id="pageIdentifier">Add User</h1>
+<h1>Go Back to Add User</h1>
 <button ><a id="back" href="/adminpage">Admin dashboard</a></button>
     
 
