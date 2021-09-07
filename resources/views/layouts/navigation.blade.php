@@ -6,6 +6,7 @@
         <ul class="desktop">
             {{-- Nav Links desktop --}}
             <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('projectPresentation') }}">Project</a></li>
             <li><a href="{{ route('tutorials') }}">Tutorials</a></li>
             <li><a href="{{ route('quiz') }}">Quiz</a></li>
             <li><a href="{{ route('about') }}">About</a></li>
@@ -61,6 +62,7 @@
 
             <div class="contentDropdownLinksRes">
                 <a href="{{ route('home') }}">Home</a>
+                <a href="{{ route('projectPresentation') }}">Project</a>
                 <a href="{{ route('tutorials') }}">Tutorials</a>
                 <a href="{{ route('quiz') }}">Quiz</a>
                 <a href="{{ route('about') }}">About</a>

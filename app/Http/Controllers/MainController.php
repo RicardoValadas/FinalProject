@@ -34,4 +34,8 @@ class MainController extends Controller
     {
         return view('tutorials');
     }
+    public function projectPresentation()
+    {
+        return view('projectPresentation');
+    }
 }
