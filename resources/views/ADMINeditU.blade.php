@@ -7,20 +7,11 @@
 @section('content')
     <h1>home</h1>
 
-
+    <button ><a id="back" href="/adminpage">Admin dashboard</a></button>
 <div id="results"></div>
     <form action="" id="form" method="post">
     @csrf
 
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 
 <input type="hidden" name="id" value="{{$user->id}}">
 

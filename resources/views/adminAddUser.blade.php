@@ -84,7 +84,7 @@ $(function() {
                    })
                    .done(function(result) {
                        console.log(result);
-                       //$('#form').html('<button ><a id="back" href="/profile">back to profile</a></button>');
+                       $('#form').html('<button ><a id="back" href="/adminpage">Admin dashboard</a></button>');
                        $('h1').html(''+result.success+'');
                        
                     })

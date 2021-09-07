@@ -9,7 +9,7 @@
 
 <div id="results"></div>
 
-<button ><a id="back" href="/profile">back to profile</a></button>
+<button ><a id="back" href="/adminpage">Admin dashboard</a></button>
 
 
     @if ($errors->any())
