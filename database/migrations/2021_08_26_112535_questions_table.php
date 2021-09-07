@@ -16,9 +16,7 @@ class QuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->string('questions');
-            $table->unsignedBigInteger('levelID');
-            $table->foreign('levelID')->references('id')->on('questionlevel');
-             //$table->timestamps();
+            //$table->timestamps();
         });
     }
 

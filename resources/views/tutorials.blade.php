@@ -8,7 +8,7 @@
 <div class="video">
     <h1><strong>5 tips to keep your child safe on the internet</strong></h1>
     <iframe src="https://www.youtube.com/embed/NqlTOOY9CIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <p>Author : <a href="https://www.youtube.com/channel/UC6KRRypaw5MfPmi0ImcJY-A" target='blank'>
+    <p>Author : <a href="https://www.youtube.com/channel/UC01n7Sn93HVMIi3HKZNxrTA" target='blank'>
             Hampton Primary School</a></p>
 </div>
 
@@ -30,7 +30,7 @@
 <div class="video">
     <h1><strong>What is phishing and how to avoid the bait</strong></h1>
     <iframe src="https://www.youtube.com/embed/XsOWczwRVuc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <p>Author : <a href="https://www.youtube.com/channel/UC0jJMyy2fu1mk2McRcEqfRA" target='blank'>
+    <p>Author : <a href="https://www.youtube.com/channel/UC6KRRypaw5MfPmi0ImcJY-A" target='blank'>
             iluli by Mike Lamb</a></p>
 </div>
 

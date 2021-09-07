@@ -25,6 +25,7 @@
         <p class="score">0</p>
         <form action="{{ route('quiz') }} " method="post">
             @csrf
+            {{-- input hidden to store score --}}
             <input type="hidden" id="hiddenScore" name="score" value="">
             <input type="submit" id="submit" class="hide" value="Submit Score">
         </form>
