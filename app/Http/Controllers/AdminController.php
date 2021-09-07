@@ -73,7 +73,7 @@ class AdminController extends Controller
     }
     
     //---------Update User----------//
-    public function update(Request $request,$id){
+    public function AdminUpdate(Request $request,$id){
         $user = User::find($request->id);    
         $user->first_name=strip_tags(str_replace(' ', '',$request->first_name));
         $user->last_name=strip_tags(str_replace(' ', '',$request->last_name));
@@ -94,8 +94,8 @@ class AdminController extends Controller
             //$user->type=$request->type;
         
         $this->validate($request,[
-            'username'=> "required|unique:users,username,$id",
-            'email'=> "required|email|unique:users,email,$id",
+            'username'=> "required|unique:users,username,$request->id",
+            'email'=> "required|email|unique:users,email,$request->id",
             'first_name'=> 'required|min:3|max:15',
             'last_name'=> 'required|min:3|max:15',
             'password'=>$passwordVer,

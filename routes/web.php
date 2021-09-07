@@ -124,7 +124,7 @@ Route::get('/adminpage', function () {
 Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('ADMdelete.user');
 
 Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
-Route::post('/admineditpage/{id}', [AdminController::class, 'update'])->name('updateToDate');
+Route::post('/admineditpage/{id}', [AdminController::class, 'AdminUpdate'])->name('updateToDate');
 
 
 //Route::get('/admineditpage/{id}', [AdminController::class, 'displayEdit'])->name('admineditpage');
