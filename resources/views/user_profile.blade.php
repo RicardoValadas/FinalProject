@@ -40,7 +40,7 @@
 
 </section>
 <!--/////////////////////////////////////////////////////////////////-->
-<hr>
+<br><hr>
 <section id="achi">
     <h2>Achievements</h2>
     <div class="buttons">
@@ -89,7 +89,8 @@
 
                 if (admin === 1) {
                     $('#Blist').append("<li id=><a href=" + "{{ route('admin.page') }}" +
-                        ">admin dashboard</a></li>");
+                        ">admin dashboard</a></li> ");
+                    
 
                 }
             })
