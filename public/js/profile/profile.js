@@ -1,23 +1,34 @@
-// NEED TO CHANGE
-/*let buttonAchieve = document.querySelector('#buttonAchieve')
-buttonAchieve.addEventListener('click', function(){
-    let hidden = document.querySelector('#achieveSection')
-    if (hidden.classList.contains('achieveHidden')) {
-        hidden.classList.toggle('achieveShow')
-    } 
-})*/
 
-
-let achiev=document.querySelector('#showachi');
-achiev.addEventListener('click', function(){
+const achiev=document.querySelector('#showachi');
+    achiev.addEventListener('click', function(){
     document.querySelector('.achievments').classList.toggle('visible'); 
-    
-    let score= document.querySelector('.userscore').value;
+    //gets the score from the hidden input
+    const score = document.querySelector('#scoreValue').value
+    //checks the score
+    //change here for the medal system
 
+    //particpation
     if(score>=1){
-    document.querySelector('participation').style.display= "none";
-    console.log("hello");
+    document.querySelector('#participation').style.display= "block";
+   
+    //bronze
+    }
+    if(score>=10){
+    document.querySelector('#bronze').style.display= "block";
+   
+
+    //silver
+    }
+    if(score>=30){
+    document.querySelector('#silver').style.display= "block";
+   
+    //gold
+    }
+    if(score>=50){
+    document.querySelector('#gold').style.display= "block";
+   
     }
     
 });
+
 

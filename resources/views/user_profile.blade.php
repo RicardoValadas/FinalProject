@@ -17,6 +17,8 @@
 
     <article class="userinfo">
         <p class="userscore" value="{{ $user->user_score }}">Score: {{ $user->user_score }} points</p>
+        {{-- Use hidden input to get the value for the achievements the value from the class userscore got undefined value and this input works --}}
+        <input type="hidden" id="scoreValue" value="{{ $user->user_score }}">
         <br>
         <p>Username: {{ $user->username }} </p>
         <p>Firstname: {{ $user->first_name }} </p>
@@ -86,7 +88,8 @@
                 let admin = result.admin
 
                 if (admin === 1) {
-                    $('#Blist').append("<li id=><a href=" + "{{ route('admin.page')}}" + ">admin dashboard</a></li>");
+                    $('#Blist').append("<li id=><a href=" + "{{ route('admin.page') }}" +
+                        ">admin dashboard</a></li>");
 
                 }
             })

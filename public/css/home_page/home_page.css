@@ -63,12 +63,13 @@ h2
     background: url('../../home_images/kidandparents.jpg') no-repeat 50% 50%/auto 580px;
     height: 200px;
     background-attachment: fixed;
+
     border-radius: 5px;
 }
 /* Second  Image */
 #imghome2
 {
-    background: url('../../home_images/max-bender-XIVDN9cxOVc-unsplash.jpg') no-repeat 50% 50%/auto 580px;
+    background: url('../../home_images/christina-wocintechchat-com-sjO_VsSkN9s-unsplash.jpg') no-repeat 50% 50%/auto 580px;
     height: 200px;
     background-attachment: fixed;
     border-radius: 5px;
@@ -137,7 +138,6 @@ h2
       justify-content: center;
 
   }
-
 /* #####################  CONTAINERS #################### */
 .cont1
 {
@@ -180,7 +180,7 @@ h2
 
 p
 {
-    text-align: center;
+    text-align: justify;
     font-size: 1,5 rem;
     padding-bottom: -10px;
     padding-top: -20px;
@@ -309,7 +309,8 @@ font-size: 18px;
 
 #imghead
 {
-    background-size: 1300px;
+    background-size: cover;
+    background-position: center;
     height: 600px;
     border-radius: 10px;
     margin: auto;
@@ -318,8 +319,9 @@ font-size: 18px;
 
 #imghome2
 {
-    background-size: 1300px;
-    height: 600px;
+    background-size: cover;
+    background-position: center;
+    height: 700px;
     border-radius: 10px;
     margin: auto;
 }
