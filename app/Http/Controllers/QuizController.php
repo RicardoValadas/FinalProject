@@ -45,11 +45,11 @@ class QuizController extends Controller
     {
 
         $user = User::find(auth()->user()->id);
-        $user->user_score += $request->score;
+
         $this->validate($request, [
             'score' => "required",
         ]);
-
+        $user->user_score += $request->score;
         $user->save();
         return view('quiz');
     }

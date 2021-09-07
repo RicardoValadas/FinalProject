@@ -81,11 +81,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/change-password', [ChangePasswordController::class, 'index'])->name('password.reset');
 Route::post('change-password', [ChangePasswordController::class, 'store'])->name('change.password');
 
-
-
 require __DIR__ . '/auth.php';
-
-
 
 ###########  Route for User Avatar uploading image during the register process  ###########
 Route::post('image/upload', [MainController::class, 'uploadImage']);
@@ -94,14 +90,11 @@ Route::post('image/upload', [MainController::class, 'uploadImage']);
 ###########  Route for the Home page (home.blade.php in views)  ###########
 Route::get('/', [MainController::class, 'welcome'])->name('welcome');
 
-
-
 ########### Route for the About page (about.blade.php in Views )  ###########
 Route::get('/about', [MainController::class, 'about'])->name('about');
 
 ###########  Route for the Contact page (contact.blade.php in Views )  ###########
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
-
 
 ###########                 Admin Routes                           ###########
 
@@ -160,6 +153,3 @@ Route::post('/email/verification-notification', function (Request $request) {
 
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
-
-
-//reset

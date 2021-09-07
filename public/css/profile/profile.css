@@ -132,19 +132,19 @@ body #achi .achievments.visible {
 }
 
 body #participation {
-    display: block;
+    display: none;
 }
 
 body #bronze {
-    display: block;
+    display: none;
 }
 
 body #silver {
-    display: block;
+    display: none;
 }
 
 body #gold {
-    display: block;
+    display: none;
 }
 
 /* -------------------------------------------Desktop------------------ */
@@ -199,7 +199,7 @@ body #gold {
     }
 
     .achievments {
-        width: 1400;
+        width: 1300;
         margin: auto;
         margin-top: 60px;
     }
