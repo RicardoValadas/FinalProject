@@ -48,9 +48,8 @@ class AdminController extends Controller
         $user->first_name=strip_tags(str_replace(' ', '',$request->first_name));
         $user->last_name=strip_tags(str_replace(' ', '',$request->last_name));
         $user->username=strip_tags(str_replace(' ', '',$request->username));
-        $user->type=$request->type;
         $user->email=$request->email;
-        $user->password= Hash::make($request->password); 
+        $user->password= $request->password; 
         $user->images= 'to add'; 
         $this->validate($request,[
             'username'=> "required|unique:users,username",
@@ -60,11 +59,11 @@ class AdminController extends Controller
             'password'=> 'required|min:7|confirmed',
             
         ]);
-        //$user->save();
+        $user->save();
         //return redirect('adminpage');
 
                         if($user->save())
-                    return (['success' => 'profile is up to date']);
+                            return (['success' => 'a new user was added']);
                     
 
             
