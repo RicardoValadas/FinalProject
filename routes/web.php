@@ -75,6 +75,9 @@ Route::middleware(['auth'])->group(function () {
     ###########  Route for the Tutorilas page (tutorials.blade.php in Views )  ###########
     Route::get('/tutorials', [MainController::class, 'tutorials'])->name('tutorials');
 
+    ###########  Route for the Tutorilas page (tutorials.blade.php in Views )  ###########
+    Route::get('/projectPresentation', [MainController::class, 'projectPresentation'])->name('projectPresentation');
+
     ##################################################################################
 }); # End of the middleware "auth" group function
 
