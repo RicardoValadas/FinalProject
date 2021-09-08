@@ -9,7 +9,7 @@
 
 <div id="results"></div>
 
-
+<button ><a id="back" href="/adminpage">Admin dashboard</a></button>
 
 
     @if ($errors->any())
@@ -54,51 +54,58 @@ $(function() {
                e.preventDefault();
                    console.log('dos clcike');
                    //console.log('dos clcike');
-                        $('#e_mail').html('')
-                        $('#l_name').html('')
-                        $('#f_name').html('')
-                        $('#u_name').html('')
+
                $.ajax({
                 headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  },
-                       url: "{{ route('ajaxcall') }}",
+                       url: "{{ route('AjaxCreateADM') }}",
                        method: 'post',
                        data:$("form").serialize(),
                    })
                    .done(function(result) {
                        console.log(result);
-                       $('#form').html('<button ><a id="back" href="/profile">back to profile</a></button>');
+                       //$('#form').html('<button ><a id="back" href="/profile">back to profile</a></button>');
                        $('h1').html(''+result.success+'');
-                      
+                       
                     })
                     .fail(function(response) {
-                        //let response =result.responseJSON.errors;
-                        //console.log(resulterrors)
-                        //console.log(response.first_name)
-                        //console.log(response.username)
+
                         
                         let errors = response.responseJSON.errors
                         
                         console.log(errors);
                         
-                        
-                        let username =response.responseJSON.errors.username[0];
-                        let first_name =response.responseJSON.errors.first_name[0];
-                        let last_name =response.responseJSON.errors.last_name[0];
-                        let email =response.responseJSON.errors.email[0];
-                        
-                        if(username>0)
-                        $('#u_name').html(errors.username[0])
-                            //e.preventDefault();
-                        
-                        $('#l_name').html(errors.last_name[0])
-                        $('#f_name').html(errors.first_name[0])
-                        $('#e_mail').html(errors.email[0])
-                        
+                            if(errors.username){
+                            let username = errors.username[0];
+                            console.log(username)
+                                $('#u_name').html(username);
+                            }else{
+                                $('#u_name').html('');
+                            }
+                            
+                            if(errors.first_name){
+                            let first_name = errors.first_name[0];
 
-                        
+                                $('#f_name').html(first_name);
+                            }else{
+                                $('#f_name').html('');
+                            
+                            }
+                            if(errors.last_name){
+                            let last_name = errors.last_name[0];
+                                $('#l_name').html(last_name);
+                            }else{
+                                $('#l_name').html('');
+                            
+                            }
+                            if(errors.email){
+                            let e_mail = errors.email[0];
+                                $('#e_mail').html(e_mail);
+                            }else{
+                                $('#e_mail').html('');
+                            
+                            }
 
 
-           
                 });
         });
 });
