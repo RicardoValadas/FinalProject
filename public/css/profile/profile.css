@@ -80,6 +80,7 @@ body .info ul a:hover {
 }
 body .buttons {
     text-align: center;
+    margin-bottom: 30px;
 }
 body #achi {
     margin-top: 50px;

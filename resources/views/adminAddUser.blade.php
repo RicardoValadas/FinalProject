@@ -9,8 +9,8 @@
 @endsection
 
 @section('content')
-<h1>Go Back to Add User</h1>
-<button ><a id="back" href="/adminpage">Admin dashboard</a></button>
+<h1>Add User</h1>
+<button ><a id="back" href="/adminpage">Go Back to Admin dashboard</a></button>
     
 
 
@@ -85,7 +85,7 @@ $(function() {
                    })
                    .done(function(result) {
                        console.log(result);
-                       $('#form').html('<button ><a id="back" href="/adminpage">Admin dashboard</a></button>');
+                       $('#form').html('<button ><a id="back" href="/adminpage">Go Back to Admin dashboard</a></button>');
                        $('h1').html(''+result.success+'');
                        
                     })

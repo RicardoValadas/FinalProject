@@ -9,7 +9,7 @@
 
 <div id="results"></div>
 
-<button ><a id="back" href="/adminpage">Admin dashboard</a></button>
+<button ><a id="back" href="/profile">Go back to Profile</a></button>
 
 
     @if ($errors->any())
@@ -57,15 +57,15 @@ $(function() {
 
                $.ajax({
                 headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  },
-                       url: "{{ route('AjaxCreateADM') }}",
+                       url: "{{ route('ajaxcall') }}",
                        method: 'post',
                        data:$("form").serialize(),
                    })
                    .done(function(result) {
                        console.log(result);
                        //$('#form').html('<button ><a id="back" href="/profile">back to profile</a></button>');
-                       $('h1').html(''+result.success+'');
-                       
+                       //$('h1').html(''+result.success+'');
+                       $('form').html(''+result.success+'');
                     })
                     .fail(function(response) {
 
