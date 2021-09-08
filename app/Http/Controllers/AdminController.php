@@ -100,13 +100,15 @@ class AdminController extends Controller
             'password'=>$passwordVer,
         ]);
         $user->save();         
-                if($user->save())
-                    return (['success' => 'profile is up to date']);
-                    
-
-            
+        
+        if($user->save())
+            return view('adminpage');
+        
+        /*
+        if($user->save())
+            return (['success' => 'profile is up to date']);
             if ($this->validate->fails())
-                return response()->json(['errors' => $this->validate->errors()->all()]); 
+                return response()->json(['errors' => $this->validate->errors()->all()]); */
     } 
     
     //----------------------Not used anymore-----------------------//

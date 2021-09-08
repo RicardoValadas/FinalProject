@@ -9,6 +9,15 @@
 <h1> Edit User</h1>
 
 <div id="results"></div>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <form action="" id="form" method="post">
     @csrf
     
@@ -61,7 +70,7 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script>
             
-            
+          /*  
             $(function() {
                 $('form').submit(function(e) {
                     e.preventDefault();
@@ -130,5 +139,5 @@
 
                 });
         });
-});
+});*/
 </script>
