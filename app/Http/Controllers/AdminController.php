@@ -100,9 +100,9 @@ class AdminController extends Controller
             'password'=>$passwordVer,
         ]);
         $user->save();         
-        
+        $allusers = User::all();
         if($user->save())
-            return view('adminpage');
+            return view('adminPage',['allusers' => $allusers]);
         
         /*
         if($user->save())
