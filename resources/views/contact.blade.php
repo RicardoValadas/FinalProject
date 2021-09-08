@@ -44,7 +44,7 @@
                 <ul class="contact-list">
                     <li><svg class="icon-svg-use">
                             <use xlink:href="#email"></use>
-                        </svg>diogomartiins77@gmail.com </li>
+                        </svg>martins.diogo01@hotmail.com </li>
                     <li><svg class="icon-svg-use">
                             <use xlink:href="#website"></use>
                         </svg><a href="https://www.linkedin.com/in/martins-de-sousa-diogo/"
