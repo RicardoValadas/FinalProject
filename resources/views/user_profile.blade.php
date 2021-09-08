@@ -24,7 +24,7 @@
             <p>Firstname: {{ $user->first_name }} </p>
             <p>Lastname: {{ $user->last_name }} </p>
             <p>Email: {{ $user->email }} </p><br>
-            <p>admin: {{ $user->admin }} </p><br>
+            
         </article>
 
         <div class="buttons">
