@@ -27,11 +27,6 @@ function* shuffle(array) {
   }
 }  
 
-let ranNums = shuffle([0,1,2]);
-
-let store1 = ranNums.next().value
-let store2 = ranNums.next().value
-let store3 = ranNums.next().value
 
 function renderQuestions(data) {
  
@@ -40,6 +35,13 @@ function renderQuestions(data) {
     const answer = document.querySelector('.answer')
     const answer2 = document.querySelector('.answer2')
     const answer3 = document.querySelector('.answer3')
+
+    
+let ranNums = shuffle([0,1,2]);
+    //Randomize answers
+    let store1 = ranNums.next().value
+    let store2 = ranNums.next().value
+    let store3 = ranNums.next().value
 
     //Get the data with random numbers
     let newData =  data.Answers[store1]['answer']
@@ -90,6 +92,7 @@ function gameShow() {
       submit.classList.remove('hide')
       submit.classList.add('show')
     }
+    //Call the function again to get api then activate renderquestions to random and place the question and answers
     begin()
   })
 
