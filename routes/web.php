@@ -100,7 +100,7 @@ Route::get('/about', [MainController::class, 'about'])->name('about');
 ###########  Route for the Contact page (contact.blade.php in Views )  ###########
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
-###########                 Admin Routes                           ###########
+###########  -------------  Admin Routes  -------------  ###########
 
 //display page
 //Route::get('/adminpage', [AdminController::class, 'displayAdmin'])->name('admin.page');
@@ -148,13 +148,13 @@ Route::get('/email/verify', function () {
 
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
-    
+
     return redirect('/home');
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::post('/email/verification-notification', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();
-    
+
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
